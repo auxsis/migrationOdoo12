@@ -1,0 +1,480 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* apiux_hr_leave
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-10 17:10+0000\n"
+"PO-Revision-Date: 2020-09-10 17:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_employee__account_ejecutive
+msgid "Account Executive"
+msgstr "Ejecutivo de cuenta"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__active
+msgid "Activo?"
+msgstr "Activo?"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__alt_holiday_status_id
+msgid "Alt Holiday Status"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Annexos"
+msgstr "Anexos"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__second_validation
+msgid "Apply Double Validation"
+msgstr "Aplicar validación double"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__user_id
+msgid "Aprobador"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Aprobadores"
+msgstr "Aprobadores"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__hr_holiday_id
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__hr_holiday_id
+msgid "Ausencia"
+msgstr "Ausencia"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__available_holiday_status_id
+msgid "Available Holiday Status"
+msgstr "Tipos de Ausencia disponibles"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__approve_message
+msgid "Aviso!"
+msgstr "Aviso!"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.hr_holidays_approve_wizard_form
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+#: selection:hr.leave,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__approve_password
+msgid "Contrasena"
+msgstr "Contraseña"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__create_uid
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__create_uid
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__create_date
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__create_date
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_employee__current_leave_state
+msgid "Current Leave Status"
+msgstr "Estatus Ausencia Actual"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__holiday_description
+msgid "Descripcion"
+msgstr "Descripcion"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave_type__description
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Dias Descontados Feriados"
+msgstr "Dias Descontados Feriados"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__display_name
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__display_name
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__holiday_employee_id
+msgid "Empleado"
+msgstr "Empleado"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__employee_outsourcing
+msgid "Empleado Outsourcing"
+msgstr "Empleado Staffing"
+
+#. module: apiux_hr_leave
+#: model:ir.model,name:apiux_hr_leave.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_employee__is_outsourcing
+msgid "Es outsourcing?"
+msgstr "Es outsourcing?"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__approve_stage
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__state
+msgid "Estatus"
+msgstr "Estatus"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_public_holiday__exemptions_ids
+msgid "Exenciones"
+msgstr "Exepciones"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__holiday_date
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__validation_date
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: apiux_hr_leave
+#: selection:hr.holidays.exemptions,holiday_type:0
+msgid "Feriado"
+msgstr "Feriado"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__public_holiday_id
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__exemption_ids
+msgid "Feriados"
+msgstr "Feriados"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Feriados/FinDeSemana"
+msgstr "Feriados/Fin De Semana"
+
+#. module: apiux_hr_leave
+#: selection:hr.holidays.exemptions,holiday_type:0
+msgid "Fin De Semana"
+msgstr "Fin De Semana"
+
+#. module: apiux_hr_leave
+#: selection:hr.leave,state:0
+msgid "Final Approval"
+msgstr "Aprobación Final"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__signed_employee
+msgid "Firma Empleado"
+msgstr "Firma Empleado"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__signed_string
+msgid "Firmado Empleado"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__first_approval_string
+msgid "Firmado Primera Aprobador"
+msgstr "Firmado Primera Aprobador"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__second_approval_string
+msgid "Firmado Segunda Aprobador"
+msgstr "Firmado Segunda Aprobador"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__third_approval_string
+msgid "Firmado Tercera Aprobador"
+msgstr "Firmado Tercera Aprobador"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.hr_holidays_approve_wizard_form
+msgid "Firmar"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__hr_holidays_validation_ids
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Firmas Simples"
+msgstr "Firmas Simples"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+#: selection:hr.holidays.approve.wizard,approve_stage:0
+#: selection:hr.holidays.validation,state:0
+#: selection:hr.leave,state:0
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__first_approver_id
+msgid "First Approval"
+msgstr "Aprobación Inicial"
+
+#. module: apiux_hr_leave
+#: selection:hr.leave,state:0
+msgid "For Approval"
+msgstr "Por Aprobación"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave_type__group_ids
+msgid "Groups"
+msgstr "Grupos"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.hr_public_holiday_edit_holiday_status_form
+msgid "Grupos"
+msgstr "Grupos"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__id
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__id
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__id
+msgid "ID"
+msgstr "ID"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard____last_update
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions____last_update
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__write_uid
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__write_uid
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__write_date
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__write_date
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_validation__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización en"
+
+#. module: apiux_hr_leave
+#: model:ir.model,name:apiux_hr_leave.model_hr_leave
+msgid "Leave"
+msgstr "Ausencia"
+
+#. module: apiux_hr_leave
+#: model:ir.model,name:apiux_hr_leave.model_hr_leave_type
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave_type__name
+msgid "Leave Type"
+msgstr "Tipo Ausencia"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__licence_or_absence
+msgid "Licencia/Ausencia"
+msgstr "Licencia/Ausencia"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_leave_view_hr_holidays_filter
+msgid "My Department Leaves"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave_type__display_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+msgid "New"
+msgstr "Nueva"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__name
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,employee_type:0
+msgid "Outsourcing"
+msgstr "Staffing"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__holiday_id
+msgid "Peticion"
+msgstr "Peticion"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__holiday_state
+msgid "Peticion Estado"
+msgstr "Peticion Estado"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Refuse"
+msgstr "Rechazar"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+#: selection:hr.leave,state:0
+msgid "Refused"
+msgstr "Rechazado"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Reset to Draft"
+msgstr "Cambiar a Borrador"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+#: selection:hr.holidays.approve.wizard,approve_stage:0
+#: selection:hr.holidays.validation,state:0
+#: selection:hr.leave,state:0
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__second_approver_id
+msgid "Second Approval"
+msgstr "Aprobacion Segunda"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+#: selection:hr.holidays.approve.wizard,approve_stage:0
+#: selection:hr.holidays.validation,state:0
+#: selection:hr.leave,state:0
+msgid "Signed"
+msgstr "Firmada"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,employee_type:0
+msgid "Staff"
+msgstr "Staff"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__state
+msgid "Status"
+msgstr "Estatus"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,help:apiux_hr_leave.field_hr_holidays_exemptions__holiday_state
+#: model:ir.model.fields,help:apiux_hr_leave.field_hr_leave__state
+msgid "The status is set to 'To Submit', when a holiday request is created.            \n"
+"The status is 'To Approve', when holiday request is confirmed by user.            \n"
+"The status is 'Refused', when holiday request is refused by manager.            \n"
+"The status is 'Approved', when holiday request is approved by manager."
+msgstr ""
+
+#. module: apiux_hr_leave
+#: selection:hr.holidays.approve.wizard,approve_stage:0
+#: selection:hr.holidays.validation,state:0
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__third_approver_id
+msgid "Third Approval"
+msgstr "Aprobación Tercera"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,help:apiux_hr_leave.field_hr_leave__first_approver_id
+msgid "This area is automatically filled by the user who validate the leave"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,help:apiux_hr_leave.field_hr_leave__second_approver_id
+#: model:ir.model.fields,help:apiux_hr_leave.field_hr_leave__third_approver_id
+msgid "This area is automaticly filled by the user who validate the leave with second level (If Leave type need second validation)"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_exemptions__holiday_type
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__holiday_status_name
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_employee__employee_type
+msgid "Tipo Empleado"
+msgstr "Tipo Empleado"
+
+#. module: apiux_hr_leave
+#: selection:hr.employee,current_leave_state:0
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_leave_view_hr_holidays_filter
+msgid "To Approve"
+msgstr "Por Aprobar"
+
+#. module: apiux_hr_leave
+#: selection:hr.leave,state:0
+msgid "To Submit"
+msgstr "Por Confirmar"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_holidays_approve_wizard__approve_username
+msgid "Usuario"
+msgstr "Usuario"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave__vacation_or_admin
+msgid "Vacaciones/Admin"
+msgstr "Vacaciones/Admin"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Validar"
+msgstr "Validar"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Validar1"
+msgstr "Validar"
+
+#. module: apiux_hr_leave
+#: model_terms:ir.ui.view,arch_db:apiux_hr_leave.apiux_hr_leave_view_form
+msgid "Validar2"
+msgstr "Validar"
+
+#. module: apiux_hr_leave
+#: model:ir.model.fields,field_description:apiux_hr_leave.field_hr_leave_type__user_has_group
+msgid "Visible"
+msgstr "Visible"
+
+#. module: apiux_hr_leave
+#: model:ir.model,name:apiux_hr_leave.model_hr_holidays_approve_wizard
+msgid "hr.holidays.approve.wizard"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model,name:apiux_hr_leave.model_hr_holidays_exemptions
+msgid "hr.holidays.exemptions"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model,name:apiux_hr_leave.model_hr_holidays_validation
+msgid "hr.holidays.validation"
+msgstr ""
+
+#. module: apiux_hr_leave
+#: model:ir.model,name:apiux_hr_leave.model_hr_public_holiday
+msgid "hr.public.holiday"
+msgstr ""
+

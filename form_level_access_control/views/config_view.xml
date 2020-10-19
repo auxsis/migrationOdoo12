@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+	<record id = "auth_window_config_config_form" model = "ir.ui.view">
+		<field name = "name">auth.window.config.form</field>
+		<field name = "model">auth.window.config</field>
+		<field name = "arch" type = "xml">
+			<form string = "Settings" class="oe_form_configuration">
+				<header>
+					<button name = "apply" type = "object" string = "Apply" class="oe_highlight"/>
+		       </header>
+				<group string  = "Status">
+		              <label for="default_active"/>
+		              <div>
+		                  <div>
+		                      <field name="default_active" class="oe_inline"/>
+		                      <label for="default_active"/>
+		                  </div>
+		              </div>
+		        </group>
+		        <group string="Password" attrs="{'invisible':[('default_active','=',False)]}">
+					  <field name="password" string="Change Password" style="width:30%;" placeholder="Enter Password" attrs="{'required':[('default_active','=',True)]}" password="True"/>
+	            </group>			        
+				<group string="Select Menus" attrs="{'invisible':[('default_active','=',False)]}">
+					<field nolabel="1" name="form_ids" attrs="{'required':[('default_active','=',True)]}" domain="[('action','!=',False)]">
+					  	<tree>
+					  		<field name="name"/>
+					  		<field name="parent_id"/>
+					  	</tree>
+					</field>
+				</group>
+	          	<group string="Security On" attrs="{'invisible':[('default_active','=',False)]}">
+	          		<field name="security_on" widget="radio" attrs="{'required':[('default_active','=',True)]}" string="Select"/>
+	          		<field name="group_ids" attrs="{'invisible':[('security_on','=','users')], 'required':[('default_active','=',True),('security_on','=','groups')]}"/>
+	          		<field name="user_ids" attrs="{'invisible':[('security_on','=','groups')], 'required':[('default_active','=',True),('security_on','=','users')]}">
+	          			<tree>
+	          				<field name="name"/>
+	          				<field name="login"/>
+	          			</tree>
+	          		</field>
+	          	</group>
+		    </form>
+		</field>
+	</record>
+	
+	<record id = "action_auth_window_config" model = "ir.actions.act_window">
+			<field name = "name">Form Level Access Control</field>
+			<field name = "res_model">auth.window.config</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name = "view_mode">form</field>
+			<field name="target">inline</field>
+	</record>
+
+        <menuitem name="Form Level Access Control" id="form_level_access_parent_menu" parent="base.menu_administration"/>
+	<menuitem id="form_level_access_menu" action="action_auth_window_config" parent="form_level_access_parent_menu" sequence="12"/>
+</data>
+</odoo>

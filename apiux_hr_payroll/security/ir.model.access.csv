@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_apiux_hr_payroll_apiux_hr_payroll,apiux_hr_payroll.apiux_hr_payroll,model_apiux_hr_payroll_apiux_hr_payroll,,1,0,0,0

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+	
+        <record id="sync_job_log_tree" model="ir.ui.view">
+            <field name="name">sync.job.log.tree</field>
+            <field name="model">sync.job.log</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Sync Job Log" create="false">
+                    <field name="state" readonly="1"/>				
+                    <field name="name" readonly="1"/>
+                    <field name="error" readonly="1"/>
+                    <field name="job_id" readonly="1"/>					
+                    <field name="create_date" readonly="1"/>
+                    <field name="write_date" readonly="1"/>		
+                </tree>
+            </field>
+        </record>	
+	
+	
+        <record id="sync_job_log_search" model="ir.ui.view">
+            <field name="name">sync.job.log.search</field>
+            <field name="model">sync.job.log</field>
+            <field name="arch" type="xml">
+                <search string="Sync Log">
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="job_id"/>						
+                    <field name="create_date"/>				
+                    <group expand="0" string="Group By">
+                        <filter string="State" name="state" icon="terp-stage" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>	
+
+
+        <record id="act_sync_job_log_all_form" model="ir.actions.act_window">
+            <field name="name">Sync Job Log</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sync.job.log</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_today":1}</field>
+            <field name="search_view_id" ref="sync_job_log_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Here are the logs for the Sync Process
+              </p>			
+            </field>
+        </record>		
+	
+        <record id="sync_job_queue_tree" model="ir.ui.view">
+            <field name="name">sync.job.queue.tree</field>
+            <field name="model">sync.job.queue</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Sync Queue">
+					<button string="Process" class="oe_link" name="process_dte_upload" type="object" groups="base.group_user" attrs="{'invisible':['|',('state','not in',['E']),('type','in',['2'])]}"/>
+					<button string="Process" class="oe_link" name="process_payment_upload" type="object" groups="base.group_user" attrs="{'invisible':['|',('state','not in',['E']),('type','in',['1'])]}"/>					
+                    <field name="name"/>
+                    <field name="type" />
+                    <field name="state" />
+                    <field name="source" />					
+                    <field name="method"/>
+                    <field name="params"/>					
+                    <field name="date_processed" readonly="1"/>
+                    <field name="active" readonly="1"/>				
+                </tree>
+            </field>
+        </record>
+					
+		
+        <record id="sync_job_queue_search" model="ir.ui.view">
+            <field name="name">sync.job.queue.search</field>
+            <field name="model">sync.job.queue</field>
+            <field name="arch" type="xml">
+                <search string="Sync Job">
+                    <field name="name"/>
+                    <field name="state"/>					
+                    <field name="create_date"/>
+                    <field name="date_processed"/>
+                    <field name="active"/>					
+                    <group expand="0" string="Group By">
+                        <filter string="State" name="state" icon="terp-stage" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="act_sync_job_queue_form" model="ir.actions.act_window">
+            <field name="name">Sync Job Queue</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sync.job.queue</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_today":1}</field>
+            <field name="search_view_id" ref="sync_job_queue_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Sync Job
+              </p><p>
+				You can create a Sync Job here to be processed later
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_job_queue_sync_main" parent="base.menu_custom" name="Odoo Syncronisation"/>		
+        <menuitem id="menu_job_queue_sync" parent="menu_job_queue_sync_main" name="Odoo Job Queue" action="act_sync_job_queue_form"/>
+        <menuitem id="menu_job_queue_sync_log" parent="menu_job_queue_sync_main" name="Odoo Job Queue Log" action="act_sync_job_log_all_form"/>		
+		
+    </data>
+</odoo>

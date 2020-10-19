@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+
+        <record id="hr_proj_generate_wizard_form" model="ir.ui.view">
+            <field name="name">Generar Bookings</field>
+            <field name="model">hr.proj.generate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="from_date" required="1" string="Fecha desde"/>
+                            <field name="project_id" required="1" string="Fecha hasta"/>
+                        </group>
+                        <group>
+                            <field name="to_date" required="1"/>
+
+                        </group>
+                    </group>
+					<notebook>
+						<page string="Bookings">
+							<field name="line_ids" >
+                                <tree string="Timesheet Activities" editable="bottom">
+                                    <field name="from_date" readonly="1" string="Fecha desde"/>
+                                    <field name="to_date" readonly="1" string="Fecha hasta"/>
+                                    <field name="reviewer_id"/>
+                                    <field name="user_id" string="Recurso"/>
+                                    <field name="account_id" context="{'default_use_timesheets': 1, 'default_type': 'contract'}" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="percentage" string="Percentage"/>
+                                    <field name="unit_amount" string="Duration Dia" widget="float_time"/>
+                                    <field name="amount" sum="Total Horas"/>
+                                    <field name="confirm_type" string="Tipo"/>
+                                    <field name="outsourcing_id" widget="many2many_tags" string="Staffings" attrs="{'invisible':[('confirm_type','=','periodns')]}"/>
+                                    <field name="task_id" widget="many2many_tags" string="WBS" attrs="{'invisible':[('confirm_type','=','periodws')]}"/>
+                                </tree>
+							</field>
+						</page>
+					</notebook>
+
+
+                    <footer>
+                        <button name="action_generate" type="object" string="Generar"/> <!-- Action Button -->
+                        <button string="Cancelar" class="oe_link" special="cancel" style="margin-left: 15px;"/> <!-- Do nothing -->
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+
+<!--         No creo que vayamos a necesitar la capacidad de generar bookings from staffing -->
+
+
+<!--         <record id="hr_projection_timesheet_edit_project" model="ir.ui.view">
+            <field name="name">hr.projection.timesheet.edit.project</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="apiux_extra.apuix_edit_project"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//button[@name='refresh_analytic_account']" position="after">
+
+            <button name="generate_bookings" type="object" string="Generar Bookings desde Staffing" groups="account.group_account_manager,project.group_project_manager" attrs="{'invisible': ['|',('state','not in',['open'])]}"/>
+            <button name="generate_prefactura_staffing_button" type="object" string="Generar PreFactura Desde Staffing" groups="account.group_account_manager,project.group_project_manager" attrs="{'invisible': ['|',('state','not in',['open'])]}"/>
+
+                </xpath>
+ -->                <!--<xpath expr="//field[@name='task_reference']" position="before">
+                    <field name="outsourcing_state" invisible="1" />
+                    <button name="action_open" attrs="{'invisible':[('outsourcing_state','!=', 'draft')]}" string="Abrir" type="object"  class="oe_highlight"/>
+                    <button name="action_reject" attrs="{'invisible':[('outsourcing_state','!=', 'done')]}" string="Rechazar" type="object"/>
+                    <button name="action_done" attrs="{'invisible':[('outsourcing_state','!=', 'open')]}" string="Cerrar" type="object" />
+                    <button name="action_draft" attrs="{'invisible':[('outsourcing_state','!=', 'rejected')]}" string="Borrador" type="object" />
+
+                </xpath>-->
+                <!--<xpath expr="//field[@name='period_id']" position="after">
+
+                        <field name="planned_hours" widget="float_time" />
+                        <field name="effective_hours" widget="float_time"/>
+
+                </xpath>-->
+<!-- 			</field>
+        </record> -->
+
+</data>
+</openerp>

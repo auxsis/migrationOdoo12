@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<odoo>
+
+    <!-- wizard sale order views -->
+    <record model="ir.ui.view" id="sale_order_wizard">
+      <field name="name">sale.order.wizard.form</field>
+      <field name="model">sale.order.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Renovación">
+          <group>
+              <field name="project_id" required="1" options="{'no_create': True, 'no_create_edit':True}" /> <!--domain="[('id','!=',actual_project)]"-->
+              <field name="renewel" required="1"/>
+              <field name="sale_order" invisible="1"/>
+              <field name="sale_note" invisible="1"/>
+          </group>
+          <footer>
+              <button name="send_renewel" type="object" string="Enviar"/> <!-- Action Button -->
+              <button string="Cancelar" class="oe_link" special="cancel" style="margin-left: 15px;"/> <!-- Do nothing -->
+          </footer>
+        </form>
+      </field>
+    </record>
+
+</odoo>

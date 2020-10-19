@@ -36,7 +36,7 @@ class ResConfigSettings(models.TransientModel):
     )
     sync_remote_partners = fields.Boolean(
             string="Sync Remote Partners",
-            default=True,
+            default=False,
     )
     url_apicaf = fields.Char(
             string="URL APICAF",
@@ -69,7 +69,7 @@ class ResConfigSettings(models.TransientModel):
         partner_token_remote_partners = ICPSudo.get_param(
                     'partner.token_remote_partners', default="token_publico")
         partner_sync_remote_partners = ICPSudo.get_param(
-                    'partner.sync_remote_partners', default=True)
+                    'partner.sync_remote_partners', default=False)
         dte_url_apicaf = ICPSudo.get_param(
                     'dte.url_apicaf', default='https://apicaf.cl/api/caf')
         dte_token_apicaf = ICPSudo.get_param(

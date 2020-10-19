@@ -47,6 +47,51 @@ class AccountJournal(models.Model):
             string="Restore Mode",
             default=False,
         )
+        
+    #apiux additional fields for chile
+    refund_journal_id = fields.Many2one(
+            'account.journal',
+            string="Credit Note Journal",
+            default=False,
+        )
+
+
+    egress_sequence_id = fields.Many2one(
+            'ir.sequence', 
+            string='Egress Sequence',
+            help="This field contains the information related to the numbering of the journal entries of this journal.",
+            copy=False
+        )
+    egress_sequence_number_next = fields.Integer(
+            string='Egress Next Number',
+            help='The next sequence number will be used for the next invoice.',
+            compute='_compute_egr_seq_number_next',
+            inverse='_inverse_egr_seq_number_next'
+        )        
+        
+
+    @api.depends('egress_sequence_id.use_date_range', 'egress_sequence_id.number_next_actual')
+    def _compute_egr_seq_number_next(self):
+        '''Compute 'sequence_number_next' according to the current sequence in use,
+        an ir.sequence or an ir.sequence.date_range.
+        '''
+        for journal in self:
+            if journal.egress_sequence_id:
+                sequence = journal.egress_sequence_id._get_current_sequence()
+                journal.egress_sequence_number_next = sequence.number_next_actual
+            else:
+                journal.egress_sequence_number_next = 1
+
+    @api.multi
+    def _inverse_egr_seq_number_next(self):
+        '''Inverse 'sequence_number_next' to edit the current sequence next number.
+        '''
+        for journal in self:
+            if journal.egress_sequence_id and journal.egress_sequence_number_next:
+                sequence = journal.egress_sequence_id._get_current_sequence()
+                sequence.sudo().number_next = journal.egress_sequence_number_next
+
+
 
     @api.onchange('journal_document_class_ids')
     def set_documents(self):

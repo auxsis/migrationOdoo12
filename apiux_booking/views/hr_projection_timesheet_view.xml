@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="hr_projection_timesheet_line_tree" model="ir.ui.view">
+            <field name="name">hr.projection.timesheet.tree</field>
+            <field name="model">hr.projection.timesheet</field>
+            <field name="arch" type="xml">
+                <tree string="Timesheet Activities">
+                    <field name="overbooked_flag" invisible="1" readonly="1"/>
+                    <field name="overbooked" widget="html" required="1" attrs="{'invisible':[('overbooked_flag','=', False),('state','=','confirm')]}"/>
+                    <field name="name"/>
+                    <field name="from_date" readonly="1"/>
+                    <field name="to_date" readonly="1"/>
+                    <field name="reviewer_id"/>
+                    <field name="user_id"/>
+                    <!--<field name="employee_unlinked"/>-->
+                    <field name="account_id"/> <!--context="{'default_use_timesheets': 1, 'default_type': 'contract'}" options="{'no_open': True, 'no_create': True}"-->
+                    <field name="percentage" string="Percentage"/>
+                    <field name="unit_amount" string="Duration" widget="float_time"/>
+                    <field name="amount" sum="Total cost"/>
+                    <field name="state" />
+                    <field name="confirm_type" />
+                    <field name="activity_type" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_projection_timesheet_line_form" model="ir.ui.view">
+            <field name="name">hr.projection.timesheet.form</field>
+            <field name="model">hr.projection.timesheet</field>
+            <field name="arch" type="xml">
+            <form string="Booking" >
+                <header>
+                    <button name="booking_confirm_period_nostaff" type="object" string="Confirmar WBS Mensual Staff" class="btn-primary" states="draft" confirm="Se confirma el Booking y se generan las WBS por Periodo. Quiere seguir?" />
+                    <button name="booking_confirm_week_nostaff" type="object" string="Confirmar WBS Semanal Staff" class="btn-primary" states="draft" confirm="Se confirma el Booking y se generan las WBS por Semana. Quiere seguir?" />
+                    <button name="booking_confirm_period" type="object" string="Confirmar WBS Mensual Outsourcing" class="btn-primary" states="draft" confirm="Se confirma el Booking y se generan las WBS por Periodo. Quiere seguir?" />
+                    <!--<button name="booking_confirm_week" type="object" string="Confirmar WBS Semanal Outsourcing" class="btn-primary" states="draft" confirm="Se confirma el Booking y se generan las Staffing por Semana. Quiere seguir?"/>-->
+                    <button name="unlink_staffing" type="object" string="Desvincular Staffing/WBS" class="btn-primary" states="confirm" confirm="Se desvincularan los WBS y Staffing de este Booking sin borrarse. Quiere seguir?"/>
+                    <button name="booking_reconfirm_percentage_periodws" attrs="{'invisible':['|',('state','=', 'draft'),('confirm_type','!=','periodws')]}" type="object" string="Recalcular WBSM" class="btn-primary" confirm="Se calculan las horas y se actualizan los Staffing y WBS. Quiere seguir?" />
+                    <button name="booking_reconfirm_percentage_weekws" attrs="{'invisible':['|',('state','=', 'draft'),('confirm_type','!=','weekws')]}" type="object" string="Recalcular WBSS" class="btn-primary"  confirm="Se calculan las horas y se actualizan los Staffing y WBS. Quiere seguir?" />
+                    <button name="booking_reconfirm_percentage_periodns" attrs="{'invisible':['|',('state','=', 'draft'),('confirm_type','!=','periodns')]}" type="object" string="Recalcular WBSM No Staff" class="btn-primary"  confirm="Se calculan las horas y se actualizan los WBS. Quiere seguir?" />
+                    <button name="booking_reconfirm_percentage_weekns" attrs="{'invisible':['|',('state','=', 'draft'),('confirm_type','!=','weekns')]}" type="object" string="Recalcular WBSS No Staff" class="btn-primary" confirm="Se calculan las horas y se actualizan los WBS. Quiere seguir?" />
+                    <button name="booking_reconfirm_shorten" attrs="{'invisible':[('state','=', 'draft')]}" type="object" string="Acortar Booking" class="btn-primary" />
+                    <button name="to_draft" type="object" string="Borrador" class="btn-primary" states="confirm" confirm="Se eliminarán todas las Staffing y WBS para esta Booking!!. Quiere seguir?" />
+                    <field name="state" widget="statusbar" string="confirm" statusbar_visible="draft,confirm" clickable="True"/>
+                </header>
+              <sheet>
+
+                <group>
+                  <div class="oe_title">
+                    <div class="oe_edit_only">
+                      <label for="account_id" string="Proyecto"/>
+                    </div>
+                    <h1>
+                      <field name="account_id" string="Proyecto" attrs="{'readonly':[('state','=', 'confirm')]}"/>
+                    </h1>
+                  </div>
+                </group>
+                <group>
+                  <group>
+                    <field name="oc_profile" attrs="{'required':[('origin','=','odoo12')]}" domain="[('project_id','=',account_id),('state_booking','=',False)]"/>
+                    <field name="user_id" required="1" attrs="{'readonly':[('state','=', 'confirm')]}" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="confirm_type" string="Tipo Booking" readonly="1"/>
+                    <field name="invoicing_type" required="1" widget="selection" domain="[('name','in',['Hora(s)','Mes(es)'])]"/>
+                    <field name="name" string="Descripcion WBS" attrs="{'readonly':[('state','=', 'confirm')]}" required="1"/>
+                    <field name="from_date" required="1" attrs="{'readonly':[('state','=', 'confirm')]}"/>
+                    <field name="percentage" required="1"/>
+                    <field name="unit_amount" string="Horas/Dia" required="1"/>
+                    <newline/>
+                    <field name="overbooked_flag" invisible="1" readonly="1"/>
+
+                  </group>
+                  <group>
+                    <field name="origin" readonly="1"/>                  
+                    <field name="company_id" readonly="1"/>
+                    <field name="reviewer_id" readonly="1"/>
+                    <field name="activity_type" string="Tipo Actividad" attrs="{'readonly':[('state','=', 'confirm')]}" />
+                    <field name="to_date" required="1" />
+                    <field name="number_of_days_temp" readonly="1" attrs="{'readonly':[('state','=', 'confirm')]}" />
+                    <field name="hours_profile" readonly="1" force_save="1"/>
+                    <field name="amount" readonly="1" force_save="1" attrs="{'readonly':[('state','=', 'confirm')]}" string="Booking Total horas"/>
+                    <field name="task_planned_hours" readonly="1" force_save="1" attrs="{'readonly':[('state','=', 'confirm')]}"  />
+
+                  </group>
+                </group>
+                <group string="Horas">
+                  <group>
+                    <field name="user_assigment_possible" readonly="1" attrs="{'readonly':[('state','=', 'confirm')]}"  />
+                    <field name="user_assigment_hours" readonly="1" attrs="{'readonly':[('state','=', 'confirm')]}"  />
+                    <field name="user_assigment_available" readonly="1" attrs="{'readonly':[('state','=', 'confirm')]}"  />
+                    <field name="amount" readonly="1" attrs="{'readonly':[('state','=', 'confirm')]}" string="Booking Total horas"/>
+                    <field name="task_planned_hours" readonly="1" attrs="{'readonly':[('state','=', 'confirm')]}"  />
+                    <field name="overbooked" required="1" attrs="{'invisible':[('overbooked_flag','=', False)]}"/>
+                  </group>
+                </group>
+                <notebook>
+                    <page string="Bookings">
+                        <field name="user_assignment_ids" readonly="1"/>
+
+                    </page>
+                    <page string="WBS">
+                        <field name="task_id" />
+                    </page>
+
+                    <page string="Staffing">
+                        <field name="outsourcing_id">
+                            <tree editable="bottom" create="false" delete="false" default_order="period_id asc">
+                								<field name="company_id" invisible="1"/>
+                								<button name="action_open" states="draft" string="Abrir" type="object" groups="base.group_hr_user" class="oe_highlight"/>
+                								<button name="action_reject" states="done" string="Rechazar" type="object" groups="base.group_hr_user"/>
+                								<button name="action_done" states="open" string="Cerrar" type="object" groups="base.group_hr_user"/>
+                								<button name="action_draft" states="rejected" string="Borrador" type="object" groups="base.group_hr_user"/>
+                                                <button name="action_send" string="Enviar" type="object" style="margin-left: 100px;" attrs="{'invisible':[('state','!=', 'done')]}"/>
+                								<field name="state" readonly="1"/>
+                								<field name="period_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
+                								<field name="name" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+                								<field name="description" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+                								<field name="activity_type" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+                								<field name="task_id" readonly="1"/>
+                								<field name="user_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+                								<field name="currency_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" options="{'no_quick_create': True, 'no_create_edit' : True}" domain="[('name','in',['CLP','USD','UF'])]"/>
+                                                <field name="quantity" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" widget="float_time"/>
+                                                <field name="quantity_days"/>                                
+                								<field name="projected_amount" sum="Total" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" options="{&quot;currency_field&quot;: &quot;currency_id&quot;}"/>
+                								<field name="quantity_real" readonly="1" widget="float_time"/>
+                								<field name="quantity_invoiced" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" widget="float_time"/>
+                								<field name="amount" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" options="{&quot;currency_field&quot;: &quot;currency_id&quot;}"/>
+                								<field name="real_period_id" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
+                								<field name="invoice_id" readonly="1"/>
+                            </tree>
+
+                        </field>
+                    </page>
+
+                    <page string="Feriados">
+						<field name="exemption_ids" >
+							<tree string="Feriados/FinDeSemana"  editable="bottom" create="false" delete="false" default_order='booking_date asc'>
+							<field name="booking_date" readonly="1" />
+							<field name="booking_type" readonly="1"/>
+							<field name="booking_description" readonly="1"/>
+							<field name="public_holiday_id" readonly="1"/>
+							<field name="booking_exclude" />
+							</tree>
+						</field>
+                    </page>
+                    <page string="Horario">
+						<field name="schedule_ids" >
+							<tree string="Horario Semanal"  editable="bottom"  default_order='name asc'>
+							<field name="name"  />
+							<field name="quantity" />
+							</tree>
+						</field>
+                    </page>
+
+
+                </notebook>
+
+              </sheet>
+            </form>
+            </field>
+        </record>
+
+
+
+		<record id="hr_projection_timesheet_line_gantt" model="ir.ui.view">
+			<field name="name">hr.projection.timesheet.gantt</field>
+			<field name="model">hr.projection.timesheet</field>
+			<field name="arch" type="xml">
+				<gantt  date_start="from_date" date_stop="to_date"
+          /> <!--model="hr.projection.timesheet" client="project_client"- percentage="percentage" amount="amount" default_group_by="account_id" project="project_reference" activity_type="activity_type" -->
+			</field>
+		</record>
+
+
+        <record id="hr_projection_timesheet_line_search" model="ir.ui.view">
+            <field name="name">hr.projection.timesheet.search</field>
+            <field name="model">hr.projection.timesheet</field>
+            <field name="arch" type="xml">
+                <search string="Timesheet">
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="project_reference" string="Ref. Proyecto" filter_domain="[('project_reference','ilike',self)]"/>
+                    <field name="user_id"/>
+                    <field name="project_client" string="Cliente" filter_domain="[('project_client','ilike',self)]"/>
+                    <!--<filter name="filter_unlinked" icon="terp-personal" domain="[('employee_unlinked','=',False)]" string="Solo Vinculados"/>-->
+                    <group expand="1" string="Mis Proyectos">
+                        <filter name="filter_myprojects" domain="[('project_jp','=',uid)]" string="Mis Proyectos"/>
+                    </group>
+                    <group expand="1" string="Sectores">
+                        <filter name="filter_public" domain="[('project_sector','ilike','Público')]" string="Público"/>
+                        <filter name="filter_finance" domain="[('project_sector','ilike','Financiero')]" string="Financiero"/>
+                        <filter name="filter_others"  domain="[('project_sector','ilike','Otros')]" string="Otros"/>
+                    </group>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_account_id" string="Project" context="{'group_by':'account_id'}"/>
+                        <filter name="group_by_user_id" string="Users" context="{'group_by':'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="act_hr_projection_timesheet_line_evry1_all_form" model="ir.actions.act_window">
+            <field name="name">Bookings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.projection.timesheet</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,gantt</field>
+            <field name="context">{"search_default_filter_unlinked":1}</field>
+            <field name="limit">75</field>
+            <field name="search_view_id" ref="hr_projection_timesheet_line_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to project activities.
+              </p><p>
+                You can project your workings hours by project every
+                day. Every time spent on a project will become a cost in the
+                analytic accounting/contract and can be re-invoiced to
+                customers if required.
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Bookings" id="menu_hr_projected_hours" parent="project.menu_projects" action="act_hr_projection_timesheet_line_evry1_all_form"/>
+
+
+        <record id="hr_projection_dates_line_tree" model="ir.ui.view">
+            <field name="name">hr.projection.dates.tree</field>
+            <field name="model">hr.projection.dates</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Timesheet Dates">
+                    <field name="date"/>
+                    <field name="weekend"/>
+                    <field name="holiday"/>
+                    <field name="unit_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="act_hr_projection_dates_line_evry1_all_form" model="ir.actions.act_window">
+            <field name="name">Bookings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.projection.dates</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create project dates used in projection.
+              </p>
+            </field>
+        </record>
+
+<!--         <menuitem parent="hr.menu_hr_configuration" id="menu_hr_projection_dates" action="act_hr_projection_dates_line_evry1_all_form" sequence="7" groups="base.group_hr_manager"/>-->
+ -->
+
+
+    <record model="ir.ui.view" id="apiux_booking_project_invoice_wizard_form">
+      <field name="name">apiux.booking.project.invoice.wizard.form</field>
+      <field name="model">project.invoice.wizard</field>
+      <field name="inherit_id" ref="apiux_project.project_invoice_wizard_form" />
+      <field name="arch" type="xml">
+          <field name="outsourcing_id" position="after">
+            <field name="product_id" readonly="1"/>
+          </field>
+      </field>
+    </record>
+
+
+    <record id="apiux_booking_preinvoice_form" model="ir.ui.view">
+      <field name="name">account.booking.preinvoice.form</field>
+      <field name="model">account.pre_invoice</field>
+      <field name="inherit_id" ref="account_pre_invoice.account_pre_invoice_form"/>
+      <field name="arch" type="xml">
+        <field name="amount_clp" position="after">
+            <field name="outsourcing_id" string="Staffing"  attrs="{'invisible':[('outsourcing_id','=',False)]}" />
+        </field>
+ 
+    
+    
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="apiux_booking_project_edit_project">
+      <field name="name">apiux.booking.project.edit.project</field>
+      <field name="model">project.project</field>
+      <field name="inherit_id" ref="apiux_project.apiux_project_edit_project" />
+      <field name="arch" type="xml">
+          <field name="quantity" position="before">
+            <field name="quantity_days" readonly="1"/>
+          </field>
+      </field>
+    </record>
+
+
+
+
+</odoo>

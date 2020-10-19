@@ -1,0 +1,136 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* apiux_hr_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-10 17:24+0000\n"
+"PO-Revision-Date: 2020-09-10 17:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,help:apiux_hr_payroll.field_hr_payslip__state
+msgid "* When the payslip is created the status is 'Draft'\n"
+"                \n"
+"* If the payslip is under verification, the status is 'Waiting'.\n"
+"                \n"
+"* If the payslip is confirmed then status is set to 'Done'.\n"
+"                \n"
+"* When user cancel payslip the status is 'Rejected'."
+msgstr "* Cuando la nómina es creada el estado es 'Borrador'\n"
+"                \n"
+"* Si la nómina está bajo verificación el estado es 'En Espera'.\n"
+"                \n"
+"* Si la nómina está confirmada entonces el estado se cambia a 'Finalizado'.\n"
+"                \n"
+"* Cuando el usuario cancela la nómina el estado es 'Rechazado'."
+
+#. module: apiux_hr_payroll
+#: model:ir.actions.act_window,name:apiux_hr_payroll.action_apiux_hr_payslip
+msgid "Apiux Nomina Payslip"
+msgstr "Apiux Nómina"
+
+#. module: apiux_hr_payroll
+#: model_terms:ir.actions.act_window,help:apiux_hr_payroll.action_apiux_hr_payslip
+msgid "Click to create a new document."
+msgstr "Presionar para crear nuevo documento"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,field_description:apiux_hr_payroll.field_hr_payslip__payslip_dias_trabajados
+msgid "Days worked"
+msgstr "Dias Trabajados"
+
+#. module: apiux_hr_payroll
+#: selection:hr.payslip,state:0
+msgid "Done"
+msgstr "Hecho"
+
+#. module: apiux_hr_payroll
+#: selection:hr.payslip,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,field_description:apiux_hr_payroll.field_hr_payslip__employee_name
+msgid "Employee Name"
+msgstr "Nombre del empleado"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,field_description:apiux_hr_payroll.field_hr_payslip__file_data
+msgid "File Data"
+msgstr "Datos de Archivo"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,field_description:apiux_hr_payroll.field_hr_payslip__file_name
+msgid "File path"
+msgstr "Carpeta de Archivo"
+
+#. module: apiux_hr_payroll
+#: model:ir.ui.menu,name:apiux_hr_payroll.menu_apiux_nomina_hr_payslip
+#: model:ir.ui.menu,name:apiux_hr_payroll.menu_apiux_nomina_nomina
+#: model:ir.ui.menu,name:apiux_hr_payroll.menu_apiux_nomina_root
+msgid "Mis Nominas"
+msgstr "Mis Nóminas"
+
+#. module: apiux_hr_payroll
+#: model:ir.model,name:apiux_hr_payroll.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: apiux_hr_payroll
+#: model_terms:ir.ui.view,arch_db:apiux_hr_payroll.apiux_view_hr_payslip_form
+msgid "Payslip"
+msgstr "Nómina"
+
+#. module: apiux_hr_payroll
+#: model_terms:ir.ui.view,arch_db:apiux_hr_payroll.apiux_hr_payslip_tree_view
+msgid "Payslips"
+msgstr "Nóminas"
+
+#. module: apiux_hr_payroll
+#: model_terms:ir.ui.view,arch_db:apiux_hr_payroll.apiux_view_hr_payslip_form
+msgid "Period"
+msgstr "Período"
+
+#. module: apiux_hr_payroll
+#: selection:hr.payslip,state:0
+msgid "Rejected"
+msgstr "Rechazada"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,help:apiux_hr_payroll.field_hr_payslip__user_id
+msgid "Related user name for the resource to manage its access."
+msgstr "Usuario relacionado con el recurso para gestionar su acceso."
+
+#. module: apiux_hr_payroll
+#: model_terms:ir.actions.act_window,help:apiux_hr_payroll.action_apiux_hr_payslip
+msgid "Si no estan visibles las Nomina, contactarse con el depto RR-HH"
+msgstr "Si no estan visibles las Nomina, contactarse con el depto RR-HH"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,field_description:apiux_hr_payroll.field_hr_payslip__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,field_description:apiux_hr_payroll.field_hr_payslip__user_id
+msgid "Usuario"
+msgstr "Usuario"
+
+#. module: apiux_hr_payroll
+#: model:ir.model.fields,field_description:apiux_hr_payroll.field_hr_payslip__visible
+msgid "Visible?"
+msgstr "Visible?"
+
+#. module: apiux_hr_payroll
+#: selection:hr.payslip,state:0
+msgid "Waiting"
+msgstr "En espera"
+

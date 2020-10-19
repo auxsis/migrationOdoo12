@@ -1,0 +1,124 @@
+<odoo>
+  <data>
+  
+  
+  
+	   <record model="ir.ui.view" id="apiux_hr_payslip_tree_view">
+			<field name="name">apiux.hr.payslip</field>
+			<field name="model">hr.payslip</field>
+			<field name="arch" type="xml">
+				<tree string="Payslips">
+                    <field name="visible" readonly="1"/>                
+                    <field name="number" readonly="1"/>
+                    <field name="user_id" invisible="1"/>                    
+                    <field name="employee_name" readonly="1"/>
+                    <field name="name" readonly="0"/>
+                    <field name="date_from" readonly="1"/>
+                    <field name="date_to" readonly="1"/>
+                    <field name="payslip_dias_trabajados" readonly="1"/>                    
+                    <field name="state" />
+                    <field name="file_name" invisible="1"/>
+                    <field name="file_data" readonly="1" attrs="{'invisible': [('visible', '=',False)]}" filename="file_name"/>     
+                    <field name="company_id" readonly="1"/>
+                </tree>
+			</field>
+		</record>
+
+        <record id="apiux_view_hr_payslip_form" model="ir.ui.view">
+            <field name="name">apiux.hr.payslip.form</field>
+            <field name="model">hr.payslip</field>
+			<field name="sequence">150</field>			
+            <field name="arch" type="xml">
+				<form string="Payslip">
+					<sheet>
+						<div class="oe_title">
+							<label for="employee_id" class="oe_edit_only"/>
+							<h1><field name="employee_name" readonly="1" /></h1>
+						</div>
+						<group col="4">
+							<label for="date_from" string="Period"/>
+							<div>
+								<field name="date_from" readonly="1" class="oe_inline"/> - <field name="date_to" readonly="1" class="oe_inline"/>
+							</div>
+                            <field name="visible" />
+							<field name="number" readonly="1"/>
+							<field name="name" readonly="0"/>						
+							<field name="state"/>
+                            <field name="file_name" invisible="1"/>
+                            <field name="file_data" readonly="1" attrs="{'invisible': [('visible', '=',False)]}" filename="file_name"/>                            
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>   
+  
+
+
+    <record model="ir.actions.act_window" id="action_apiux_hr_payslip">
+        <field name="name">Apiux Nomina Payslip</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.payslip</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+		<field name="domain">[('user_id','=',uid),('visible','=',True)]</field>	
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to create a new document. 
+          </p><p>
+			Si no estan visibles las Nomina, contactarse con el depto RR-HH
+          </p>
+        </field>
+    </record>	
+  
+  
+	<record id="action_apiux_hr_payslip_tree" model="ir.actions.act_window.view">
+		<field name="act_window_id" ref="action_apiux_hr_payslip" />
+		<field name="view_id" ref="apiux_hr_payslip_tree_view" />
+		<field name="view_mode">tree</field>
+		<field name="sequence">1</field>
+	</record>	
+	
+	
+	<record id="action_apiux_hr_payslip_form2" model="ir.actions.act_window.view">
+		<field name="act_window_id" ref="action_apiux_hr_payslip" />
+		<field name="view_id" ref="apiux_view_hr_payslip_form" />
+		<field name="view_mode">form</field>
+		<field name="sequence">200</field>
+	</record>
+    
+    
+    <menuitem name="Mis Nominas" id="menu_apiux_nomina_root" sequence="90"/>
+    <menuitem name="Mis Nominas" id="menu_apiux_nomina_nomina" parent="menu_apiux_nomina_root" sequence="10"/>
+    <menuitem 	name="Mis Nominas"  id="menu_apiux_nomina_hr_payslip" sequence="20" icon="STOCK_PRINT" parent="menu_apiux_nomina_nomina" action="action_apiux_hr_payslip" />	    
+    
+    
+    
+	<record id="action_hr_payslip_tree" model="ir.actions.act_window.view">
+		<field name="act_window_id" ref="hr_payroll.action_view_hr_payslip_form" />
+		<field name="view_id" ref="hr_payroll.view_hr_payslip_tree" />
+		<field name="view_mode">tree</field>
+		<field name="sequence">1</field>
+	</record>	
+	
+	
+	<record id="action_hr_payslip_form" model="ir.actions.act_window.view">
+		<field name="act_window_id" ref="hr_payroll.action_view_hr_payslip_form" />
+		<field name="view_id" ref="hr_payroll.view_hr_payslip_form" />
+		<field name="view_mode">form</field>
+		<field name="sequence">2</field>
+	</record>
+    
+    
+	<record id="action_hr_payslip_kanban" model="ir.actions.act_window.view">
+		<field name="act_window_id" ref="hr_payroll.action_view_hr_payslip_form" />
+		<field name="view_id" ref="hr_payroll.hr_payslip_view_kanban" />
+		<field name="view_mode">kanban</field>
+		<field name="sequence">3</field>
+	</record>    
+    
+    
+    
+    
+    
+  </data>
+</odoo>

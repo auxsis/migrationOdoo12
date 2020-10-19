@@ -1,0 +1,91 @@
+<odoo>
+  <data>
+        #
+        # Analytic Journal
+        #
+
+        <record id="view_account_analytic_journal_tree" model="ir.ui.view">
+            <field name="name">account.analytic.journal.tree</field>
+            <field name="model">account.analytic.journal</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic Journal">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_analytic_journal_search" model="ir.ui.view">
+            <field name="name">account.analytic.journal.search</field>
+            <field name="model">account.analytic.journal</field>
+            <field name="arch" type="xml">
+                <search string="Analytic Journals">
+                    <field name="name" filter_domain="['|', ('name','ilike',self), ('code','ilike',self)]" string="Analytic Journal"/>
+                    <field name="type"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_type" string="Type" icon="terp-stock_symbol-selection" domain="[]" context="{'group_by':'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_journal_form" model="ir.ui.view">
+            <field name="name">account.analytic.journal.form</field>
+            <field name="model">account.analytic.journal</field>
+            <field name="arch" type="xml">
+                <form string="Analytic Journal">
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="type"/>
+                        <field name="active"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_account_analytic_journal_form" model="ir.actions.act_window">
+            <field name="name">Analytic Journals</field>
+            <field name="res_model">account.analytic.journal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_analytic_journal_search" />
+        </record>
+        <menuitem groups="analytic.group_analytic_accounting" action="action_account_analytic_journal_form" id="account_def_analytic_journal" parent="account.menu_analytic_accounting" sequence="5"/>
+
+
+        <record id="view_account_journal_1" model="ir.ui.view">
+            <field name="name">account.journal.form.1</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="analytic_journal_id" groups="analytic.group_analytic_accounting"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_account_analytic_journal_form" model="ir.actions.act_window">
+            <field name="name">Analytic Journals</field>
+            <field name="res_model">account.analytic.journal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_analytic_journal_search" />
+        </record>
+        <menuitem groups="analytic.group_analytic_accounting" action="action_account_analytic_journal_form" id="account_def_analytic_journal" parent="account.menu_analytic_accounting" sequence="5"/>
+
+
+    <record id="analytic_journal_move_form_sector" model="ir.ui.view">
+      <field name="name">analytic.journal.account.move.form.sector</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook//field[@name='line_ids']/tree/field[@name='analytic_account_id']" position="before">
+          <field name="analytic_journal_id"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

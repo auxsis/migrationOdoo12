@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError,ValidationError
 from datetime import datetime, timedelta, date
 from lxml import etree
 from odoo.tools.translate import _
 from .bigint import BigInt
+
+import json
 import pytz
 import logging
+
+from odoo.tools import email_re, email_split, email_escape_char, float_is_zero, float_compare, \
+    pycompat, date_utils
+
+
 _logger = logging.getLogger(__name__)
 
 from six import string_types
@@ -52,9 +59,55 @@ TYPE2JOURNAL = {
     'in_refund': 'purchase',
 }
 
+class AccountMove(models.Model):
+    _inherit = 'account.move'
+    
+    
+    invoice_id=fields.Many2one('account.invoice', string='Factura Origen')
+    document_number=fields.Char('No. Documento')
+    internal_sequence_number=fields.Char('No. Documento')    
+    move_type=fields.Selection(
+            [
+                ('salary','Remuneraciones'),
+                ('rendition','Rendiciones'),
+                ('expenses','Gastos'),
+                ('bankcard','Tarjeta'),
+                ('invoice','Factura'),
+                ('settlement','Finiquito'),
+                ('other','Otra')
+            ],
+            default='other',
+            string='Origen',
+            required=True,
+        )
+
+
 
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
+
+
+    @api.model
+    def _default_cost_center(self):
+        return self.invoice_id.cost_center_id or self.env['account.cost.center'].browse(self.env.context.get('cost_center_id'))
+
+    @api.model
+    def _default_sector(self):
+        return self.invoice_id.sector_id or self._context.get('sector_id') or self.env['account.sector']
+
+    sector_id = fields.Many2one(
+        'account.sector', 
+        string='Sector',
+        default=_default_sector
+    )
+    
+    cost_center_id = fields.Many2one(
+        'account.cost.center',
+        string='Cost Center',
+        index=True,
+        default=lambda self: self._default_cost_center(),
+    )
+
 
     sequence = fields.Integer(
             string="Sequence",
@@ -84,6 +137,15 @@ class AccountInvoiceLine(models.Model):
             sign = line.invoice_id.type in ['in_refund', 'out_refund'] and -1 or 1
             line.price_subtotal_signed = price_subtotal_signed * sign
             line.price_total = taxes['total_included'] if (taxes and taxes['total_included'] > total) else total
+
+    @api.model
+    def move_line_get_item(self, line):
+        res = super(account_invoice_line, self).move_line_get_item(line)
+        if line.cost_center_id:
+            res['cost_center_id'] = line.cost_center_id.id
+        if line.sector_id:
+            res['sector_id'] = line.sector_id.id            
+        return res
 
 
 class Referencias(models.Model):
@@ -151,17 +213,27 @@ class AccountInvoice(models.Model):
             if r.sii_barcode:
                 r.sii_barcode_img = r.get_barcode_img()
 
+    
+
+
+
     @api.onchange('journal_id')
     @api.depends('journal_id')
     def get_dc_ids(self):
         for r in self:
             r.document_class_ids = []
-            dc_type = ['invoice'] if r.type in ['in_invoice', 'out_invoice'] else ['credit_note', 'debit_note']
+            dc_type = ['invoice','debit_note'] if r.type in ['in_invoice', 'out_invoice'] else ['credit_note', 'debit_note']
             ids = []
             if r.type in ['in_invoice', 'in_refund']:
-                for j in r.journal_id.document_class_ids:
-                    if j.document_type in dc_type:
-                        ids.append(j.id)
+                # for j in r.journal_id.document_class_ids:
+                    # if j.document_type in dc_type:
+                        # ids.append(j.id)
+                jdc_ids = self.env['account.journal.sii_document_class'].search([
+                    ('journal_id', '=', r.journal_id.id),
+                    ('sii_document_class_id.document_type', 'in', dc_type),
+                ])
+                for dc in jdc_ids:
+                    ids.append(dc.sii_document_class_id.id)
             else:
                 jdc_ids = self.env['account.journal.sii_document_class'].search([
                     ('journal_id', '=', r.journal_id.id),
@@ -169,7 +241,9 @@ class AccountInvoice(models.Model):
                 ])
                 for dc in jdc_ids:
                     ids.append(dc.sii_document_class_id.id)
+            _logger.info("dcids=%s,%s,%s,%s",ids,dc_type,r.type,r.journal_id.name)
             r.document_class_ids = ids
+            r.journal_document_class_id=None
 
     vat_discriminated = fields.Boolean(
             'Discriminate VAT?',
@@ -187,11 +261,11 @@ class AccountInvoice(models.Model):
             'account.journal.sii_document_class',
             string='Documents Type',
             default=lambda self: self._default_journal_document_class_id(),
-            readonly=True,
-            states={'draft': [('readonly', False)]},
         )
     document_class_id = fields.Many2one(
             'sii.document_class',
+            compute='_set_document_class_id',
+            store=True,
             string='Document Type',
             readonly=True,
             states={'draft': [('readonly', False)]},
@@ -203,10 +277,10 @@ class AccountInvoice(models.Model):
             readonly=True,
             store=True,
         )
+    #apiux make sii_document_number editable Field
     sii_document_number = BigInt(
             string='Document Number',
             copy=False,
-            readonly=True,
         )
     responsability_id = fields.Many2one(
             'sii.responsability',
@@ -394,6 +468,169 @@ class AccountInvoice(models.Model):
         readonly=True,
     )
 
+    #apiux temporary fields to use before switch to fe
+    
+    document_number = fields.Char(
+        compute='_get_document_number',
+        string='Document Number',
+        readonly=True,
+        store=True
+    )
+
+    supplier_invoice_number = fields.Char(
+        string='Invoice Number', 
+        help="The partner reference of this invoice."
+    )    
+
+    #apiux extra date fields for followup
+
+    date_sent = fields.Date(string='Sent Date',
+        index=True,
+        help="Keep empty to use the current date", copy=False)
+
+
+    date_reception = fields.Date(string='Received Date',
+        index=True,
+        help="Keep empty to use the current date", copy=False)
+
+
+    display_name = fields.Char(
+        string='Factura', 
+        compute='_compute_display_name'
+    )
+
+    #apiux additional information fields
+    
+    company_rut=fields.Char(related="company_id.partner_id.vat", string="RUT Supplier")
+    partner_rut=fields.Char(related="partner_id.vat", string="RUT Supplier")
+    comment = fields.Text('Additional Information', readonly=False, states={'draft': [('readonly', False)]})
+
+    sector_id = fields.Many2one(
+        'account.sector', 
+        string='Sector', 
+        help="Default Sector"
+    )
+
+    cost_center_id = fields.Many2one(
+        'account.cost.center',
+        string='Cost Center',
+        readonly=False,
+        help='Default Cost Center',
+    )
+
+    @api.model
+    def line_get_convert(self, line, part):
+        res = super(AccountInvoice, self).line_get_convert(line, part)
+        if line.get('cost_center_id'):
+            res['cost_center_id'] = line['cost_center_id']
+        if line.get('sector_id'):
+            res['sector_id'] = line['sector_id']                
+        return res
+
+    @api.model
+    def invoice_line_move_line_get(self):
+        res = super(AccountInvoice, self).invoice_line_move_line_get()
+
+        for dict_data in res:
+            invl_id = dict_data.get('invl_id')
+            line = self.env['account.invoice.line'].browse(invl_id)
+            if line.cost_center_id:
+                dict_data['cost_center_id'] = line.cost_center_id.id
+            if line.sector_id:
+                dict_data['sector_id'] = line.sector_id.id
+        return res
+
+
+
+    @api.one
+    @api.constrains('type','state','sii_document_number','document_class_id','company_id')
+    def _check_duplicate_document(self):
+    
+        inv_obj=self.env['account.invoice']
+        if self.type in ['out_invoice','out_refund'] and self.state=='open':
+            domain=[('company_id','=',self.company_id.id),('sii_document_number','=',self.sii_document_number),('document_class_id','=',self.document_class_id.id),('id','!=',self.id)]
+            duplicates=inv_obj.sudo().search(domain)
+            _logger.info("domdup=%s,%s",domain,duplicates)
+            if duplicates:
+                raise ValidationError('Ya existe un documento DTE con este Folio, Compañia y Tipo!')
+                
+        if self.type in ['in_invoice','in_refund'] and self.state=='open':    
+            domain=[('partner_id','=',self.partner_id.id),('sii_document_number','=',self.sii_document_number),('document_class_id','=',self.document_class_id.id),('id','!=',self.id)]
+            duplicates=inv_obj.sudo().search(domain)
+            if duplicates:
+                raise ValidationError('Ya existe un documento DTE con este Folio,Cliente y Tipo!')
+
+
+    @api.one
+    @api.depends('sii_document_number', 'journal_document_class_id')
+    def _compute_display_name(self):
+        display_value = ''
+        display_value += '['            
+        display_value += str(self.sii_document_number) or ""
+        display_value += '] '
+        display_value += self.document_number  or ""
+        self.display_name = display_value  
+  
+  
+    @api.multi
+    def name_get(self):
+ 
+        res = super(account_invoice, self).name_get()
+        data = []
+        for invoice in self:
+            display_value = ''
+            display_value += '['            
+            display_value += invoice.supplier_invoice_number or ""
+            display_value += '] '
+            display_value += invoice.document_number  or ""
+            
+            data.append((invoice.id, display_value))
+        return data  
+ 
+    @api.model
+    def name_search(self, name, args=None, operator='ilike', limit=100):
+        _logger.debug("OPE 4")
+        args = args or []
+        recs = self.browse()
+        if name:
+            recs = self.search(
+                ['|','|','|', ('number','ilike',name), ('origin','ilike',name), ('supplier_invoice_number', 'ilike', name), ('partner_id', 'child_of', name)] + args, limit=limit)
+        if not recs:
+            recs = self.search([('name', operator, name)] + args, limit=limit)
+        return recs.name_get()
+
+    #end temporary fields
+    
+
+    @api.depends('sii_document_number', 'number','date_invoice','period_id')
+    def _get_document_number(self):
+
+        for rec in self:
+            invdate=None
+            if rec.sii_document_number:
+                if rec.type in ['out_invoice','out_refund']:
+                    if rec.date_invoice:
+                        invdate=rec.date_invoice
+                elif rec.type in ['in_invoice','in_refund']:
+                    if rec.period_id:
+                        invdate=rec.period_id.date_start
+                    else:
+                        if rec.date_invoice:
+                            invdate=rec.date_invoice
+                _logger.info("invdate=%s",invdate)
+                if invdate:
+                    document_number = (
+                        rec.document_class_id.doc_code_prefix or '') + "/".join([invdate.strftime('%Y'),invdate.strftime('%m'),str(rec.sii_document_number)])
+                else:
+                    document_number = (
+                        rec.document_class_id.doc_code_prefix or '') + str(rec.sii_document_number)           
+            else:
+                document_number = rec.number
+             
+            rec.document_number = document_number
+           
+
+
     @api.onchange('invoice_line_ids')
     def _onchange_invoice_line_ids(self):
         i = 0
@@ -418,6 +655,17 @@ class AccountInvoice(models.Model):
                 invoice.sequence_number_next = invoice.journal_document_class_id.sequence_id.number_next_actual
             else:
                 super(AccountInvoice, self)._get_sequence_number_next()
+
+
+    #apiux set document class id for type in_invoice, in_refund
+    @api.depends('journal_document_class_id')
+    def _set_document_class_id(self):
+        # if self.move_id or self.type in ['in_invoice', 'in_refund']:
+        if self.move_id:
+            return
+        self.document_class_id = self.journal_document_class_id.sii_document_class_id.id
+
+
 
     @api.multi
     def compute_invoice_totals(self, company_currency, invoice_move_lines):
@@ -550,6 +798,9 @@ class AccountInvoice(models.Model):
 
     def _prepare_tax_line_vals(self, line, tax):
         vals = super(AccountInvoice, self)._prepare_tax_line_vals(line, tax)
+        vals['account_analytic_id']=line.account_analytic_id and line.account_analytic_id.id or False
+        vals['cost_center_id']=line.cost_center_id and line.cost_center_id.id or False
+        vals['sector_id']=line.sector_id and line.sector_id.id or False
         vals['amount_retencion'] = tax['retencion']
         vals['retencion_account_id'] = self.type in ('out_invoice', 'in_invoice') and (tax['refund_account_id'] or line.account_id.id) or (tax['account_id'] or line.account_id.id)
         return vals
@@ -579,6 +830,8 @@ class AccountInvoice(models.Model):
                         'quantity': 1,
                         'price': tax_line.amount_total,
                         'account_id': tax_line.account_id.id,
+                        'cost_center_id':tax_line.cost_center_id.id,
+                        'sector_id':tax_line.sector_id.id,                        
                         'account_analytic_id': tax_line.account_analytic_id.id,
                         'analytic_tag_ids': analytic_tag_ids,
                         'invoice_id': self.id,
@@ -594,11 +847,14 @@ class AccountInvoice(models.Model):
                         'quantity': 1,
                         'price': -tax_line.amount_retencion,
                         'account_id': tax_line.retencion_account_id.id,
+                        'cost_center_id':tax_line.cost_center_id.id,
+                        'sector_id':tax_line.sector_id.id,                        
                         'account_analytic_id': tax_line.account_analytic_id.id,
                         'analytic_tag_ids': analytic_tag_ids,
                         'invoice_id': self.id,
                         'tax_ids': [(6, 0, done_taxes)] if tax_line.tax_id.include_base_amount else []
                     })
+        _logger.info("resline=%s",res)
         return res
 
     def porcentaje_dr(self):
@@ -639,6 +895,7 @@ class AccountInvoice(models.Model):
                 tax_grouped[key]['amount'] += val['amount']
                 tax_grouped[key]['amount_retencion'] += val['amount_retencion']
                 tax_grouped[key]['base'] += val['base']
+            _logger.info("taxgrouped=%s,%s",tax_grouped,val)
         return tax_grouped
 
     @api.multi
@@ -698,7 +955,7 @@ class AccountInvoice(models.Model):
     @api.model
     def _prepare_refund(self, invoice, date_invoice=None,
                         date=None, description=None, journal_id=None,
-                        tipo_nota=61, mode='1'):
+                        tipo_nota=61, mode='1',sector_id=None,cost_center_id=None):
         values = super(AccountInvoice, self)._prepare_refund(invoice,
                                                              date_invoice,
                                                              date, description,
@@ -731,6 +988,8 @@ class AccountInvoice(models.Model):
         values.update({
                 'document_class_id': dc.id,
                 'type': type,
+                'sector_id':sector_id,
+                'cost_center_id':cost_center_id,                
                 'journal_document_class_id': jdc.id,
                 'referencias':[[0, 0, {
                         'origen': invoice.sii_document_number,
@@ -752,7 +1011,7 @@ class AccountInvoice(models.Model):
             values = self._prepare_refund(invoice, date_invoice=date_invoice,
                                           date=date, description=description,
                                           journal_id=journal_id,
-                                          tipo_nota=tipo_nota, mode=mode)
+                                          tipo_nota=tipo_nota, mode=mode,sector_id=invoice.sector_id.id,cost_center_id=invoice.cost_center_id.id)
             refund_invoice = self.create(values)
             invoice_type = {'out_invoice': ('customer invoices credit note'),
                             'out_refund': ('customer invoices debit note'),
@@ -877,11 +1136,6 @@ class AccountInvoice(models.Model):
             line.invoice_line_tax_ids = False
             line.invoice_line_tax_ids = tax_ids
 
-    @api.onchange('journal_document_class_id')
-    def set_document_class_id(self):
-        if self.move_id or self.type in ['in_invoice', 'in_refund']:
-            return
-        self.document_class_id = self.journal_document_class_id.sii_document_class_id.id
 
     '''
     @TODO mejor forma de avisar problema conrut
@@ -932,6 +1186,7 @@ a VAT."""))
                         self.document_class_id.doc_code_prefix,
                          self.sii_document_number)
 
+    #apiux dont set sii_document_number on invoice until FE enabled
     @api.multi
     def action_move_create(self):
         for obj_inv in self:
@@ -948,10 +1203,11 @@ a VAT."""))
                     prefix = obj_inv.document_class_id.doc_code_prefix or ''
                     move_name = (prefix + str(sii_document_number)).replace(' ','')
                     to_write.update({
-                            'sii_document_number': int(sii_document_number),
-                            'move_name': move_name
+                            #'sii_document_number': int(sii_document_number),
+                            'move_name': move_name,
                         })
                     obj_inv.write(to_write)
+
         super(AccountInvoice, self).action_move_create()
         for obj_inv in self:
             invtype = obj_inv.type
@@ -983,10 +1239,14 @@ a VAT."""))
     def _validaciones_uso_dte(self):
         ncs = [60, 61, 112, 802]
         nds = [55, 56, 111]
-        if self.document_class_id.sii_code in ncs+nds and not self.referencias:
-            raise UserError('Las Notas deben llevar por obligación una referencia al documento que están afectando')
-        if not self.env.user.get_digital_signature(self.company_id):
-            raise UserError(_('Usuario no autorizado a usar firma electrónica para esta compañia. Por favor solicatar autorización en la ficha de compañia del documento por alguien con los permisos suficientes de administrador'))
+        
+        #apiux temporarily eliminate dte-specific tests
+        # if self.document_class_id.sii_code in ncs+nds and not self.referencias:
+            # raise UserError('Las Notas deben llevar por obligación una referencia al documento que están afectando')
+        #if not self.env.user.get_digital_signature(self.company_id):
+        #    raise UserError(_('Usuario no autorizado a usar firma electrónica para esta compañia. Por favor solicatar autorización en la ficha de compañia del documento por alguien con los permisos suficientes de administrador'))
+        
+        #end apiux
         if not self.env.ref('base.lang_es_CL').active:
             raise UserError(_('Lang es_CL must be enabled'))
         if not self.env.ref('base.CLP').active:
@@ -1003,33 +1263,167 @@ a VAT."""))
         if self.company_id.tax_calculation_rounding_method != 'round_globally':
             raise UserError("El método de redondeo debe ser Estríctamente Global")
 
+
+    #apiux - disable fe until ready for switchover - copy invoice_validate and remove firma electronica
+
+    # @api.multi
+    # def invoice_validate(self):
+        # for inv in self:
+            # if not inv.journal_id.use_documents or not inv.document_class_id.dte:
+                # continue
+            # inv._validaciones_uso_dte()
+            # inv.sii_result = 'NoEnviado'
+            # inv.responsable_envio = self.env.user.id
+            # if inv.type in ['out_invoice', 'out_refund']:
+                # if inv.journal_id.restore_mode:
+                    # inv.sii_result = 'Proceso'
+                # else:
+                    # inv._timbrar()
+                    # tiempo_pasivo = (datetime.now() + timedelta(hours=int(self.env['ir.config_parameter'].sudo().get_param('account.auto_send_dte', default=12))))
+                    # self.env['sii.cola_envio'].create({
+                                                # 'company_id': inv.company_id.id,
+                                                # 'doc_ids': [inv.id],
+                                                # 'model': 'account.invoice',
+                                                # 'user_id': self.env.uid,
+                                                # 'tipo_trabajo': 'pasivo',
+                                                # 'date_time': tiempo_pasivo,
+                                                # 'send_email': False if inv.company_id.dte_service_provider=='SIICERT' or not self.env['ir.config_parameter'].sudo().get_param('account.auto_send_email', default=True) else True,
+                                                # })
+            # if inv.purchase_to_done:
+                # for ptd in inv.purchase_to_done:
+                    # ptd.write({'state': 'done'})
+        # return super(AccountInvoice, self).invoice_validate()
+        
+        
+
     @api.multi
     def invoice_validate(self):
         for inv in self:
-            if not inv.journal_id.use_documents or not inv.document_class_id.dte:
-                continue
-            inv._validaciones_uso_dte()
-            inv.sii_result = 'NoEnviado'
-            inv.responsable_envio = self.env.user.id
-            if inv.type in ['out_invoice', 'out_refund']:
-                if inv.journal_id.restore_mode:
-                    inv.sii_result = 'Proceso'
-                else:
-                    inv._timbrar()
-                    tiempo_pasivo = (datetime.now() + timedelta(hours=int(self.env['ir.config_parameter'].sudo().get_param('account.auto_send_dte', default=12))))
-                    self.env['sii.cola_envio'].create({
-                                                'company_id': inv.company_id.id,
-                                                'doc_ids': [inv.id],
-                                                'model': 'account.invoice',
-                                                'user_id': self.env.uid,
-                                                'tipo_trabajo': 'pasivo',
-                                                'date_time': tiempo_pasivo,
-                                                'send_email': False if inv.company_id.dte_service_provider=='SIICERT' or not self.env['ir.config_parameter'].sudo().get_param('account.auto_send_email', default=True) else True,
-                                                })
+        
+            #apiux suspend dte tests until FE implemented
+            
+            # if not inv.journal_id.use_documents or not inv.document_class_id.dte:
+                # continue
+            # inv._validaciones_uso_dte()
+            # inv.sii_result = 'NoEnviado'
+            # inv.responsable_envio = self.env.user.id
+            # if inv.type in ['out_invoice', 'out_refund']:
+                # if inv.journal_id.restore_mode:
+                    # inv.sii_result = 'Proceso'
+
+            #end apiux
+
             if inv.purchase_to_done:
                 for ptd in inv.purchase_to_done:
                     ptd.write({'state': 'done'})
-        return super(AccountInvoice, self).invoice_validate()
+                    
+            #apiux set type and invoice id
+            inv.move_id.move_type='invoice'
+            inv.move_id.invoice_id=inv
+            #end apiux                           
+                    
+            res=super(AccountInvoice, self).invoice_validate()
+        
+            #After invoice validate check if type out_refund or in_refund
+            #Then check for outstanding credit/debit on original document
+            #And use to pay original invoice
+
+            if inv.type in ['out_refund','in_refund'] and inv.refund_invoice_id:
+                origin_invoice=inv.refund_invoice_id
+                paylines=origin_invoice._get_outstanding_info_lines(inv)
+                if paylines:
+                    for payline in paylines:
+                        origin_invoice.assign_outstanding_credit(payline.id)
+
+            return res
+
+        #apiux end
+        #apiux end
+        
+
+    @api.one
+    def _get_outstanding_info_lines(self, refund_invoice):
+        self.outstanding_credits_debits_widget = json.dumps(False)
+        if self.state == 'open':
+            domain = [('account_id', '=', self.account_id.id),
+                      ('partner_id', '=', self.env['res.partner']._find_accounting_partner(self.partner_id).id),
+                      ('reconciled', '=', False),
+                      '|',
+                        '&', ('amount_residual_currency', '!=', 0.0), ('currency_id','!=', None),
+                        '&', ('amount_residual_currency', '=', 0.0), '&', ('currency_id','=', None), ('amount_residual', '!=', 0.0)]
+            if self.type in ('out_invoice', 'in_refund'):
+                domain.extend([('credit', '>', 0), ('debit', '=', 0)])
+                domain.extend([('move_id.invoice_id.id','in',[refund_invoice.id])])
+                type_payment = _('Outstanding credits')
+            else:
+                domain.extend([('credit', '=', 0), ('debit', '>', 0)])
+                domain.extend([('move_id.invoice_id.id','in',[refund_invoice.id])])                
+                type_payment = _('Outstanding debits')
+            info = {'title': '', 'outstanding': True, 'content': [], 'invoice_id': self.id}
+            lines = self.env['account.move.line'].search(domain)
+            currency_id = self.currency_id
+            if len(lines) != 0:
+                return lines
+            else:
+                return False
+
+        #apiux end
+
+
+        
+    #apiux start: include refund_invoice_ids in domain so as to restrict N/C to Invoice original
+    
+    @api.one
+    def _get_outstanding_info_JSON(self):
+        self.outstanding_credits_debits_widget = json.dumps(False)
+        if self.state == 'open':
+            domain = [('account_id', '=', self.account_id.id),
+                      ('partner_id', '=', self.env['res.partner']._find_accounting_partner(self.partner_id).id),
+                      ('reconciled', '=', False),
+                      '|',
+                        '&', ('amount_residual_currency', '!=', 0.0), ('currency_id','!=', None),
+                        '&', ('amount_residual_currency', '=', 0.0), '&', ('currency_id','=', None), ('amount_residual', '!=', 0.0)]
+            if self.type in ('out_invoice', 'in_refund'):
+                domain.extend([('credit', '>', 0), ('debit', '=', 0)])
+                domain.extend([('move_id.invoice_id.id','in',self.refund_invoice_ids.ids)])
+                type_payment = _('Outstanding credits')
+            else:
+                domain.extend([('credit', '=', 0), ('debit', '>', 0)])
+                domain.extend([('move_id.invoice_id.id','in',self.refund_invoice_ids.ids)])                
+                type_payment = _('Outstanding debits')
+            info = {'title': '', 'outstanding': True, 'content': [], 'invoice_id': self.id}
+            lines = self.env['account.move.line'].search(domain)
+            currency_id = self.currency_id
+            if len(lines) != 0:
+                for line in lines:
+                    # get the outstanding residual value in invoice currency
+                    if line.currency_id and line.currency_id == self.currency_id:
+                        amount_to_show = abs(line.amount_residual_currency)
+                    else:
+                        currency = line.company_id.currency_id
+                        amount_to_show = currency._convert(abs(line.amount_residual), self.currency_id, self.company_id, line.date or fields.Date.today())
+                    if float_is_zero(amount_to_show, precision_rounding=self.currency_id.rounding):
+                        continue
+                    if line.ref :
+                        title = '%s : %s' % (line.move_id.name, line.ref)
+                    else:
+                        title = line.move_id.name
+                    info['content'].append({
+                        'journal_name': line.ref or line.move_id.name,
+                        'title': title,
+                        'amount': amount_to_show,
+                        'currency': currency_id.symbol,
+                        'id': line.id,
+                        'position': currency_id.position,
+                        'digits': [69, self.currency_id.decimal_places],
+                    })
+                info['title'] = type_payment
+                self.outstanding_credits_debits_widget = json.dumps(info)
+                self.has_outstanding = True
+
+        #apiux end
+
+
 
     def default_journal(self):
         if self._context.get('default_journal_id', False):
@@ -2077,3 +2471,56 @@ a VAT."""))
         img.save(buffered, format="PNG")
         imm = base64.b64encode(buffered.getvalue()).decode()
         return imm
+
+
+class AccountInvoiceTax(models.Model):
+    _inherit = 'account.invoice.tax'        
+        
+        
+    @api.model
+    def _default_cost_center(self):
+        return self._context.get('cost_center_id') \
+            or self.env['account.cost.center']        
+    @api.model
+    def _default_sector(self):
+        return self._context.get('sector_id') \
+            or self.env['account.sector']        
+     
+    sector_id = fields.Many2one(
+        'account.sector', 
+        string='Sector', 
+        default=_default_sector
+    )
+    
+    cost_center_id = fields.Many2one(
+        'account.cost.center', string='Cost Center',
+        default=_default_cost_center)
+
+    @api.model
+    def move_line_get(self, invoice_id):
+        res = super(account_invoice_tax, self).move_line_get(invoice_id)
+        _logger.info("movelineget=%s",res)
+        
+        invoice=self.env['account.invoice'].browse([invoice_id])
+        if invoice and invoice.cost_center_id:
+            for tax_line in res:
+                tax_line['cost_center_id'] = invoice.cost_center_id.id
+        if invoice and invoice.sector_id:
+            for tax_line in res:
+                tax_line['sector_id'] = invoice.sector_id.id                
+        return res  
+
+
+class AccountInvoiceRefund(models.TransientModel):
+    """Refunds invoice"""
+
+    _inherit = "account.invoice.refund"
+
+
+    @api.multi
+    def compute_refund(self, mode='1'):
+        result,refund,inv=super(AccountInvoiceRefund,self).compute_refund(mode)
+        refund.sector_id=inv.sector_id
+        refund.cost_center_id=inv.cost_center_id
+        
+        return result,refund,inv

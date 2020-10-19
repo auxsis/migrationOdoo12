@@ -529,6 +529,8 @@ class AccountInvoice(models.Model):
 
     def _prepare_tax_line_vals(self, line, tax):
         vals = super(AccountInvoice, self)._prepare_tax_line_vals(line, tax)
+        vals['cost_center_id']=line.cost_center_id.id
+        vals['sector_id']=line.sector_id.id        
         vals['amount_retencion'] = tax['retencion']
         vals['retencion_account_id'] = self.type in ('out_invoice', 'in_invoice') and (tax['refund_account_id'] or line.account_id.id) or (tax['account_id'] or line.account_id.id)
         return vals

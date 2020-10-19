@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="sale_order_service_type_view_tree" model="ir.ui.view">
+        <field name="model">sale.order.service.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="risk"/>
+                <field name="margin"/>                
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active"/>                 
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_order_service_type_view_search" model="ir.ui.view">
+        <field name="model">sale.order.service.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Name/Code" filter_domain="['|', ('code','ilike', self), ('name','ilike',self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale_order_service_type_action" model="ir.actions.act_window">
+        <field name="name">Service Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order.service.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="sale_order_service_type_view_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new Sale Order Service Type.
+            </p>
+            <p>
+                Cost centers provide an extra analytic dimension
+            </p>
+        </field>
+    </record>
+
+    <!-- Cost Center menu-->
+    <menuitem id="sale_order_service_type_menu"
+              parent="sale.menu_sale_config"
+              action="sale_order_service_type_action"
+              sequence="40"/>
+
+</odoo>

@@ -1,0 +1,243 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* apiux_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-09 17:57+0000\n"
+"PO-Revision-Date: 2020-09-09 17:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.apiux_purchase_order_form
+msgid "Approve1"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.apiux_purchase_order_form
+msgid "Approve2"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.apiux_purchase_order_form
+msgid "Approve3"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.apiux_purchase_order_form
+msgid "Approve4"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Approved by Finance Assistant"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Approved by General Manager"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Approved by Head of Finance"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Approved by Manager of Requestor"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Approved by Requestor"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.apiux_purchase_order_form
+msgid "Cancel"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model,name:apiux_purchase.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_purchase_order_line__cost_center_id
+msgid "Cost Center"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.apiux_purchase_order_form
+msgid "Create Bill"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_res_config_settings__finance_assistant
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.res_config_settings_view_form_purchase
+msgid "Finance Assistant"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_res_config_settings__finance_manager
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.res_config_settings_view_form_purchase
+msgid "Finance Manager"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_res_config_settings__general_manager_approval_limit
+msgid "GM Approval Limit"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_res_config_settings__general_manager
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.res_config_settings_view_form_purchase
+msgid "General Manager"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.res_config_settings_view_form_purchase
+msgid "General Manager Approve Limit"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model,name:apiux_purchase.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Invoiced"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "Locked"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_purchase_order__boss_id
+msgid "Manager of Requestor"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.res_config_settings_view_form_purchase
+msgid "Project Approval"
+msgstr ""
+
+#. module: apiux_purchase
+#: model_terms:ir.ui.view,arch_db:apiux_purchase.res_config_settings_view_form_purchase
+msgid "Purchase Approval"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model,name:apiux_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model,name:apiux_purchase.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "RFQ"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "RFQ Sent"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_purchase_order__employee_id
+msgid "Requestor"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_purchase_order_line__sector_id
+msgid "Sector"
+msgstr ""
+
+#. module: apiux_purchase
+#: model:ir.model.fields,field_description:apiux_purchase.field_purchase_order__state
+msgid "Status"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:108
+#, python-format
+msgid "There is no Requestor Manager for this Purchase Order. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:87
+#, python-format
+msgid "There is no Requestor for this Purchase Order. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:44
+#: code:addons/apiux_purchase/models/purchase_order.py:160
+#: code:addons/apiux_purchase/models/purchase_order.py:196
+#, python-format
+msgid "There is no employee for value of Finance Assistant in configuration settings. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:65
+#, python-format
+msgid "There is no employee for value of Finance Manager in configuration settings. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:137
+#, python-format
+msgid "There is no employee for value of General Manager in configuration settings. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:40
+#: code:addons/apiux_purchase/models/purchase_order.py:156
+#: code:addons/apiux_purchase/models/purchase_order.py:192
+#, python-format
+msgid "There is no value set for Finance Assistant in configuration settings. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:61
+#, python-format
+msgid "There is no value set for Finance Manager in configuration settings. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:133
+#, python-format
+msgid "There is no value set for General Manager in configuration settings. Please contact the system administrator"
+msgstr ""
+
+#. module: apiux_purchase
+#: selection:purchase.order,state:0
+msgid "To Approve"
+msgstr ""
+
+#. module: apiux_purchase
+#: code:addons/apiux_purchase/models/purchase_order.py:174
+#, python-format
+msgid "Unable to cancel this purchase order. You must first cancel the related vendor bills."
+msgstr ""
+

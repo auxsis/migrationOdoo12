@@ -1,0 +1,82 @@
+﻿<?xml version="1.0"?>
+<odoo>
+  <data>
+
+    <!-- Sector views -->
+    <record model="ir.ui.view" id="account_sector_tree">
+      <field name="name">account.sector.tree</field>
+      <field name="model">account.sector</field>
+      <field name="arch" type="xml">
+        <tree string="Sectores">
+          <field name="code"/>
+          <field name="name"/>       
+          <field name="company_id"/>
+          <field name="active"/>
+          
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_sector_form">
+      <field name="name">account.sector.form</field>
+      <field name="model">account.sector</field>
+      <field name="arch" type="xml">
+        <form string="Sector" version="7.0">
+          <sheet>
+            <group>
+              <div class="oe_title">
+                <div class="oe_edit_only">
+                  <label for="name" string="Title"/>
+                </div>
+                <h1>
+                  <field name="name" required="1"/>
+                </h1>
+              </div>
+            </group>
+            <group>
+              <group>
+                <field name="code"/>                 
+                <field name="company_id"/>
+                <field name="active"/>                
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_sector_filter">
+      <field name="name">account.sector.filter</field>
+      <field name="model">account.cost.center</field>
+      <field name="arch" type="xml">
+        <search string="Sectores">
+          <field name="name" string="Name/Code" filter_domain="['|', '|', ('code','ilike', self), ('name','ilike',self)]"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="account_sector_action">
+      <field name="name">Sector</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">account.sector</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{'search_default_actual' : 1}</field>
+      <field name="search_view_id" ref="account_sector_filter"/>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Click to add a new event.
+        </p>
+        <p>
+          Sectors provide an extra analytic dimension
+        </p>
+      </field>
+    </record>
+
+
+
+    <!-- Cost Center menu-->
+    <menuitem name="Sectores" id="sector_menu" parent="account.menu_analytic_accounting" action="account_sector_action" sequence="40"/>
+
+  </data>
+</odoo>

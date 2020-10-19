@@ -1,0 +1,1391 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* apiux_booking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-10 16:13+0000\n"
+"PO-Revision-Date: 2020-09-10 16:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2015"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2016"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2017"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2018"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2019"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2020"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2021"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2022"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2023"
+msgstr ""
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,year:0
+msgid "2024"
+msgstr ""
+
+#. module: apiux_booking
+#: code:addons/apiux_booking/models/hr_projection_timesheet.py:269
+#: code:addons/apiux_booking/models/hr_projection_timesheet.py:957
+#, python-format
+msgid "A Booking in state Confirm cannot be changed. Please change state to Draft and try again."
+msgstr "Un Booking en estado Confirmado no se puede cambiarse. Por favor, cambiar estado a Borrador y intentar nuevamente."
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Abrir"
+msgstr "Abrir"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_shorten_wizard_form
+msgid "Acortar"
+msgstr "Acortar"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Acortar Booking"
+msgstr "Acortar Booking"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__activity_type
+#: model:ir.model.fields,field_description:apiux_booking.field_project_outsourcing__activity_type
+msgid "Activity Type"
+msgstr "Tipo de actividad"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_leave__employee_active
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__active
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__active
+msgid "Activo"
+msgstr "Activo"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea Analítica"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_outsourcing__assignment_id
+msgid "Asignacion de Staffing"
+msgstr "Asignacion de Staffing"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__booking_id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__booking_id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__booking_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_task__hr_proj_timesheet_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Booking"
+msgstr "Booking"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__booking_state
+msgid "Booking Estado"
+msgstr "Booking Estado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__amount_2
+msgid "Booking Total Horas"
+msgstr "Booking Total Horas"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Booking Total horas"
+msgstr "Booking Total Horas"
+
+#. module: apiux_booking
+#: model:ir.actions.act_window,name:apiux_booking.act_hr_projection_dates_line_evry1_all_form
+#: model:ir.actions.act_window,name:apiux_booking.act_hr_projection_timesheet_line_evry1_all_form
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__user_assignment_ids
+#: model:ir.model.fields,field_description:apiux_booking.field_project_project__hr_proj_timesheet_ids
+#: model:ir.model.fields,field_description:apiux_booking.field_res_users__assignment_ids
+#: model:ir.ui.menu,name:apiux_booking.menu_hr_projected_hours
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Bookings"
+msgstr "Bookings"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate.line,confirm_type:0
+#: selection:hr.proj.generate.line,state:0
+#: selection:hr.projection.timesheet,confirm_type:0
+#: selection:hr.projection.timesheet,state:0
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Borrador"
+msgstr "Borrador"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__clp_id
+#: selection:project.accrued.invoice.wizard,money:0
+msgid "CLP"
+msgstr "CLP"
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_hr_proj_generate_line__amount
+msgid "Calculated by multiplying the quantity and the price given in the Product's cost price. Alway expressed in the company main currency."
+msgstr "Calculado por multiplicar cantidad y valor en el costo del Producto. Siempre en la moneda principal de la empresa."
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_hr_projection_dates__unit_amount
+#: model:ir.model.fields,help:apiux_booking.field_hr_projection_timesheet__amount
+msgid "Calculated by multiplying the quantity and the price given in the Product's cost price. Always expressed in the company main currency."
+msgstr "Calculado por multiplicar cantidad y valor en el costo del Producto. Siempre en la moneda principal de la empresa."
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_shorten_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_accrued_invoice_wizard_form
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Cerrar"
+msgstr "Cerrar"
+
+#. module: apiux_booking
+#: model_terms:ir.actions.act_window,help:apiux_booking.act_hr_projection_dates_line_evry1_all_form
+msgid "Click to create project dates used in projection."
+msgstr "Presionar para crear fechas de proyecto usadas en la proyección"
+
+#. module: apiux_booking
+#: model_terms:ir.actions.act_window,help:apiux_booking.act_hr_projection_timesheet_line_evry1_all_form
+msgid "Click to project activities."
+msgstr "Presionar para crear Actividades del Proyecto"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__project_client
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__partner_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__company_id
+msgid "Compañia"
+msgstr "Compañia"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate.line,state:0
+#: selection:hr.projection.timesheet,state:0
+msgid "Confirmado"
+msgstr "Confirmado"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Confirmar WBS Mensual Outsourcing"
+msgstr "Confirmar WBS Mensual Outsourcing"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Confirmar WBS Mensual Staff"
+msgstr "Confirmar WBS Mensual Staff"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Confirmar WBS Semanal Staff"
+msgstr "Confirmar WBS Semanal Staff"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__contract
+msgid "Contrato"
+msgstr "Contrato"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__create_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__create_date
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__number_of_days_temp
+msgid "Ctd. Dias"
+msgstr "Ctd. Dias"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__quantity
+msgid "Ctd. Horas"
+msgstr "Ctd. Horas"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__invoice_account_receivable_id
+msgid "Cuenta a cobrar"
+msgstr "Cuenta a Cobrar"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__invoice_account_id
+msgid "Cuenta de Ingresos"
+msgstr "Cuenta de Ingresos"
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_project_accrued_invoice_wizard__currency_name
+msgid "Currency Code (ISO 4217)"
+msgstr "Código de moneda (ISO 4217)"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__booking_description
+msgid "Descripcion"
+msgstr "Descripcion"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Descripcion WBS"
+msgstr "Descripcion WBS"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_accrued_invoice_wizard_form
+msgid "Descripción"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__name
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__user_name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_tree
+msgid "Desvengados"
+msgstr "Devengados"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__employee_unlinked
+msgid "Desvinculado"
+msgstr "Desvinculado"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Desvincular Staffing/WBS"
+msgstr "Desvincular Staffing/WBS"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,pre_invoice_state:0
+msgid "Devengado"
+msgstr "Devengado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_pre_invoice__is_preaccrued
+msgid "Devengado?"
+msgstr "Devengado?"
+
+#. module: apiux_booking
+#: model:ir.actions.act_window,name:apiux_booking.act_project_pre_invoice_tree
+#: model:ir.ui.menu,name:apiux_booking.menu_project_pre_invoice
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "Devengados"
+msgstr "Devengados"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_tree
+msgid "Devengar"
+msgstr "Devengar"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__name
+msgid "Dia"
+msgstr "Dia"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__journal_id
+msgid "Diario Analitico"
+msgstr "Diario Analitico"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__display_name
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__document_ids
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__documents_count
+msgid "Documentos"
+msgstr "Documentos"
+
+#. module: apiux_booking
+#: selection:hr.booking.schedule,name:0
+msgid "Domingo"
+msgstr "Domingo"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__unit_amount
+msgid "Duracion"
+msgstr "Duración"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_tree
+msgid "Duration"
+msgstr "Duración"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Duration Dia"
+msgstr "Duración Dia"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_tree
+msgid "Eliminar Devengado"
+msgstr "Eliminar Devengado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__company_id
+msgid "Empresa"
+msgstr "Empresa"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_accrued_invoice_wizard_form
+msgid "Enviar"
+msgstr "Enviar"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__state
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__state
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__pre_invoice_state
+msgid "Estado"
+msgstr "Estado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__booking_exclude
+msgid "Excluir?"
+msgstr "Excluir?"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,pre_invoice_state:0
+msgid "Facturado"
+msgstr "Facturado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__booking_date
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__to_date
+msgid "Fecha Fin Nueva"
+msgstr "Fecha Fin Nueva"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__emission_date
+msgid "Fecha de emision"
+msgstr "Fecha de emision"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__send_date
+msgid "Fecha de envio"
+msgstr "Fecha de envio"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Fecha desde"
+msgstr "Fecha desde"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Fecha hasta"
+msgstr "Fecha hasta"
+
+#. module: apiux_booking
+#: selection:hr.booking.exemptions,booking_type:0
+msgid "Feriado"
+msgstr "Feriado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__public_holiday_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Feriados"
+msgstr "Feriados"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Feriados/FinDeSemana"
+msgstr "Feriados/FinDeSemana"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__exemption_ids
+msgid "Feriados/Weekend"
+msgstr "Feriados/Weekend"
+
+#. module: apiux_booking
+#: selection:hr.booking.exemptions,booking_type:0
+msgid "Fin De Semana"
+msgstr "Fin De Semana"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Financiero"
+msgstr "Financiero"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__overbooked_flag
+msgid "Flag"
+msgstr "Flag"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__from_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__from_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__from_date
+msgid "From Date"
+msgstr "Desde la fecha"
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,source_type:0
+msgid "Generado"
+msgstr "Generado"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Generar"
+msgstr "Generar"
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_project_accrued_invoice_lines__sequence
+msgid "Gives the sequence of this line when displaying the purchase order."
+msgstr "Da la secuencia de esta Linea cuando se muestra el O/C"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__glosa
+msgid "Glosa"
+msgstr "Glosa"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__hes
+msgid "Hes"
+msgstr "Agrupar por"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "Hito"
+msgstr "Hito"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__holiday
+msgid "Holiday?"
+msgstr "Feriado?"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__schedule_ids
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Horario"
+msgstr "Horario"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Horario Semanal"
+msgstr "Horario Semanal"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Horas"
+msgstr "Horas"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__user_assigment_available
+msgid "Horas Disponibles dentro Fechas"
+msgstr "Horas Disponibles dentro Fechas"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__hours_profile
+msgid "Horas Perfil"
+msgstr "Horas Perfil"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__user_assigment_possible
+msgid "Horas Posibles dentro Fechas"
+msgstr "Horas Posibles dentro Fechas"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__amount
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__amount
+msgid "Horas Total"
+msgstr "Horas Total"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__user_assigment_hours
+msgid "Horas Ya Asignados dentro Fechas"
+msgstr "Horas Ya Asignados dentro Fechas"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Horas/Dia"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__unit_amount
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__unit_amount
+msgid "Horas/dia"
+msgstr "Horas/dia"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_leave_exemptions
+msgid "Hr Leave Exemtions"
+msgstr "Execepiones Ausencias"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_hr_leave__employee_active
+msgid "If the active field is set to False, it will allow you to hide the resource record without removing it."
+msgstr "Si el campo activo se desmarca, permite ocultar el registro del recurso sin eliminarlo."
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__tax
+msgid "Impuesto (%)"
+msgstr "Impuesto (%)"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__project_jp
+msgid "JP. Proyecto"
+msgstr "JP. Proyecto"
+
+#. module: apiux_booking
+#: selection:hr.booking.schedule,name:0
+msgid "Jueves"
+msgstr "Jueves"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines____last_update
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__write_uid
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_schedule__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_shorten__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__write_date
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_leave
+msgid "Leave"
+msgstr "Ausencia"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_leave_type
+msgid "Leave Type"
+msgstr "Tipo de ausencia"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_pre_invoice__link_preaccrued_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_pre_invoice__preaccrued_id
+msgid "Linea Devengado"
+msgstr "Linea Devengado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_account_pre_invoice_line__outsourcing_id
+msgid "Linea Outsourcing"
+msgstr "Linea Outsourcing"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_outsourcing__preinvoice_line_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_pre_invoice__preinvoice_line_id
+msgid "Linea Prefactura"
+msgstr "Linea Prefactura"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__line_ids
+msgid "Lineas"
+msgstr "Lineas"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__line_ids
+msgid "Lineas de Booking"
+msgstr "Lineas de Booking"
+
+#. module: apiux_booking
+#: selection:hr.booking.schedule,name:0
+msgid "Lunes"
+msgstr "Lunes"
+
+#. module: apiux_booking
+#: selection:hr.projection.timesheet,source_type:0
+msgid "Manual"
+msgstr "Manual"
+
+#. module: apiux_booking
+#: selection:hr.booking.schedule,name:0
+msgid "Martes"
+msgstr "Martes"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate,type:0
+msgid "Mes"
+msgstr "Mes"
+
+#. module: apiux_booking
+#: selection:hr.booking.schedule,name:0
+msgid "Miercoles"
+msgstr "Miercoles"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Mis Proyectos"
+msgstr "Mis Proyectos"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__currency_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__currency_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__currency_name
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__money
+msgid "Moneda"
+msgstr "Moneda"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_pre_invoice__preaccrued_amount
+msgid "Monto Devengado"
+msgstr "Monto Devengado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__line_amount
+msgid "Monto Real"
+msgstr "Monto real"
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_project_accrued_invoice_lines__line_amount
+msgid "Monto Real in UF"
+msgstr "Monto Real in UF"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__amount
+msgid "Monto neto"
+msgstr "Monto neto"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__total_clp
+msgid "Monto neto (CLP)"
+msgstr "Monto neto (CLP)"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_accrued_invoice_wizard_form
+msgid "Monto neto(CLP)"
+msgstr "Monto neto(CLP)"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,is_tax_exempt:0
+msgid "No"
+msgstr ""
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "No Devengados"
+msgstr "No"
+
+#. module: apiux_booking
+#: code:addons/apiux_booking/wizards/hr_projection_generate.py:178
+#, python-format
+msgid "No hay Bookings por crearse! Elige otras Fechas y/o Proyecto!"
+msgstr "No hay Bookings por crearse! Elige otras Fechas y/o Proyecto!"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__name
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__user_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_outsourcing__display_name
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__note_id
+msgid "Nota de Venta"
+msgstr "Nota de Venta"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__document_number
+msgid "Número de documento"
+msgstr "Número de documento"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__oc
+msgid "OC"
+msgstr "O/C"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__source_type
+msgid "Origen"
+msgstr "Origen"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Otros"
+msgstr "Otros"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__outsourcing_id
+msgid "Outsourcing"
+msgstr "Outsourcing"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__overbooked
+msgid "Overbooked"
+msgstr "Overbooked"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__hr_proj_generate_id
+msgid "Padre"
+msgstr "Padre"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Nómina"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,pre_invoice_state:0
+msgid "Pendiente"
+msgstr "Pendiente"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__percentage
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__percentage
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_tree
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: apiux_booking
+#: code:addons/apiux_booking/models/hr_projection_timesheet.py:214
+#, python-format
+msgid "Percentage must be greater than or equal to 0"
+msgstr "% debiese ser superior o igual a cero!"
+
+#. module: apiux_booking
+#: code:addons/apiux_booking/models/hr_projection_timesheet.py:216
+#, python-format
+msgid "Percentage must be less than or equal to 100"
+msgstr "% debiese ser inferior a o igual a cien!"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__oc_profile
+msgid "Perfil OC"
+msgstr "Perfil O/C"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__period
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__period_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "Periodo"
+msgstr "Periodo"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate.line,confirm_type:0
+#: selection:hr.projection.timesheet,confirm_type:0
+msgid "Periodo Con Staffing"
+msgstr "Periodo Con Staffing"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate.line,confirm_type:0
+#: selection:hr.projection.timesheet,confirm_type:0
+msgid "Periodo No Staffing"
+msgstr "Periodo No Staffing"
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_hr_projection_timesheet__activity_type
+#: model:ir.model.fields,help:apiux_booking.field_project_outsourcing__activity_type
+msgid "Pleas select an activity type for your tasks"
+msgstr "Por favor, seleccionar tipo de actvividad de Tareas"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__invoice_id
+msgid "Pre Factura"
+msgstr "Pre-Factura"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__projection_id
+msgid "Pre-Factura"
+msgstr "Pre-Factura"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__invoice_product_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_invoice_wizard_lines__product_id
+msgid "Producto"
+msgstr "Producto"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_project_project
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__account_id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__account_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_project_invoice_wizard_lines
+msgid "Project Invoice Wizard Lines"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_project_outsourcing
+msgid "Project Outsourcing"
+msgstr "Staffing de Proyecto"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_project_pre_invoice
+msgid "Project Pre Invoice"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_account_analytic_line__projection_id
+msgid "Proyeccion"
+msgstr "Proyeccion"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,pre_invoice_state:0
+msgid "Proyectado"
+msgstr "Proyectado"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__project_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__project_id
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__project_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "Proyecto"
+msgstr "Proyecto"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Público"
+msgstr "Público"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__quantity
+msgid "Reales./Horas"
+msgstr "Reales./Horas"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Recalcular WBSM"
+msgstr "Recalcular WBS Mensual"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Recalcular WBSM No Staff"
+msgstr "Recalcular WBS Mensual No Staff"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Recalcular WBSS"
+msgstr "Recalcular WBS Semanal"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Recalcular WBSS No Staff"
+msgstr "Recalcular WBS Semanal No Staff"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Rechazar"
+msgstr "Rechazar"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__booking_user_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Recurso"
+msgstr "Recurso"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_pre_invoice__project_reference
+msgid "Ref."
+msgstr "Ref."
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__project_reference
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Ref. Proyecto"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__project_responsable
+msgid "Resp. Proyecto"
+msgstr "Responsable Proyecto"
+
+#. module: apiux_booking
+#: selection:hr.booking.schedule,name:0
+msgid "Sabado"
+msgstr "Sabado"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_shorten_wizard_form
+msgid "Se borran los Staffing/WBS no necesitados!. Quiere seguir?"
+msgstr "Se borran los Staffing/WBS no necesitados!. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Se calculan las horas y se actualizan los Staffing y WBS. Quiere seguir?"
+msgstr "Se calculan las horas y se actualizan los Staffing y WBS. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Se calculan las horas y se actualizan los WBS. Quiere seguir?"
+msgstr "Se calculan las horas y se actualizan los WBS. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Se confirma el Booking y se generan las WBS por Periodo. Quiere seguir?"
+msgstr "Se confirma el Booking y se generan las WBS por Periodo. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Se confirma el Booking y se generan las WBS por Semana. Quiere seguir?"
+msgstr "Se confirma el Booking y se generan las WBS por Semana. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Se desvincularan los WBS y Staffing de este Booking sin borrarse. Quiere seguir?"
+msgstr "Se desvincularan los WBS y Staffing de este Booking sin borrarse. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_tree
+msgid "Se elimina la Linea Analitica con los cambios. Quiere seguir?"
+msgstr "Se elimina la Linea Analitica con los cambios. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Se eliminarán todas las Staffing y WBS para esta Booking!!. Quiere seguir?"
+msgstr "Se eliminarán todas las Staffing y WBS para esta Booking!!. Quiere seguir?"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_tree
+msgid "Se genera la Linea Analitica con los cambios. Quiere seguir?"
+msgstr "Se genera la Linea Analitica con los cambios. Quiere seguir?"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__project_sector
+msgid "Sector"
+msgstr "Sector"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Sectores"
+msgstr "Sectores"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate.line,confirm_type:0
+#: selection:hr.projection.timesheet,confirm_type:0
+msgid "Semana Con Staffing"
+msgstr "Semana Con Staffing"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate.line,confirm_type:0
+#: selection:hr.projection.timesheet,confirm_type:0
+msgid "Semana No Staffing"
+msgstr "Semana No Staffing"
+
+#. module: apiux_booking
+#: selection:hr.proj.generate,type:0
+msgid "Semanal"
+msgstr "Semanal"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,is_tax_exempt:0
+msgid "Si"
+msgstr "Si"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__reviewer_id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__reviewer_id
+msgid "Solicitante"
+msgstr "Solicitante"
+
+#. module: apiux_booking
+#: model:ir.model.fields,help:apiux_booking.field_hr_proj_generate_line__unit_amount
+#: model:ir.model.fields,help:apiux_booking.field_hr_projection_timesheet__unit_amount
+msgid "Specifies the amount of quantity to count."
+msgstr "Especifica cantidad por contarse"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__outsourcing_id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__outsourcing_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.apiux_booking_preinvoice_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "Staffing"
+msgstr "Staffing"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Staffings"
+msgstr "Staffings"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__task_id
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: apiux_booking
+#: code:addons/apiux_booking/models/hr_projection_timesheet.py:273
+#: code:addons/apiux_booking/models/hr_projection_timesheet.py:922
+#: code:addons/apiux_booking/models/hr_projection_timesheet.py:969
+#, python-format
+msgid "The start date must be anterior to the end date."
+msgstr "Fecha Inicio debiese ser antes de Fecha Fin"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Timesheet"
+msgstr "Hoja de servicios"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_tree
+msgid "Timesheet Activities"
+msgstr "Actividades del parte de horas"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_dates_line_tree
+msgid "Timesheet Dates"
+msgstr "Fechas Timesheet"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_projection_dates
+msgid "Timesheet Projection Dates"
+msgstr "Fechas Proyeccion de Timesheet"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_projection_timesheet
+msgid "Timesheet Projection Line"
+msgstr "Linea Proyección Timesheet"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_booking_exemptions__booking_type
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__type
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Tipo Actividad"
+msgstr "Tipo Activividad"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__confirm_type
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__confirm_type
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "Tipo Booking"
+msgstr "Tipo Booking"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_search
+msgid "Tipo Invoice"
+msgstr "Tipo Invoice"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__invoicing_type
+msgid "Tipo de Proyección"
+msgstr "Tipo de Proyección"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__document_type
+msgid "Tipo de documento"
+msgstr "Tipo Documento"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_leave__gantt_date_to
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate__to_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__to_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__gantt_to_date
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__to_date
+msgid "To Date"
+msgstr "Hasta la Fecha"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.project_pre_invoice_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+msgid "Total Horas"
+msgstr "Total Horas"
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_tree
+msgid "Total cost"
+msgstr "Total Cost"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,money:0
+msgid "UF"
+msgstr "UF"
+
+#. module: apiux_booking
+#: selection:project.accrued.invoice.wizard,money:0
+msgid "USD"
+msgstr "USD"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__user_id
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_res_users
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_search
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__dolar_value
+msgid "Valor dolar a la fecha"
+msgstr "Valor dolar a la fecha"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__uf_value
+msgid "Valor uf a la fecha"
+msgstr "Valor UF a la fecha"
+
+#. module: apiux_booking
+#: selection:hr.booking.schedule,name:0
+msgid "Viernes"
+msgstr "Viernes"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_proj_generate_line__task_id
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_proj_generate_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "WBS"
+msgstr "WBS"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__task_planned_hours
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__task_planned_hours_2
+msgid "WBS Total Horas"
+msgstr "WBS Total Horas"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_lines__task_id
+msgid "WBS de Proyecto"
+msgstr "WBS de Proyecto"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__week
+msgid "Week"
+msgstr "Semana"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_dates__weekend
+msgid "Weekend?"
+msgstr "Fin de Semana?"
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_hr_projection_timesheet__year
+msgid "Year"
+msgstr "Año"
+
+#. module: apiux_booking
+#: model_terms:ir.actions.act_window,help:apiux_booking.act_hr_projection_timesheet_line_evry1_all_form
+msgid "You can project your workings hours by project every\n"
+"                day. Every time spent on a project will become a cost in the\n"
+"                analytic accounting/contract and can be re-invoiced to\n"
+"                customers if required."
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_account_pre_accrued
+msgid "account.pre_accrued"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_account_pre_accrued_line
+msgid "account.pre_accrued.line"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_account_pre_invoice_line
+msgid "account.pre_invoice.line"
+msgstr ""
+
+#. module: apiux_booking
+#: model_terms:ir.ui.view,arch_db:apiux_booking.hr_projection_timesheet_line_form
+msgid "confirm"
+msgstr "Confirmar"
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_booking_exemptions
+msgid "hr.booking.exemptions"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_booking_schedule
+msgid "hr.booking.schedule"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_proj_generate
+msgid "hr.proj.generate"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_proj_generate_line
+msgid "hr.proj.generate.line"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_proj_matrix
+msgid "hr.proj.matrix"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_proj_shorten
+msgid "hr.proj.shorten"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_hr_public_holiday
+msgid "hr.public.holiday"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_project_accrued_invoice_lines
+msgid "project.accrued.invoice.lines"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model,name:apiux_booking.model_project_accrued_invoice_wizard
+msgid "project.accrued.invoice.wizard"
+msgstr ""
+
+#. module: apiux_booking
+#: model:ir.model.fields,field_description:apiux_booking.field_project_accrued_invoice_wizard__is_tax_exempt
+msgid "¿Excento de iva?"
+msgstr "¿Excento de iva?"
+

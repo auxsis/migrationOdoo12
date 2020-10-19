@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="uom_uom_apiux" model="uom.uom">
+        <field name="name">Mes(es)</field>
+        <field name="rounding">0.01</field>
+        <field name="category_id">3</field>
+        <field name="uom_type">bigger</field>
+    </record>
+</odoo>

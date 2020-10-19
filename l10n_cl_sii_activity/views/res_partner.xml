@@ -1,0 +1,27 @@
+<odoo>
+
+    <record id="view_partner_activity_form" model="ir.ui.view">
+        <field name="name">res.partner.activity.form.inherit</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="sii_activity_id"/>
+                <field name="description"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="partner_activities_ids" widget="many2many_tags"/>
+            </field>				
+        </field>
+    </record>
+
+
+</odoo>

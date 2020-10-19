@@ -1,0 +1,199 @@
+﻿<odoo>
+  <data>
+
+
+	    <record id="apiux_hr_leave_view_form" model="ir.ui.view">
+            <field name="name">apiux.hr.leave.view.form</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//header" position="replace">
+                    <header >
+                        <button string="Firmar" name="signed" states="draft" type="object" class="oe_highlight"/>                    
+                        <button string="Confirm" name="confirm" states="signed" type="object" class="oe_highlight"/>
+                        <button string="Validar" name="validate" states="confirm" type="object" class="oe_highlight"/>
+                        <button string="Validar1" name="validate1" states="validate" type="object" class="oe_highlight"/>
+                        <button string="Validar2" name="validate2" states="validate1" type="object" class="oe_highlight"/>                
+                        <button string="Refuse" name="refuse" states="signed,confirm,validate,validate1,validate2" type="object" />
+                        <button string="Reset to Draft" name="reset" type="object" attrs="{'invisible': ['|', ('can_reset', '=', False), ('state', 'not in', ['confirm', 'refuse'])]}"/>
+                        <field name="state" widget="statusbar" clickable="1" statusbar_visible="draft,signed,confirm,refuse,validate,validate1,validate2" statusbar_colors='{"confirm":"blue","validate1":"blue","validate2":"blue","refuse":"red"}'/>            
+         
+                    </header>
+                </xpath>
+
+                <field name="holiday_status_id" position="replace">
+                    <field name="available_holiday_status_id" invisible="1"/>
+                    <field name="holiday_status_id"  widget="selection" domain="[('id','in',available_holiday_status_id)]"/>
+                </field>
+
+                
+				<xpath expr="/form/sheet/group" position="after">
+				<notebook>
+                    <page string="Aprobadores" >
+                        <group cols="4" >
+                            <group>
+                                <field name="first_approver_id" readonly="1"/>
+                                <field name="third_approver_id" readonly="1"/>                              
+                            </group>
+                            <group>
+                                <field name="second_approver_id" readonly="1"/>
+                            </group> 
+                        </group>
+                    </page>
+
+                    <page string="Firmas Simples" >
+                        <field name="hr_holidays_validation_ids" readonly="1"> 
+                            <tree string="Annexos" editable="false" create="false" default_order="validation_date asc">
+                            <field name="state" readonly="1"/>                        
+                            <field name="validation_date" readonly="1"/>	
+                            <field name="user_id" readonly="1"/>								
+                            <field name="active" readonly="1"/>								
+                            </tree>
+                        </field>                  
+                    </page>
+                
+					<page string="Dias Descontados Feriados" >
+						<field name="holiday_status_name" invisible="1" />
+						<field name="exemption_ids" >
+							<tree string="Feriados/FinDeSemana" editable="false" create="false" delete="false" default_order='holiday_date asc'>							
+							<field name="holiday_date" readonly="1" />								
+							<field name="holiday_type" readonly="1"/>
+							<field name="holiday_description" readonly="1"/>
+							<field name="public_holiday_id" readonly="1"/>							
+							</tree>
+						</field>
+					</page>	
+				</notebook>	
+				</xpath>
+            </field>
+        </record>
+
+
+
+	    <record id="hr_public_holiday_view_holiday_status_normal_tree" model="ir.ui.view">
+            <field name="name">hr.public.holiday.view.holiday.status.normal.tree</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_status_normal_tree"/>
+            <field name="arch" type="xml"> 
+                <field name="validity_stop" position="after">
+					<field name="user_has_group"/>
+				</field>	
+                
+            </field>
+        </record>                  
+                  
+                  
+	    <record id="hr_public_holiday_edit_holiday_status_form" model="ir.ui.view">
+            <field name="name">hr.public.holiday.edit.holiday.status.form</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml"> 
+            
+            <field name="name" position="after">
+                <field name="description"/>
+            </field>	            
+            
+		    <xpath expr="/form/sheet/group" position="after">
+                <notebook>
+                    <page string="Grupos">
+                        <field name="group_ids" options="{'no_create_edit': True}"/>
+                     </page>   
+                </notebook>
+            </xpath>  
+            </field>
+        </record>
+
+
+	    <record id="apiux_leave_view_hr_holidays_filter" model="ir.ui.view">
+            <field name="name">apiux.leave.view.hr.holidays.filter</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.view_hr_holidays_filter"/>
+            <field name="arch" type="xml"> 
+            
+            <filter name="approve" position="replace">
+                <filter domain="[('state','in',('confirm','validate','validate1'))]" string="To Approve" name="approve"/>
+            </filter>	            
+
+            <filter name="department" position="replace">
+                <filter string="My Department Leaves" name="department" domain="['|',('first_approver_id.user_id','=',uid),'|',('second_approver_id.user_id','=',uid),('third_approver_id.user_id','=',uid)]" help="My Department Leaves"/>
+            </filter>
+ 
+            </field>
+        </record>
+
+
+        <!-- Wizard -->
+        <record id="hr_holidays_approve_wizard_form" model="ir.ui.view">
+            <field name="name">Ingrese Contrasena</field>
+            <field name="model">hr.holidays.approve.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="hr_holiday_id" readonly="1" invisible="1"/>
+                            <field name="approve_stage" readonly="1" invisible="1"/>   
+                            <field name="approve_message" readonly="1"/> 
+                            <field name="approve_username" required="1"/>                              
+                            <field name="approve_password" required="1" password="1"/>  					
+                        </group>
+                    </group>
+					
+					
+                    <footer>
+                        <button name="action_transfer" type="object" string="Firmar"/> <!-- Action Button -->
+                        <button string="Cancelar" class="oe_link" special="cancel" style="margin-left: 15px;"/> <!-- Do nothing -->
+                    </footer>
+                </form>
+            </field>
+        </record>	
+
+
+
+
+	    <record id="apiux_leave_hr_view_employee_form" model="ir.ui.view">
+            <field name="name">apiux.leave.view.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml"> 
+            
+            <field name="parent_id" position="after">
+                <field name="employee_type"/>
+                <field name="account_ejecutive"/>
+            </field>	            
+            
+
+            </field>
+        </record>
+
+
+<!-- 	    <record id="apiux_leave_edit_public_holiday_new" model="ir.ui.view">
+            <field name="name">apiux.leave.edit.public.holiday.new</field>
+            <field name="model">hr.public.holiday</field>
+            <field name="inherit_id" ref="hr_public_holidays.edit_public_holiday_new"/>
+            <field name="arch" type="xml"> 
+            
+            <group name="top" position="after">
+                <notebook>
+                    <page string="Peticiones">
+                        <field name="exemptions_ids" >
+                            <tree string="Vacaciones afectados" editable="false" create="false" delete="false" default_order='holiday_date asc'>
+                            <field name="holiday_id" string="Descripcion" readonly="1" />								
+                            <field name="holiday_employee_id" readonly="1" />																
+                            <field name="holiday_date" readonly="1" />
+                            <field name="holiday_state" readonly="1" />										
+                            </tree>
+                        </field>
+                    </page>	
+                </notebook>
+            </group>	            
+            
+
+            </field>
+        </record> -->
+
+
+
+  </data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="project_pre_invoice_account_view_tree" model="ir.ui.view">
+        <field name="model">project.pre.invoice.account</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">        
+                <field name="company_id" required="1" />
+                <field name="sector_id" />
+                <field name="cost_center_id" />
+                <field name="account_income_id" required="1" domain="[('company_id','=',company_id)]"/>
+                <field name="account_expense_id" domain="[('company_id','=',company_id)]"/>   
+                <field name="account_receivable_id" required="1" domain="[('company_id','=',company_id)]"/>
+                <field name="account_payable_id" domain="[('company_id','=',company_id)]"/>                               
+                <field name="active"/>                 
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record id="project_pre_invoice_account_action" model="ir.actions.act_window">
+        <field name="name">Pre Invoice Account</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">project.pre.invoice.account</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new Project Pre Invoice Account.
+            </p>
+        </field>
+    </record>
+
+    <!-- Cost Center menu-->
+    <menuitem id="project_pre_invoice_account_menu"
+              parent="project.menu_project_config"
+              action="project_pre_invoice_account_action"
+              sequence="40"/>
+
+</odoo>

@@ -1,0 +1,2130 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* apiux_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-09 18:29+0000\n"
+"PO-Revision-Date: 2020-09-09 18:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_project__approve_state
+#: model:ir.model.fields,help:apiux_project.field_project_task__project_approve_state
+msgid " * The 'Draft' status is used when a user is encoding a new and unconfirmed timesheet.             \n"
+"* The 'Confirmed' status is used for to confirm the timesheet by user.             \n"
+"* The 'Done' status is used when users timesheet is accepted by his/her senior."
+msgstr ""
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "% En"
+msgstr "% En"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__porc_margin
+msgid "% Margen"
+msgstr "% Margen (Apiux)"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "(Des)archivar un proyecto automáticamente (des)archiva sus tareas. Quieres proceder?"
+msgstr ""
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "<span string=\"Otros Costos\"/>"
+msgstr ""
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "<span string=\"Perfiles\"/>"
+msgstr ""
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+#: selection:project.outsourcing,state:0
+#: selection:project.pre.invoice,state:0
+#: selection:project.task,outsourcing_state:0
+msgid "Abierto"
+msgstr ""
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+msgid "Abrir"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__account_expense_id
+msgid "Account Expense"
+msgstr "Cuenta de Gastos"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__account_income_id
+msgid "Account Income"
+msgstr "Cuenta de Ingreso"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__account_payable_id
+msgid "Account Payable"
+msgstr "Cuenta a pagar"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__account_receivable_id
+msgid "Account Receivable"
+msgstr "Cuenta a cobrar"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__active
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__active
+msgid "Active?"
+msgstr "Activo?"
+
+#. module: apiux_project
+#: model:ir.actions.act_window,name:apiux_project.project_task_activity_type_action
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__activity_type
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__activity_type
+#: model:ir.ui.menu,name:apiux_project.project_task_activity_type_menu
+msgid "Activity Type"
+msgstr "Tipo de actividad"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__active
+msgid "Activo?"
+msgstr "Activo?"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Actualizar Cuenta Analytica"
+msgstr "Actualizar Cuenta Analytica"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "Add a product"
+msgstr "Agregar un producto"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Address"
+msgstr "Dirección"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__address_state
+msgid "Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr "División administrativa de un país. Por ejemplo Comunidad Autónoma, Provincia, Ayuntamiento"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__approve_state
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__project_approve_state
+msgid "Approval Status"
+msgstr "Estado Aprobación"
+
+#. module: apiux_project
+#: selection:project.project,approve_state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_ir_attachment
+msgid "Attachment"
+msgstr "Adjunto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_note.py:146
+#, python-format
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+#: selection:project.outsourcing,state:0
+#: selection:project.pre.invoice,state:0
+#: selection:project.task,outsourcing_state:0
+msgid "Borrador"
+msgstr "Borrador"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__clp_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__clp_id
+#: selection:project.invoice.wizard,money:0
+#: selection:project.outsourcing.invoice.wizard,money:0
+#: selection:project.pre.invoice,money:0
+msgid "CLP"
+msgstr "CLP"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__nota_ids
+msgid "CRM Sale Note"
+msgstr "Nota de Venta"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "CRM Sales Note"
+msgstr "Nota de Venta"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Cancel Project"
+msgstr "Anular Proyecto"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_outsourcing_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.sale_order_wizard
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: apiux_project
+#: selection:project.project,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__num_outsourcing
+msgid "Cant. Staffing"
+msgstr "Cant. Staffing"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__product_uom_qty
+msgid "Cantidad"
+msgstr "Cantidad"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+msgid "Cerrar"
+msgstr "Cerrar"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_res_partner__is_company
+#: model:ir.model.fields,help:apiux_project.field_res_users__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Marque esta casilla si el contacto es una compañía. En caso contrario, es una persona."
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: apiux_project
+#: model_terms:ir.actions.act_window,help:apiux_project.project_pre_invoice_account_action
+msgid "Click to add a new Project Pre Invoice Account."
+msgstr "Presionar para agregar nuevo Cuenta de Proyecto Prefactura"
+
+#. module: apiux_project
+#: model_terms:ir.actions.act_window,help:apiux_project.project_task_activity_type_action
+msgid "Click to add a new Project Task Activity Type."
+msgstr "Presionar para agregar nuevo Tipo de Actividad"
+
+#. module: apiux_project
+#: model_terms:ir.actions.act_window,help:apiux_project.sale_order_service_type_action
+msgid "Click to add a new Sale Order Service Type."
+msgstr "Presionar para agregar nuevo Tipo de Servicio"
+
+#. module: apiux_project
+#: model_terms:ir.actions.act_window,help:apiux_project.action_crm_sale_note_form
+msgid "Click to add a sales note."
+msgstr "Presionar "
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__client_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__partner_id
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_note.py:37
+#: code:addons/apiux_project/models/sale_note.py:166
+#: code:addons/apiux_project/models/sale_note.py:196
+#, python-format
+msgid "Cliente %s no tiene Abreviatura. Ingrese abreviatura en Cliente"
+msgstr "Cliente %s no tiene Abreviatura. Ingrese abreviatura en Cliente"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Cliente/Proyecto"
+msgstr "Cliente/Proyecto"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Close Project"
+msgstr "Cerrar Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_type__close_stage
+msgid "Close Stage"
+msgstr "Cerrar Etapa"
+
+#. module: apiux_project
+#: selection:project.project,state:0
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__code
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__code
+msgid "Code"
+msgstr "Código"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__company_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__company_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Compartir"
+msgstr "Compartir"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__company_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__company_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__company_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__company_id
+msgid "Compañia"
+msgstr "Compañia"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__project_company_id
+msgid "Compañia Proyecto"
+msgstr "Compañia Proyecto"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Configuración"
+msgstr "Configuración"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_res_partner
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__contact_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__contact_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__contract
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__contract
+msgid "Contrato"
+msgstr "Contrato"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__email_to
+msgid "Correos Recursos"
+msgstr "Correos Recursos"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__cost
+msgid "Cost"
+msgstr "Costo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__cost_center_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__cost_center_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__cost_center_id
+msgid "Cost Center"
+msgstr "Centro de Costo"
+
+#. module: apiux_project
+#: model_terms:ir.actions.act_window,help:apiux_project.project_task_activity_type_action
+#: model_terms:ir.actions.act_window,help:apiux_project.sale_order_service_type_action
+msgid "Cost centers provide an extra analytic dimension"
+msgstr "Centros de Costo provee una dimension adicional analitica"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__cost
+msgid "Cost of Project"
+msgstr "Costo de Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_line__cost
+msgid "Costo"
+msgstr "Costo"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:133
+#: code:addons/apiux_project/models/sale_order.py:137
+#: code:addons/apiux_project/models/sale_order.py:213
+#: code:addons/apiux_project/models/sale_order.py:217
+#, python-format
+msgid "Costo 0"
+msgstr "Costo 0"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__final_cost
+msgid "Costo Final"
+msgstr "Costo Final"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__country
+msgid "Country Name"
+msgstr "Nombre del país"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "Crear Proyecto"
+msgstr "Crear Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__create_uid
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__create_date
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Cuenta Analitica/Sector"
+msgstr "Cuenta Analitica/Sector"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__project_currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_invoice_wizard__currency_name
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing_invoice_wizard__currency_name
+#: model:ir.model.fields,help:apiux_project.field_sale_order__currency_quotation_name
+msgid "Currency Code (ISO 4217)"
+msgstr "Código de moneda (ISO 4217)"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/project_pre_invoice.py:367
+#, python-format
+msgid "Default values for Account and Account Receivable cannot be found! Please contact the System Adminstrator."
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__name
+msgid "Descripción"
+msgstr "Descripción"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__description
+msgid "Description WBS"
+msgstr "Description WBS"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__documents_count
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__documents_count
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Documentos"
+msgstr "Documentos"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Documentos Facturación"
+msgstr "Documentos Facturación"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__projected_days
+msgid "Días Proyectados"
+msgstr "Días Proyectados"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Edite las etapas del proyecto y establezca una plantilla de correo electrónico sobre las etapas en las que desea activar la clasificación."
+msgstr "Edite las etapas del proyecto y establezca una plantilla de correo electrónico sobre las etapas en las que desea activar la clasificación."
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__product_id
+msgid "Elemento"
+msgstr "Elemento""
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__contact_email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__company_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__company_id
+msgid "Empresa"
+msgstr "Empresa"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_outsourcing_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.sale_order_wizard
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+msgid "Enviar"
+msgstr "Enviar"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Enviar a"
+msgstr "Enviar a"
+
+#. module: apiux_project
+#: selection:product.template,type_product:0
+msgid "Equipo"
+msgstr "Equipo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__pre_invoice_state
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__pre_invoice_state
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__state
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__pre_invoice_state
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__pre_invoice_state
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__state
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_line__state_booking
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Estado"
+msgstr "Estado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__outsourcing_state
+msgid "Estado Staffing"
+msgstr "Estado Staffing"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__exclude_sql
+msgid "Excluir de SQL Consultas"
+msgstr "Excluir de SQL Consultas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__invoice_invoiced
+msgid "Fact. Facturado"
+msgstr "Fact. Facturado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__invoice_money
+msgid "Fact. Moneda"
+msgstr "Fact. Moneda"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__invoice_pending
+msgid "Fact. Pendiente"
+msgstr "Fact. Pendiente"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__invoice_projected
+msgid "Fact. Proyectado"
+msgstr "Fact. Proyectado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__invoice_total
+msgid "Fact. Total"
+msgstr "Fact. Total"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__invoice_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__invoice_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__invoice_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__invoice_id
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Factura"
+msgstr "Factura"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__project_invoice_ids
+msgid "Facturacion"
+msgstr "Facturacion"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__outsourcing_id
+msgid "Facturacion Outsourcing"
+msgstr "Facturacion Outsourcing"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+#: selection:project.invoice.wizard,pre_invoice_state:0
+#: selection:project.outsourcing,state:0
+#: selection:project.outsourcing.invoice.wizard,pre_invoice_state:0
+#: selection:project.pre.invoice,pre_invoice_state:0
+#: selection:project.pre.invoice,state:0
+#: selection:project.task,outsourcing_state:0
+msgid "Facturado"
+msgstr "Facturado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__invoice_period
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__invoice_period
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__emission_date
+msgid "Fecha Emision"
+msgstr "Fecha Emision"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__invoice_period
+msgid "Fecha Emission"
+msgstr "Fecha Emision"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__date_to
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Fecha Fin"
+msgstr "Fecha Fin"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__entry_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__entry_date
+msgid "Fecha Ingreso"
+msgstr "Fecha Ingreso"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__date_from
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Fecha Inicio"
+msgstr "Fecha Inicio"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__emission_date
+msgid "Fecha de emision"
+msgstr "Fecha de emision"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__send_date
+msgid "Fecha de envio"
+msgstr "Fecha de envio"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__emission_date
+msgid "Fecha de ingreso"
+msgstr "Fecha de ingreso"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:139
+#: code:addons/apiux_project/models/sale_order.py:219
+#, python-format
+msgid "For contract type 'New' you must specify Cost Center!."
+msgstr "Para contrato nuevo hay que especificar Centro de Costo"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Generar Bookings desde Staffing"
+msgstr "Generar Bookings desde Staffing"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Generar PreFactura Desde Staffing"
+msgstr "Generar PreFactura Desde Staffing"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_invoice_wizard_lines__sequence
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing__sequence
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing_invoice_lines__sequence
+msgid "Gives the sequence of this line when displaying the purchase order."
+msgstr "Da la secuencia de la linea al mostrar el O/C"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__glosa
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__glosa
+msgid "Glosa"
+msgstr "Glosa"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__hes
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__hes
+msgid "Hes"
+msgstr "Hes"
+
+#. module: apiux_project
+#: selection:project.pre.invoice,invoice_type:0
+msgid "Hito"
+msgstr "Hito"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__quantity_real
+msgid "Horas Acumuladas"
+msgstr "Horas Acumuladas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__quantity
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__total_hours_projected
+msgid "Horas Proyectadas"
+msgstr "Horas Proyectadas"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Horas Proyecto"
+msgstr "Horas Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__quantity_invoiced
+msgid "Horas Reales"
+msgstr "Horas Reales"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__total_hours_registered
+msgid "Horas Registradas"
+msgstr "Horas Registradas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__total_hours
+msgid "Horas Total"
+msgstr "Horas Total"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__total_hours_sold
+msgid "Horas Vendidas"
+msgstr "Horas Vendidas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__id_out
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__id
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__tax
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__tax
+msgid "Impuesto (%)"
+msgstr "Impuesto (%)"
+
+#. module: apiux_project
+#: selection:project.project,state:0
+msgid "In Progress"
+msgstr "En Progreso"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_ir_attachment__invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__invoice_id
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_res_partner__is_company
+#: model:ir.model.fields,field_description:apiux_project.field_res_users__is_company
+msgid "Is a Company"
+msgstr "Es una compañia"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__manager_user_id
+msgid "Jefe de Proyecto"
+msgstr "Jefe de Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__contact_function
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type____last_update
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__write_uid
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__write_date
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__projection_id
+msgid "Linea Proyeccion"
+msgstr "Linea Proyeccio"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__line_ids
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__line_ids
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_outsourcing_invoice_wizard_form
+msgid "Lineas"
+msgstr "Lineas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__margin
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__margin
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_line__margin
+msgid "Margen"
+msgstr "Margen UF"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__compute_margin_sim
+msgid "Margen Simulación %"
+msgstr "Margen Simulación % (Perfil)"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__margin
+msgid "Margen of Project"
+msgstr "Margen del Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__margin
+msgid "Margin"
+msgstr "Margen"
+
+#. module: apiux_project
+#: model:uom.uom,name:apiux_project.uom_uom_apiux
+msgid "Mes(es)"
+msgstr "Mes(es)"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__contact_mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__projection_currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__currency_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__money
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__currency_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__money
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__currency_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__currency_quotation
+msgid "Moneda"
+msgstr "Moneda"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__cost_amount
+msgid "Monto"
+msgstr "Monto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__sales_value
+msgid "Monto Nota de Venta"
+msgstr "Monto Nota de Venta"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing__projected_amount
+msgid "Monto Proyecctado in UF"
+msgstr "Monto Proyecctado in UF"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__projected_amount
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__projected_amount
+msgid "Monto Proyectado"
+msgstr "Monto Proyectado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__line_amount
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__amount
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__line_amount
+msgid "Monto Real"
+msgstr "Monto Real"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_invoice_wizard_lines__line_amount
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing__amount
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing_invoice_lines__line_amount
+msgid "Monto Real in UF"
+msgstr "Monto Real in UF"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__amount
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__amount
+msgid "Monto neto"
+msgstr "Monto neto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__total_clp
+msgid "Monto neto (CLP)"
+msgstr "Monto neto (CLP)"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__amount
+msgid "Monto neto (Moneda)"
+msgstr "Monto neto (Moneda)"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_outsourcing_invoice_wizard_form
+msgid "Monto neto(CLP)"
+msgstr "Monto neto(CLP)"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__contact_name
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__partner_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__preinvoice_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_task_activity_type__name
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__name
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_task_activity_type_view_search
+#: model_terms:ir.ui.view,arch_db:apiux_project.sale_order_service_type_view_search
+msgid "Name/Code"
+msgstr "Nombre/Código"
+
+#. module: apiux_project
+#: selection:project.project,state:0
+msgid "New"
+msgstr "Nuevo"
+
+#. module: apiux_project
+#: selection:project.invoice.wizard,is_tax_exempt:0
+#: selection:project.outsourcing.invoice.wizard,is_tax_exempt:0
+msgid "No"
+msgstr "No"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:129
+#: code:addons/apiux_project/models/sale_order.py:209
+#, python-format
+msgid "No Lineas de Perfiles!"
+msgstr "No Lineas de Perfiles!"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:163
+#: code:addons/apiux_project/models/sale_order_wizard.py:64
+#, python-format
+msgid "No se podia actualizar la Nota de Venta. Por favor contactese con el Admin del sistema!"
+msgstr "No se podia actualizar la Nota de Venta. Por favor contactese con el Admin del sistema!"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:168
+#, python-format
+msgid "No se podia crear la Nota de Venta. Por favor contactese con el Admin del sistema!\n"
+"\n"
+""
+msgstr "No se podia crear la Nota de Venta. Por favor contactese con el Admin del sistema!\n"
+"\n"
+""
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:185
+#, python-format
+msgid "No se puede actualizar el Proyecto. Por favor contactese con el Admin del sistema!"
+msgstr "No se puede actualizar el Proyecto. Por favor contactese con el Admin del sistema!"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:202
+#, python-format
+msgid "No se puede crear el Proyecto. Por favor contactese con el Admin del sistema! \n"
+"\n"
+"e: "
+msgstr "No se puede crear el Proyecto. Por favor contactese con el Admin del sistema! \n"
+"\n"
+"e: "
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/project_outsourcing.py:182
+#, python-format
+msgid "No se puede crear el WBS. Por favor contactese con el Administrador del sistema"
+msgstr "o se puede crear el WBS. Por favor contactese con el Administrador del sistema"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order_wizard.py:70
+#, python-format
+msgid "No se puede crear la Nota de Venta. Por favor contactese con el Admin del sistema!\n"
+"\n"
+" e:"
+msgstr "No se puede crear la Nota de Venta. Por favor contactese con el Admin del sistema!\n"
+"\n"
+" e:"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/project_outsourcing.py:520
+#, python-format
+msgid "No se puede eliminar un WBS con horas ingresados contra ello!"
+msgstr "No se puede eliminar un WBS con horas ingresados contra ello!"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_outsourcing_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+msgid "No."
+msgstr "No"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__user_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__display_name
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__user_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__user_id
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__currency_quotation_name
+msgid "Nombre Moneda"
+msgstr "Nombre Moneda"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Nombre de las tareas:"
+msgstr "Nombre de las tareas:"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Nombre del proyecto"
+msgstr "Nombre del proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__note_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__note_id
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Nota de Venta"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.actions.act_window,name:apiux_project.action_crm_sale_note_form
+#: model:ir.ui.menu,name:apiux_project.menu_crm_sale_note_form
+msgid "Notas de Venta"
+msgstr "Notas de Venta"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__doc_count
+msgid "Number of documents attached"
+msgstr "Número de documentos adjuntos"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__sale_note_number
+msgid "Numero Referencia"
+msgstr "Numero Referencia"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+msgid "Numero de Orden de Compra"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__document_number
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__document_number
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__document_number
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__document_number
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__document_number
+msgid "Número de documento"
+msgstr "Número de documento"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__oc
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__oc
+msgid "OC"
+msgstr "O/C"
+
+#. module: apiux_project
+#: selection:project.project,approve_state:0
+msgid "Open"
+msgstr "Abierto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__oportunity
+msgid "Oportunidad"
+msgstr "Oportunidad"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__external_lead
+msgid "Oportunidad externa"
+msgstr "Oportunidad externa"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__purchase_order_id
+msgid "Orden de Compra"
+msgstr "Orden de Compra"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__order_line_quotation
+msgid "Order Lines"
+msgstr "Líneas del pedido"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_line__order_id_quotation
+msgid "Order Reference"
+msgstr "Referencia del pedido"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Ordered Qty"
+msgstr "Ctdad pedida"
+
+#. module: apiux_project
+#: selection:product.template,type_product:0
+msgid "Otros"
+msgstr "Otros"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "Otros Costos"
+msgstr "Otros Costos"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__outsourcing_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__outsourcing_id
+msgid "Outsourcing"
+msgstr "Outsourcing"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__partner_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: apiux_project
+#: selection:project.invoice.wizard,pre_invoice_state:0
+#: selection:project.outsourcing.invoice.wizard,pre_invoice_state:0
+#: selection:project.pre.invoice,pre_invoice_state:0
+msgid "Pendiente"
+msgstr "Pendiente"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: selection:project.project,state:0
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_project__progress_rate
+msgid "Percent of tasks closed according to the total of tasks todo."
+msgstr "% de tareas cerradas según total"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__name
+#: selection:product.template,type_product:0
+msgid "Perfil"
+msgstr "Perfil"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "Perfiles"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__period_id
+msgid "Period"
+msgstr "Período"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__period_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__period_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__period_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__period_id
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Periodo"
+msgstr "Periodo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__real_period_id
+msgid "Periodo Real"
+msgstr "Periodo Real"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Permitir partes de horas"
+msgstr "Permitir partes de horas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__contact_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Planificación del tiempo"
+msgstr "Planificación del tiempo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__planned_hours
+msgid "Planned Time"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing__activity_type
+#: model:ir.model.fields,help:apiux_project.field_project_task__activity_type
+msgid "Pleas select an activity type for your tasks"
+msgstr "Por favor, seleccionar tipo de actividad"
+
+#. module: apiux_project
+#: selection:project.outsourcing,state:0
+#: selection:project.pre.invoice,state:0
+#: selection:project.task,outsourcing_state:0
+msgid "Por Facturar"
+msgstr "Por Facturar"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Por facturar"
+msgstr "Por facturar"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__invoice_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__invoice_id
+msgid "Pre Factura"
+msgstr "Pre Factura"
+
+#. module: apiux_project
+#: model:ir.actions.act_window,name:apiux_project.project_pre_invoice_account_action
+#: model:ir.ui.menu,name:apiux_project.project_pre_invoice_account_menu
+msgid "Pre Invoice Account"
+msgstr "Cuenta Prefactura"
+
+#. module: apiux_project
+#: selection:project.outsourcing,state:0
+#: selection:project.pre.invoice,state:0
+#: selection:project.task,outsourcing_state:0
+msgid "PreFacturado"
+msgstr "PreFacturado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_line__price
+msgid "Precio"
+msgstr "Precio"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_order.py:131
+#: code:addons/apiux_project/models/sale_order.py:211
+#, python-format
+msgid "Precio 0"
+msgstr "Precio 0"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__final_price
+msgid "Precio Final"
+msgstr "Precio Final (Cliente)"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__unit_price
+msgid "Precio/Hora"
+msgstr "Precio/Hora"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Prefacturas"
+msgstr "Prefacturas"
+
+#. module: apiux_project
+#: model_terms:ir.actions.act_window,help:apiux_project.project_outsourcing
+msgid "Presionar para crear nueva comision."
+msgstr "Presionar para crear nueva comision."
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__price
+msgid "Price of Project"
+msgstr "Precio del Proyecto"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_product_template
+msgid "Product Template"
+msgstr "Plantilla producto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__progress_rate
+msgid "Progress"
+msgstr "En proceso"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__project_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__project_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__project_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__project_id
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__project_currency_id
+msgid "Project Currency"
+msgstr "Moneda del Proyecto"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_invoice_wizard
+msgid "Project Invoice Wizard"
+msgstr "Wizard Factura Proyecto"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_invoice_wizard_lines
+msgid "Project Invoice Wizard Lines"
+msgstr "Wizard Lineas de Factura Proyecto"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Project Manager"
+msgstr "Responsable de proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__project_number
+msgid "Project Number"
+msgstr "Numero de Proyecto"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_outsourcing
+msgid "Project Outsourcing"
+msgstr "Outsourcing de Proyecto"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_outsourcing_invoice_lines
+msgid "Project Outsourcing Invoice Lines"
+msgstr "Outsourcing de Proyecto Lineas de Factura"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_outsourcing_invoice_wizard
+msgid "Project Outsourcing Invoice Wizard"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_pre_invoice
+msgid "Project Pre Invoice"
+msgstr "PreFactura de Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__project_reference
+msgid "Project Reference"
+msgstr "Referencia Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_res_config_settings__project_sequence
+#: model_terms:ir.ui.view,arch_db:apiux_project.res_config_settings_view_form
+msgid "Project Sequence"
+msgstr "Sequencia Proyecto"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.res_config_settings_view_form
+msgid "Project Sequences"
+msgstr "Sequencia Proyecto"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/project.py:201
+#: code:addons/apiux_project/models/project.py:231
+#, python-format
+msgid "Project sequence not set in Project Configuration. Please set sequence in Project Configuration"
+msgstr "Sequencia Proyecto no configurado. Por favor, configuar secuencia en Configuracion de Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__projection_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__projection_id
+msgid "Projection"
+msgstr "Proyeccion"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_outsourcing_invoice_wizard_form
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Proyeccion"
+msgstr "Proyeccion"
+
+#. module: apiux_project
+#: selection:project.invoice.wizard,pre_invoice_state:0
+#: selection:project.outsourcing.invoice.wizard,pre_invoice_state:0
+#: selection:project.pre.invoice,pre_invoice_state:0
+msgid "Proyectado"
+msgstr "Proyectado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__project_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__project_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__project_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__project_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__project_id
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Proyecto"
+msgstr "Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__partner_rut
+msgid "RUT Cliente"
+msgstr "RUT Cliente"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Re-open project"
+msgstr "Reabrir Proyecto"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+msgid "ReEnviar"
+msgstr "ReEnviar"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__quantity
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__quantity
+msgid "Reales./Horas"
+msgstr "Reales./Horas"
+
+#. module: apiux_project
+#: selection:project.outsourcing,state:0
+#: selection:project.pre.invoice,state:0
+#: selection:project.task,outsourcing_state:0
+msgid "Rechazado"
+msgstr "Rechazado"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Rechazados"
+msgstr "Rechazados"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+msgid "Rechazar"
+msgstr "Rechazar"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "Recurso"
+msgstr "Recurso"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/project.py:49
+#: code:addons/apiux_project/models/project.py:270
+#: code:addons/apiux_project/models/sale_note.py:39
+#, python-format
+msgid "Ref. No Disponible"
+msgstr "Ref. No Disponible"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__sale_note_reference
+msgid "Referencia"
+msgstr "Referencia"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__project_reference
+msgid "Referencia Proyecto"
+msgstr "Referencia Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__remaining_hours
+msgid "Remaining Hours"
+msgstr "Horas restantes"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__renewel
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__renewel
+#: model_terms:ir.ui.view,arch_db:apiux_project.sale_order_wizard
+msgid "Renovación"
+msgstr "Renovación"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Reset as Project"
+msgstr "Recomponer como Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_res_partner__responsability_id
+#: model:ir.model.fields,field_description:apiux_project.field_res_users__responsability_id
+msgid "Responsability"
+msgstr "Responsabilidad"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Responsable de proyecto"
+msgstr "Responsable de proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__reviewer_id
+msgid "Reviewer"
+msgstr "Supervisor"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__risk
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_line__risk
+msgid "Riesgo"
+msgstr "Riesgo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_service_type__risk
+msgid "Risk"
+msgstr "Riesgo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__sale_cost_line_id
+msgid "Sale Cost Line"
+msgstr "Linea Costo de Venta"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_crm_sale_note
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__crm_sale_note_id
+msgid "Sale Note"
+msgstr "Nota de Venta"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_sale_order
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__sale_order_id
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_sale_order_wizard
+msgid "Sale Order Wizard"
+msgstr "Wizard Orden de Vemta"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "Sales Cost Lines"
+msgstr "Lineas Costo Venta"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_tree
+msgid "Sales Note"
+msgstr "Nota de Venta"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Sales Order Lines"
+msgstr "Líneas pedido de ventas"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+msgid "Se va a desvincular Factura. Esta seguro?"
+msgstr "Se va a desvincular Factura. Esta seguro?"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice_account__sector_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__project_activities_ids
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__sector_id
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__sector_id
+msgid "Sector"
+msgstr "Sector"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Seguir este proyecto para rastrear automáticamente los eventos asociados a las tareas y a las incidencias del mismo."
+msgstr "Seguir este proyecto para rastrear automáticamente los eventos asociados a las tareas y a las incidencias del mismo."
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__sequence
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__sequence
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/sale_note.py:173
+#: code:addons/apiux_project/models/sale_note.py:202
+#, python-format
+msgid "Sequencia no esta configurada. Por favor, contactese con el Administrador de sistema"
+msgstr "Sequencia no esta configurada. Por favor, contactese con el Administrador de sistema"
+
+#. module: apiux_project
+#: model:ir.actions.act_window,name:apiux_project.sale_order_service_type_action
+#: model:ir.ui.menu,name:apiux_project.sale_order_service_type_menu
+msgid "Service Type"
+msgstr "Tipo de Servicio"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Set as Template"
+msgstr "Recomponer como Plantilla"
+
+#. module: apiux_project
+#: selection:project.invoice.wizard,is_tax_exempt:0
+#: selection:project.outsourcing.invoice.wizard,is_tax_exempt:0
+msgid "Si"
+msgstr "Si"
+
+#. module: apiux_project
+#: model:ir.actions.act_window,name:apiux_project.project_outsourcing
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__outsourcing_ids
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__outsourcing_ids
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree
+#: selection:project.pre.invoice,invoice_type:0
+msgid "Staffing"
+msgstr "Staffing"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__address_state
+msgid "State Name"
+msgstr "Nombre provincia"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_crm_sale_note_form
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__street2
+msgid "Street2"
+msgstr "Calle2"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_project__planned_hours
+msgid "Sum of planned hours of all tasks related to this project and its child projects."
+msgstr "Sumatoria de horas planificados de todas las Tareas asociadas a este Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_project__effective_hours
+msgid "Sum of spent hours of all tasks related to this project and its child projects."
+msgstr "Sumatoria de horas gastadas de todas las Tareas asociadas a este Proyecto"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_project__total_hours
+msgid "Sum of total hours of all tasks related to this project and its child projects."
+msgstr "Sumatoria de horas totales de todas las Tareas asociadas a este Proyecto"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Tareas"
+msgstr "Tareas"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_task
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Task"
+msgstr "Tarea"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__stage_close
+msgid "Task Closed"
+msgstr "Tarea Cerrada"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__task_number
+msgid "Task Number"
+msgstr "Número Tarea"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__task_reference
+msgid "Task Reference"
+msgstr "Referencia Tarea"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_res_config_settings__task_sequence
+#: model_terms:ir.ui.view,arch_db:apiux_project.res_config_settings_view_form
+msgid "Task Sequence"
+msgstr "Secuencia Tarea"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_task_type
+msgid "Task Stage"
+msgstr "Etapa de la tarea"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/project.py:246
+#: code:addons/apiux_project/models/project.py:321
+#, python-format
+msgid "Task sequence not set in Project Configuration. Please set sequence in Project Configuration"
+msgstr "Secuencia de Tareas no configurada. Por favor, estipula secuencia in ménu opción Proyecto/Configuracion"
+
+#. module: apiux_project
+#: selection:project.project,state:0
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__partner_rut
+msgid "The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements."
+msgstr "El número de identificación de impuesto. Complételo si el contacto está sujeto a los impuestos del gobierno. Utilizado en algunas declaraciones legales."
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__country
+msgid "The full name of the country."
+msgstr "El nombre completo del país."
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_outsourcing__unit_price
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "La tasa de cambio de la moneda respecto a la moneda de tasa 1"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__has_hours
+msgid "Tiene horas despues 2019-01-01"
+msgstr "Tiene horas despues 2019-01-01"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__effective_hours
+msgid "Time Spent"
+msgstr "Tiempo Gastado"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_product_product__type_product
+#: model:ir.model.fields,field_description:apiux_project.field_product_template__type_product
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__invoice_type
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__service_type
+msgid "Tipo Servicio"
+msgstr "Tipo Servicio"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__type_service
+msgid "Tipo de Servicio"
+msgstr "Tipo Servicio"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__type_sale
+msgid "Tipo de Venta"
+msgstr "Tipo de Venta"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__document_type
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__document_type
+msgid "Tipo de documento"
+msgstr "Tipo de Documento"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_pre_invoice__money
+msgid "Tipo moneda"
+msgstr "Tipo moneda"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__total_cost
+msgid "Total"
+msgstr "Total"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__total_hours
+msgid "Total Horas Vendidas"
+msgstr "Total Horas Vendidas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__total_hours
+msgid "Total Time"
+msgstr "Tiempo Total"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__total_clp
+msgid "Total a facturar"
+msgstr "Total a facturar"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_project_task__remaining_hours
+msgid "Total remaining time, can be re-estimated periodically by the assignee of the task."
+msgstr "Total de tiempo restante, puede ser reestimado periódicamente por quien se le haya asignado la tarea."
+
+#. module: apiux_project
+#: selection:project.invoice.wizard,money:0
+#: selection:project.outsourcing.invoice.wizard,money:0
+#: selection:project.pre.invoice,money:0
+msgid "UF"
+msgstr "UF"
+
+#. module: apiux_project
+#: selection:project.invoice.wizard,money:0
+#: selection:project.outsourcing.invoice.wizard,money:0
+#: selection:project.pre.invoice,money:0
+msgid "USD"
+msgstr "USD"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__product_uom
+msgid "Unidad"
+msgstr "Unidad"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_project__updated_index
+msgid "Update count"
+msgstr "Actualizar cuento"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: apiux_project
+#: code:addons/apiux_project/models/project.py:47
+#, python-format
+msgid "User has no abbreviation. Please enter abbreviation in Partner/User"
+msgstr "Usuario no tiene abreviatura. Por favor, ingrésala en el Cliente corespondiente"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__dolar_value
+msgid "Valor Dolar"
+msgstr "Valor Dolar"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order__uf_value
+msgid "Valor UF"
+msgstr "Valor UF"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__dolar_value
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__dolar_value
+msgid "Valor dolar a la fecha"
+msgstr "Valor dolar a la fecha"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__uf_value
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__uf_value
+msgid "Valor uf a la fecha"
+msgstr "Valor uf a la fecha"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__salesman_id
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__user_id
+msgid "Vendedor"
+msgstr "Vendedor"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.apiux_project_edit_project
+msgid "Venta/Facturación"
+msgstr "Venta/Facturación"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_order_form_quotation
+msgid "Vincular Proyecto"
+msgstr "Aplica a Proyecto existente"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.view_project_outsourcing_tree_filter
+msgid "WBS"
+msgstr "WBS"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard_lines__task_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing__task_id
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_lines__task_id
+msgid "WBS de Proyecto"
+msgstr "WBS de Proyecto"
+
+#. module: apiux_project
+#: selection:project.project,approve_state:0
+msgid "Waiting Approval"
+msgstr "Esperando aprobación"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: apiux_project
+#: model:ir.model.fields,help:apiux_project.field_crm_sale_note__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_task__work_ids
+msgid "Work"
+msgstr "Trabajo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_crm_sale_note__zip
+msgid "Zip"
+msgstr "C.P."
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__cost
+msgid "costo"
+msgstr "costo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__external_lead
+msgid "external lead"
+msgstr ""
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+msgid "id"
+msgstr "id"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__margin
+msgid "margen"
+msgstr "margen"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__name
+msgid "nombre"
+msgstr "nombre"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__sale_note
+msgid "nota de venta"
+msgstr "nota de venta"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__sale_order
+msgid "orden de venta"
+msgstr "orden de venta"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__order_line_quotation
+msgid "order line quotation"
+msgstr "Cotización de Linea de Orden"
+
+#. module: apiux_project
+#: model_terms:ir.ui.view,arch_db:apiux_project.project_invoice_wizard_form
+msgid "p.ej Consultoria"
+msgstr "p.ej Consultoria"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__price
+msgid "precio"
+msgstr "precio"
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_pre_invoice_account
+msgid "project.pre.invoice.account"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_project_task_activity_type
+msgid "project.task.activity.type"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_sale_cost_line
+msgid "sale.cost.line"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model,name:apiux_project.model_sale_order_service_type
+msgid "sale.order.service.type"
+msgstr ""
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_cost_line__type_product_cost
+msgid "tipo"
+msgstr "tipo"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_sale_order_wizard__total_hours
+msgid "total de horas"
+msgstr "total de horas"
+
+#. module: apiux_project
+#: model:ir.model.fields,field_description:apiux_project.field_project_invoice_wizard__is_tax_exempt
+#: model:ir.model.fields,field_description:apiux_project.field_project_outsourcing_invoice_wizard__is_tax_exempt
+msgid "¿Excento de iva?"
+msgstr "¿Excento de iva?"
+

@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record id="view_repo_libro_honorario" model="ir.ui.view">
+            <field name="name">cl.repo.libro_honorario.form</field>
+            <field name="model">cl.repo.libro_honorario</field>
+            <field name="arch" type="xml">
+                <form string="Libro Honorarios">
+                    <group>
+                        <field name="company_id"/>
+                        <field name="date_start"/>
+                        <field name="date_stop"/>
+                        <field name="file_path"  invisible="1"/>
+                        <field name="name"  invisible="1" />
+                        <field name="file" filename="name" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button string="Generar" name="generar" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_repo_libro_honorario" model="ir.actions.act_window">
+            <field name="name">Reporte Libro Honorarios</field>
+            <field name="res_model">cl.repo.libro_honorario</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_repo_libro_honorario"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Libro Honorarios" id="cl_sii_repo_libro_diario"
+            parent="menu_finance_legal_statement_xlsx"
+            action="action_repo_libro_honorario" />
+
+    </data>
+</odoo>

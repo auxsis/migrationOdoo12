@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+  <record id="hr_projection_x2many_2d_matrix" model="ir.ui.view">
+    <field name="name">hr.projection.x2many.2d.matrix</field>
+    <field name="model">hr.proj.matrix</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+      <form>
+      <group>
+        <group>
+            <field name='project_id' string='Proyecto'/>
+        </group>
+        <group>
+            <field name='user_id' string='Recurso'/>
+        </group>
+       </group>
+        <field name="line_ids" widget="x2many_2d_matrix" field_x_axis="user_id" field_y_axis="account_id" field_value="amount"/>
+      </form>
+    </field>
+  </record>
+
+<!--   <record id="action_x2m_demo" model="ir.actions.act_window">
+    <field name="name">Matriz</field>
+    <field name="res_model">hr.proj.matrix</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_id" ref="hr_projection_x2many_2d_matrix"/>
+
+  </record> -->
+
+    <record id="action_x2m_demo" model="ir.actions.server">
+        <field name="name">Test Browsse File</field>
+        <field name="condition">True</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="apiux_extra_2.model_hr_proj_matrix" />
+        <field name="state">code</field>
+        <field name="code">action = self.open_x2m_matrix(cr, uid, context.get('active_ids',
+        []), context=context)</field>
+    </record>
+
+
+
+<!--   <menuitem
+    id="hr_projection_timesheet_matrix_widget_menu"
+    name="Matriz"
+    parent="project.menu_projects_config_main"
+    action="action_x2m_demo"
+    />	 -->
+
+
+  </data>
+</openerp>

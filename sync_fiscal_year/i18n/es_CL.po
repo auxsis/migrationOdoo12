@@ -1,0 +1,955 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sync_fiscal_year
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-24 19:24+0000\n"
+"PO-Revision-Date: 2020-06-24 19:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:77
+#, python-format
+msgid " Centralisation"
+msgstr "Centralisación"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_form
+msgid "<span style=\"background-color: #b6b7d4; font-size:16px;\"><strong style=\"margin-right:5px;\">NOTE:</strong>If you already have accounting entries then click on 'Set Period' Button.</span>\n"
+"                <br/><br/>"
+msgstr "Si ya tiene entradas contables, presionar botón 'Eligir Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_form
+msgid "Account Period"
+msgstr "Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_reconciliation_widget
+msgid "Account Reconciliation widget"
+msgstr "Widget de reconciliación de cuenta"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_account_type
+msgid "Account Type"
+msgstr "Tipo de cuenta"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_account__move_line_ids
+msgid "Account move lines"
+msgstr "Apuntes Contables"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_period
+msgid "Account period"
+msgstr "Periodo"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.sync_fiscal_year_invoice_form
+msgid "Accounting Period"
+msgstr "Periodo Contable"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Comprobantes contables"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.actions.act_window,help:sync_fiscal_year.action_account_period
+msgid "An accounting period typically is a month or a quarter. It\n"
+"                usually corresponds to the periods of the tax declaration."
+msgstr ""
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_close
+msgid "Are you sure?"
+msgstr "Estas Seguro?"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal__entry_posted
+msgid "Autopost Created Moves"
+msgstr "Cerrar Movimientos Creados"
+
+#. module: sync_fiscal_year
+#: selection:account.account.type,close_method:0
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_account__balance
+msgid "Balance"
+msgstr "Saldo pendiente"
+
+#. module: sync_fiscal_year
+#: selection:account.journal,type:0
+msgid "Bank"
+msgstr "Banco"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close_state
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_close
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: sync_fiscal_year
+#: model:ir.actions.act_window,name:sync_fiscal_year.action_account_open_closed_fiscalyear
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_wizard_account_open_closed_fiscalyear
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_open_closed_fiscalyear
+msgid "Cancel Closing Entries"
+msgstr "Anular Entradas de Cierre"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_open_closed_fiscalyear
+msgid "Cancel Fiscal Year Closing Entries"
+msgstr "Anular Entradas de Cierre del Año Financiero"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:158
+#, python-format
+msgid "Cannot create moves for different companies."
+msgstr "No se puede crear movimientos para empresas diferentes"
+
+#. module: sync_fiscal_year
+#: selection:account.journal,type:0
+msgid "Cash"
+msgstr "Efectivo"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_move_line__centralisation
+msgid "Centralisation"
+msgstr "Centralización"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal__centralisation
+msgid "Centralized Counterpart"
+msgstr "Contraparte Centralizado"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close__sure
+msgid "Check this box"
+msgstr "Seleccionar casilla"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_journal__entry_posted
+msgid "Check this box to automatically post entries of this journal. Note that legally, some entries may be automatically posted when the source document is validated (Invoices), whatever the status of this field."
+msgstr "Seleccionar casilla para cerrar automaticamente los comprobantes contables"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_journal__centralisation
+msgid "Check this box to determine that each entry of this journal won't create a new counterpart but will share the same counterpart. This is used in fiscal year closing."
+msgstr "Seleccionar casilla para que entradas en este Diario compartan el mismo contraparte. Se ocupa en el cierre del año financiero"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_open_closed_fiscalyear
+msgid "Choose Fiscal Year"
+msgstr "Seleccionar Año Financiero"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.actions.act_window,help:sync_fiscal_year.action_account_period
+msgid "Click to add a fiscal period."
+msgstr "Presionar para agregar periodo financiero"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.actions.act_window,help:sync_fiscal_year.action_account_fiscalyear
+msgid "Click to start a new fiscal year."
+msgstr "Presionar para empezar un nuevo año financiero"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close_state
+msgid "Close Fiscal Year"
+msgstr "Cerrar Año Financiero"
+
+#. module: sync_fiscal_year
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_account_close_period
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_close
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_form
+msgid "Close Period"
+msgstr "Cerrar Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.actions.act_window,name:sync_fiscal_year.action_account_fiscalyear_close_state
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_wizard_fy_close_state
+msgid "Close a Fiscal Year"
+msgstr "Cerrar un Año Financiero"
+
+#. module: sync_fiscal_year
+#: model:ir.actions.act_window,name:sync_fiscal_year.action_account_period_close
+msgid "Close a Period"
+msgstr "Cerrar un Periodo"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close_state
+msgid "Close states of Fiscal year and periods"
+msgstr "Cerrar estados de Año y Periodos Financieros"
+
+#. module: sync_fiscal_year
+#: selection:account.fiscalyear,state:0
+#: selection:account.period,state:0
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_search
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__code
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__code
+msgid "Code"
+msgstr "Código"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__company_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__company_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_journal_period__company_id
+msgid "Company related to this journal"
+msgstr "Compañía relacionada con este diario"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:162
+#, python-format
+msgid "Couldn't create move with currency different from the secondary currency of the account \"%s - %s\". Clear the secondary currency field of the account definition if you want to accept all currencies."
+msgstr "No fue posible crear un movimiento con una moneda diferente de la moneda secondaria de la cuenta \"%s - %s\". Eliminar la moneda secondaria desde la cuenta si quiere acceptar todas las monedas."
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close
+msgid "Create"
+msgstr "Crear"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_form
+msgid "Create 3 Months Periods"
+msgstr "Crear Periodos de 3 Meses"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_form
+msgid "Create Monthly Periods"
+msgstr "Crear Periodos de un Mes"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__create_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__create_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state__create_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__create_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear__create_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__create_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__create_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__create_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state__create_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__create_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear__create_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__create_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_account__credit
+msgid "Credit"
+msgstr "Haber"
+
+#. module: sync_fiscal_year
+#: selection:account.move.line,centralisation:0
+msgid "Credit Centralisation"
+msgstr "Centralización Credito"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_invoice_refund
+msgid "Credit Note"
+msgstr "Rectificativa"
+
+#. module: sync_fiscal_year
+#: selection:account.move.line,centralisation:0
+#: code:addons/sync_fiscal_year/models/account_move.py:115
+#, python-format
+msgid "Currency Adjustment"
+msgstr "Ajuste Moneda"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_account__debit
+msgid "Debit"
+msgstr "Debe"
+
+#. module: sync_fiscal_year
+#: selection:account.move.line,centralisation:0
+msgid "Debit Centralisation"
+msgstr "Centralisación Debe"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_account_type__close_method
+msgid "Deferral Method"
+msgstr "Metodo de Aplazamiento"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.actions.act_window,help:sync_fiscal_year.action_account_fiscalyear
+msgid "Define your company's financial year according to your needs. A\n"
+"                financial year is a period at the end of which a company's\n"
+"                accounts are made up (usually 12 months). The financial year is\n"
+"                usually referred to by the date in which it ends. For example,\n"
+"                if a company's financial year ends November 30, 2011, then\n"
+"                everything between December 1, 2010 and November 30, 2011\n"
+"                would be referred to as FY 2011."
+msgstr ""
+
+#. module: sync_fiscal_year
+#: selection:account.account.type,close_method:0
+msgid "Detail"
+msgstr "Detalle"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_open_closed_fiscalyear
+msgid "Discard"
+msgstr "Descartar"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__display_name
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__display_name
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state__display_name
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__display_name
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear__display_name
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__display_name
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: sync_fiscal_year
+#: selection:account.journal.period,state:0
+msgid "Done"
+msgstr "Hecho"
+
+#. module: sync_fiscal_year
+#: selection:account.journal.period,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_move_line__date_maturity
+msgid "Due date"
+msgstr "Fecha vencimiento"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_form
+msgid "Duration"
+msgstr "Duración"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__date_stop
+msgid "End Date"
+msgstr "Fecha finalización"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__date_stop
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_account_end_year_treatments
+msgid "End of Period"
+msgstr "Fin de Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__end_journal_period_id
+msgid "End of Year Entries Journal"
+msgstr "Diario de Entradas Fin del Año"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_open_closed_fiscalyear.py:24
+#, python-format
+msgid "Error! \n"
+"You can not cancel closing entries if the 'End of Year Entries Journal' period is closed."
+msgstr "Error! \n"
+"No se puede anular las entradas de cierre si el Diario de Entradas Fin del Año tiene el periodo cerrado."
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_open_closed_fiscalyear.py:21
+#, python-format
+msgid "Error! \n"
+"You have to set the 'End  of Year Entries Journal' for this Fiscal Year which is set after generating opening entries from 'Generate Opening Entries'."
+msgstr "Error! \n"
+"Hay que colocar el 'Diario de Entradas Fin de Año' de este Año Fiscal despues de que se generen las entradas de apertura from 'Generar Entradas de Apertura'." 
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_fiscalyear
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__name
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__fiscalyear_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear__fyear_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__fiscalyear_id
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_search
+msgid "Fiscal Year"
+msgstr "Ejercicio fiscal"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state__fy_id
+msgid "Fiscal Year to Close"
+msgstr "Año Financiero por Cerrarse"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__fy_id
+msgid "Fiscal Year to close"
+msgstr "Año Financiero por Cerrarse"
+
+#. module: sync_fiscal_year
+#: model:ir.actions.act_window,name:sync_fiscal_year.action_account_fiscalyear
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_action_account_fiscalyear
+msgid "Fiscal Years"
+msgstr "Ejercicio fiscal"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_form
+msgid "Fiscal year"
+msgstr "Año Financiero"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_tree
+msgid "Fiscalyear"
+msgstr "AñoFinanciero"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_fiscalyear_close
+msgid "Fiscalyear Close"
+msgstr "Cierre AñoFinanciero"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_fiscalyear_close_state
+msgid "Fiscalyear Close state"
+msgstr "Estado de Cierre de Año Financiero"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_invoice__period_id
+msgid "Force Period"
+msgstr "Eforzar Periodo"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close
+msgid "Generate Fiscal Year Opening Entries"
+msgstr "Gererar Entradas de Apertura del Año Financiero"
+
+#. module: sync_fiscal_year
+#: model:ir.actions.act_window,name:sync_fiscal_year.action_account_fiscalyear_close
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_wizard_fy_close
+msgid "Generate Opening Entries"
+msgstr "Generar Entradas de Apertura"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_fiscalyear_close__report_name
+msgid "Give name of the new entries"
+msgstr "Colocar nombre de las nuevas entradas"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state__id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear__id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_journal_period__active
+msgid "If the active field is set to False, it will allow you to hide the journal period without removing it."
+msgstr "Si el campo Activo es Falso, puedes ocultar el periodo del diario sin eliminarlo"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_fiscalyear_close_state.py:28
+#, python-format
+msgid "Invalid Action! \n"
+"In order to close a fiscalyear, you must first post related journal entries."
+msgstr "Para cerrar un Año Financiero, hay que cerrar entradas de diario relacionadas"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_period_close.py:27
+#, python-format
+msgid "Invalid Action! \n"
+"In order to close a period, you must first post related journal entries."
+msgstr "Para cerrar un Periodo, hay que cerrar entradas de diario relacionadas"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_journal
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_journal_period
+msgid "Journal Period"
+msgstr "Periodo de Diario"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__name
+msgid "Journal-Period Name"
+msgstr "Nombre Diario-Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_invoice__period_id
+msgid "Keep empty to use the period of the validation(invoice) date."
+msgstr "Mantener vacio el campo para usar periodo de la fecha de validacion de la factura"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear____last_update
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close____last_update
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state____last_update
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period____last_update
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear____last_update
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period____last_update
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__write_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__write_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state__write_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__write_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear__write_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__write_uid
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__write_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__write_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close_state__write_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__write_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_open_closed_fiscalyear__write_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__write_date
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period_close__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: sync_fiscal_year
+#: selection:account.journal,type:0
+msgid "Miscellaneous"
+msgstr "Miscelánea"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__report_name
+msgid "Name of new entries"
+msgstr "Nombre de las entradas nuevas"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__fy2_id
+msgid "New Fiscal Year"
+msgstr "Año Financiero Nuevo"
+
+#. module: sync_fiscal_year
+#: selection:account.account.type,close_method:0
+msgid "None"
+msgstr "Ninguno"
+
+#. module: sync_fiscal_year
+#: selection:account.move.line,centralisation:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: sync_fiscal_year
+#: selection:account.fiscalyear,state:0
+#: selection:account.period,state:0
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_search
+msgid "Open"
+msgstr "Abierto"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__journal_id
+msgid "Opening Entries Journal"
+msgstr "Diario de Entradas de Apertura"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear_close__period_id
+msgid "Opening Entries Period"
+msgstr "Periodo de Entradas de Apertura"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_fiscalyear_close.py:76
+#, python-format
+msgid "Opening Entries have already been generated. Please run \"Cancel Closing Entries\" wizard to cancel those entries and then run this wizard."
+msgstr "Entradas de Apertura ya se generaron. Por favor, executar \"Anular Entradas de Cierre\" wizard para anular y despues, executar este wizard nuevamente." 
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:94
+#, python-format
+msgid "Opening Period"
+msgstr "Periodo de Apertura"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__special
+msgid "Opening/Closing Period"
+msgstr "Periodo de Apertura/Cierre"
+
+#. module: sync_fiscal_year
+#: selection:account.journal,type:0
+msgid "Opening/Closing Situation"
+msgstr "Balance Apertura/Cierre"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.sync_fiscal_year_view_account_journal_form
+msgid "Other"
+msgstr "Otro"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_invoice.py:74
+#, python-format
+msgid "Outstanding credits"
+msgstr "Creditos pendientes"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_invoice.py:77
+#, python-format
+msgid "Outstanding debits"
+msgstr "Debitos pendientes"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_invoice_refund__period_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__period_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_move__period_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_move_line__period_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_payment__period_id
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_voucher__period_id
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_form
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_search
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_tree
+msgid "Period"
+msgstr "Período"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__name
+msgid "Period Name"
+msgstr "Nombre Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_finance_periodical_processing
+msgid "Periodic Processing"
+msgstr "Procesamientos Periodicos"
+
+#. module: sync_fiscal_year
+#: model:ir.actions.act_window,name:sync_fiscal_year.action_account_period
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__period_ids
+#: model:ir.ui.menu,name:sync_fiscal_year.menu_action_account_period
+#: model:ir.ui.menu,name:sync_fiscal_year.next_id_23
+msgid "Periods"
+msgstr "Periodos"
+
+#. module: sync_fiscal_year
+#: selection:account.move.line,state:0
+msgid "Posted"
+msgstr "Cerrado"
+
+#. module: sync_fiscal_year
+#: selection:account.journal.period,state:0
+msgid "Printed"
+msgstr "Impreso"
+
+#. module: sync_fiscal_year
+#: selection:account.journal,type:0
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_form
+msgid "Re-Open Period"
+msgstr "Reabrir Periodo"
+
+#. module: sync_fiscal_year
+#: selection:account.journal,type:0
+msgid "Sale"
+msgstr "Venta"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_search
+msgid "Search Fiscalyear"
+msgstr "Buscar Año Financiero"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_search
+msgid "Search Period"
+msgstr "Buscar Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_journal__type
+msgid "Select 'Sale' for customer invoices journals.\n"
+"Select 'Purchase' for vendor bills journals.\n"
+"Select 'Cash' or 'Bank' for journals that are used in customer or vendor payments.\n"
+"Select 'General' for miscellaneous operations journals."
+msgstr "Seleccione 'Ventas' para diarios de facturas de cliente.\n"
+"Seleccione 'Compras' para diarios de facturas de proveedor.\n"
+"Seleccione 'Caja' o 'Banco' para diarios que se usan para pagos de clientes y proveedores. Seleccione 'General' para diarios que contienen operaciones varias."
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_open_closed_fiscalyear__fyear_id
+msgid "Select Fiscal Year which you want to remove entries for its End of year entries journal"
+msgstr "Eligir Año Financiero para lo cual se requiere eliminar las entradas del Diario del Fin del Año"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_fiscalyear_close__fy_id
+msgid "Select a Fiscal year to close"
+msgstr "Eligir Año Financiero por cerrarse"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_fiscalyear_close_state__fy_id
+msgid "Select a fiscal year to close"
+msgstr "Eligir Año Financiero por cerrarse"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_form
+msgid "Set Period"
+msgstr "Eligir Periodo"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_account_type__close_method
+msgid "Set here the method that will be used to generate the end of year journal entries for all the accounts of this type.\n"
+"                                     'None' means that nothing will be done.\n"
+"                                     'Balance' will generally be used for cash accounts.\n"
+"                                     'Detail' will copy each existing journal item of the previous year, even the reconciled ones.\n"
+"                                     'Unreconciled' will copy only the journal items that were unreconciled on the first day of the new fiscal year."
+msgstr "Eligir aqui el metodo de generación del entradas del fin del año según tipo de cuenta.\n"
+"                                     'Ninguno' significa que se hará nada.\n"
+"                                     'Balance' se usa para cuentas de banco.\n"
+"                                     'Detalle' implica copiar todas las entradas del año anterior. Incluso las entradas reconciliadas\n"
+"                                     'No Reconciliados' implica copiar solo las entradas no reconciliadas al primer dia del Año Financiero nuevo."
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__date_start
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__date_start
+msgid "Start of Period"
+msgstr "Inicio de Periodo"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:254
+#, python-format
+msgid "Start period should precede then end period."
+msgstr "Periodo de inicio debiese ser antes del Periodo de termino"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_fiscalyear__state
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal_period__state
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_move_line__state
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_period__state
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_fiscalyear_close__journal_id
+msgid "The best practice here is to use a journal dedicated to contain the opening entries of all fiscal years. Note that you should define it with default debit/credit accounts, of type 'situation' and with a centralized counterpart."
+msgstr "Se aconsejable usar un Diario dedicado para las entradas de apertura para todos los años financieros. Debiese tener cuentas de Debito/Credito por defecto de tipo 'situación con contraparte centralizado"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:172
+#, python-format
+msgid "The duration of the Period(s) is/are invalid."
+msgstr "La duracion de los Periodos no es valida"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_fiscalyear_close.py:68
+#, python-format
+msgid "The journal must have centralized counterpart without the Skipping draft state option checked."
+msgstr "El Diario debe tener contraparte centralizado sin opción Saltar estado borrador seleccionada"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_fiscalyear_close.py:66
+#, python-format
+msgid "The journal must have default credit and debit account."
+msgstr "The Diario debe tener cuentas Credito/Debito"
+
+#. module: sync_fiscal_year
+#: sql_constraint:account.period:0
+msgid "The name of the period must be unique per company!"
+msgstr "El nombre del periodo debe ser unico dentro de la misma compañia"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:181
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:186
+#, python-format
+msgid "The period is invalid. Either some periods are overlapping or the period's dates are not matching the scope of the fiscal year."
+msgstr "El Periodo es invalido. Posiblemente hay periodos que se estan pisando o las fechas no coresponden al alcance del año financiero"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/wizard/account_fiscalyear_close.py:56
+#, python-format
+msgid "The periods to generate opening entries cannot be found."
+msgstr "Los periodos de entradas de apertura no se encuentran"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:82
+#, python-format
+msgid "The start date of a fiscal year must precede its end date."
+msgstr "La fecha de inicio de un año financiero debe preceder fecha fin"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:67
+#, python-format
+msgid "There is no default credit account defined \n"
+"on journal \"%s\"."
+msgstr "No hay cuenta de credito definida para este Diario"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:61
+#, python-format
+msgid "There is no default debit account defined \n"
+"on journal \"%s\"."
+msgstr "No hay cuenta de debito definida para este Diario"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_period__special
+msgid "These periods can overlap."
+msgstr "Estos periodos se puedan pisar"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_move_line__date_maturity
+msgid "This field is used for payable and receivable journal entries. You can put the limit date for the payment of this line."
+msgstr "Este campo se utiliza en asientos pendientes de pago y de cobro. Puede establecer la fecha límite para el pago de esta entrada."
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:239
+#, python-format
+msgid "This journal already contains items for this period, therefore you cannot modify its company field."
+msgstr "Este Diario ya tiene entradas de este periodo, asi que no no se puede modificar campo de compañia"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close
+msgid "This wizard will generate the end of year journal entries of selected fiscal year. Note that you can run this wizard many times for the same fiscal year: it will simply replace the old opening entries with the new ones."
+msgstr "Este wizard genera las entradas del fin de año del año seleccionado. Se puede executar de forma repetida, reemplazando las entradas anteriores con las nuevas"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_open_closed_fiscalyear
+msgid "This wizard will remove the end of year journal entries of selected fiscal year. Note that you can run this wizard many times for the same fiscal year."
+msgstr "Este wizard genera las entradas del fin de año del año seleccionado. Se puede executar de forma repetida, reemplazando las entradas anteriores con las nuevas"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_search
+msgid "To Close"
+msgstr ""
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,field_description:sync_fiscal_year.field_account_journal__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: sync_fiscal_year
+#: selection:account.move.line,state:0
+msgid "Unposted"
+msgstr "Sin asentar"
+
+#. module: sync_fiscal_year
+#: selection:account.account.type,close_method:0
+msgid "Unreconciled"
+msgstr "No conciliado"
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_journal_period__state
+msgid "When journal period is created. The status is 'Draft'. If a report is printed it comes to 'Printed' status. When all transactions are done, it comes in 'Done' status."
+msgstr "Cuando se crea un periodo de un diario su estado inicial es 'Borrador'. Si se imprime un informe, se cambia a 'Imprimido'. Cuando se terminen todas las transacciones, se cambia a 'Hecho'."
+
+#. module: sync_fiscal_year
+#: model:ir.model.fields,help:sync_fiscal_year.field_account_period__state
+msgid "When monthly periods are created. The status is 'Draft'. At the end of monthly period it is in 'Done' status."
+msgstr "Cuando se crean periodos mensuales, su estado incial es 'Borrador'. Al fin del periodo mensual, se cambia a 'Hecho'."
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:309
+#, python-format
+msgid "You can not add/modify entries in a closed period %s of journal %s."
+msgstr "No se puede agregar/modificar entradas de un periodo cerrado %s del diario %s."
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:218
+#, python-format
+msgid "You can not re-open a period which belongs to closed fiscal year"
+msgstr "No se puede reabrir un period de un año financiero cerrado"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:197
+#, python-format
+msgid "You cannot add/modify entries prior to and inclusive of the lock date %s to %s"
+msgstr "No se puede modificar/agregar entradas antes de y incluyendo la fecha de cierre %s a %s"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_move.py:199
+#, python-format
+msgid "You cannot add/modify entries prior to and inclusive of the lock date %s to %s. Check the company settings or ask someone with the 'Adviser' role"
+msgstr "No se puede modificar/agregar entradas antes de y incluyendo la fecha de cierre %s a %s. Revisar la configuración de la compañia o preguntar a alguien de perfil 'Aconsejal'"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:293
+#, python-format
+msgid "You cannot modify/delete a journal with entries for this period."
+msgstr "No se puede modificar/eliminar un Diario con entradas para este periodo"
+
+#. module: sync_fiscal_year
+#: code:addons/sync_fiscal_year/models/account_fiscal_year.py:252
+#, python-format
+msgid "You should choose the periods that belong to the same company."
+msgstr "Se debe eligir periodos que pertenecen a la misma compañia"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.sync_fiscal_year_invoice_form
+msgid "force period"
+msgstr "Eforzar periodo"
+
+#. module: sync_fiscal_year
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_fiscalyear_close_state
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_open_closed_fiscalyear
+#: model_terms:ir.ui.view,arch_db:sync_fiscal_year.view_account_period_close
+msgid "or"
+msgstr "o"
+
+#. module: sync_fiscal_year
+#: model:ir.model,name:sync_fiscal_year.model_account_period_close
+msgid "period close"
+msgstr "Cierre de periodo"
+

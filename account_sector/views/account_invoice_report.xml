@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_invoice_report_sector_search" model="ir.ui.view">
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.view_account_invoice_report_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/filter[@name='user']" position="after">
+                <filter string="Sector" name="sector" context="{'group_by':'sector_id'}" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+
+        <record id="apiux_purchase_order_form" model="ir.ui.view">
+            <field name="name">apiux.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+            
+                <button name="action_view_invoice" position="replace" >            
+                    <button name="action_view_invoice" string="Create Bill" type="object" context="{'create_bill':True}" attrs="{'invisible': ['|', '|', ('state', 'not in', ('approve4', 'done')), ('invoice_status', 'not in', ('no', 'invoiced')), ('order_line', '=', [])]}"/>
+                </button>    
+            
+                <button name="button_cancel" position="replace">
+                         <button name="button_cancel" states="draft,purchase,approve1,approve2,approve3,approve4," string="Cancel" type="object"/>
+                </button>
+            
+                <button name="action_rfq_send" position="replace">             
+                </button>
+            
+                <button name="button_confirm" position="after" >
+                    <button name="button_approve1" type="object" states="purchase" string="Approve1" id="purchase_approve1"/>
+                    <button name="button_approve2" type="object" states="approve1" string="Approve2" id="approve1_approve2"/>
+                    <button name="button_approve3" type="object" states="approve2" string="Approve3" id="approve2_approve3"/>            
+                    <button name="button_approve4" type="object" states="approve3" string="Approve4" id="approve3_approve4"/>
+                </button>
+                    
+                <field name="state" position="replace">
+                    <field name="state" widget="statusbar" statusbar_visible="draft,purchase,approve1,approve2,approve3,approve4,invoiced" readonly="1"/>                
+                </field>   
+                    
+                <field name="partner_ref" position="after">
+                    <field name="employee_id" />
+                    <field name="boss_id" />                 
+                </field> 
+                <field name="account_analytic_id" position="after">                     
+                    <field name="sector_id" />
+                    <field name="cost_center_id" />                   
+                </field>
+            </field>
+        </record>	
+
+
+
+  </data>
+</odoo>

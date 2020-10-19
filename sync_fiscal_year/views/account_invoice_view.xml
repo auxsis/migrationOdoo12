@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Customer Invoice-->
+    <record id="sync_fiscal_year_invoice_form" model="ir.ui.view">
+        <field name="name">account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group/field[@name='fiscal_position_id']" position="after">
+                <field name="period_id" domain="[('state', '=', 'draft'),('special', '=', False), ('company_id', '=', company_id)]"
+                groups="account.group_account_manager"
+                string="Accounting Period"
+                placeholder="force period"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Supplier Invoice -->
+    <record id="sync_fiscal_year_invoice_supplier_form" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group[2]/field[@name='fiscal_position_id']" position="after">
+                <field name="period_id" domain="[('state', '=', 'draft'),('special', '=', False), ('company_id', '=', company_id)]" groups="account.group_account_user"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,552 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_pre_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-10 16:57+0000\n"
+"PO-Revision-Date: 2020-09-10 16:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__clp_id
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__clp_id
+msgid "CLP"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__client_id
+msgid "Cliente"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__company_id
+msgid "Compañia"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__contract
+msgid "Contrato"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__cost_center_id
+msgid "Cost Center"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Creado por"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__create_uid
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__create_date
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__invoice_account_receivable_id
+msgid "Cuenta a cobrar"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__invoice_account_id
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__account_id
+msgid "Cuenta de Ingresos"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,help:account_pre_invoice.field_account_pre_invoice__currency_name
+msgid "Currency Code (ISO 4217)"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_invoice__dso
+msgid "DSO"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "DTE/Producto"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:287
+#, python-format
+msgid "Data insuficiente. Los terminos de pago de este Cliente no tiene lineas!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__display_name
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__document_ids
+msgid "Documentos"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:238
+#, python-format
+msgid "El tipo de documento %s no esta configurado para este diario %s! Revisa configuracion de diarios en contabilidad!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__company_id
+msgid "Empresa"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__projection_status
+msgid "Estado"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:230
+#, python-format
+msgid "Este cliente no este autorizado a emitir este documento %s! Por favor, revisa el registro de cliente y su responsabilidad SII!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__invoice_id
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Factura"
+msgstr ""
+
+#. module: account_pre_invoice
+#: selection:account.pre_invoice,projection_status:0
+msgid "Facturado"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Facturar"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__emission_date
+msgid "Fecha de emision"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__send_date
+msgid "Fecha de envio"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,help:account_pre_invoice.field_account_pre_invoice_line__sequence
+msgid "Gives the sequence of this line when displaying the purchase order."
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_invoice__invoice_glossary
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__glosa
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Glosa"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__hes
+msgid "Hes"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Hito"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__id
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__id
+msgid "ID"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__tax
+msgid "Impuesto"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__taxes_id
+msgid "Impuestos"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model,name:account_pre_invoice.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:217
+#, python-format
+msgid "La cuenta por cobrar de esta Prefactura %s no pertence a la compañia %s! Por favor, editar registro y colocar cuenta correcta!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice____last_update
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__write_uid
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__write_date
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__note_id
+msgid "Linea Nota de Venta"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__projection_id
+msgid "Linea Proyeccion"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__line_ids
+msgid "Lineas"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Lineas Facturacion"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__message_last_post
+msgid "Message Last Post"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__currency_id
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__currency_name
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__currency_id
+msgid "Moneda"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__amount
+msgid "Monto Neto"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__amount_clp
+msgid "Monto Neto (CLP)"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,help:account_pre_invoice.field_account_pre_invoice_line__amount_clp
+msgid "Monto Neto en CLP de la Prefectura"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,help:account_pre_invoice.field_account_pre_invoice_line__amount
+msgid "Monto en la moneda de la Prefectura"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__amount
+msgid "Monto neto"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Monto neto (Moneda)"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Monto neto a facturar (CLP)"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Montos"
+msgstr ""
+
+#. module: account_pre_invoice
+#: selection:account.pre_invoice,is_tax_exempt:0
+msgid "No"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:213
+#, python-format
+msgid "No hay cuenta por cobrar asociada con este Prefactura de cliente %s! Por favor, editar registro y colocar cuenta correcta!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:234
+#, python-format
+msgid "No hay diario de venta defined para este compañia. Revisa configuracion de diarios en contabilidad!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:207
+#, python-format
+msgid "No hay periodo disponible para este fecha %s y compañia %s! Contactese con el Administrador de sistema!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "No."
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Nota"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Numero de Orden de Compra"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:268
+#, python-format
+msgid "Numero de documento no es numero entero. Por favor, revisa No. de Documento en Prefactura!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__document_number
+msgid "Número de documento"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__oc
+msgid "OC"
+msgstr ""
+
+#. module: account_pre_invoice
+#: selection:account.pre_invoice,projection_status:0
+msgid "Pendiente"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__name
+msgid "Perfil"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__period_id
+msgid "Periodo"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.ui.menu,name:account_pre_invoice.action_pre_invoice
+msgid "Pre Factura"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.actions.act_window,name:account_pre_invoice.action_pre_invoice_view
+msgid "Pre facturas"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_invoice__preinvoice_id
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__preinvoice_id
+msgid "PreFactura"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__invoice_product_id
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__product_id
+msgid "Producto"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_invoice__project_id
+msgid "Project"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.ui.menu,name:account_pre_invoice.account_pre
+msgid "Proyección facturas"
+msgstr ""
+
+#. module: account_pre_invoice
+#: selection:account.pre_invoice,projection_status:0
+msgid "Proyectado"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__project_id
+msgid "Proyecto"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:253
+#, python-format
+msgid "Proyecto no tiene Centro de Costo asociado!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:259
+#, python-format
+msgid "Proyecto no tiene Sector asociado!"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_invoice__partner_rut
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__client_rut
+msgid "RUT Cliente"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_invoice__company_rut
+msgid "RUT Proveedor"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__quantity
+msgid "Reales./Horas"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "Referencia de documento"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__reference
+msgid "SII Reference"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__sector_id
+msgid "Sector"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:386
+#, python-format
+msgid "Selected invoice(s) cannot be confirmed as they are not in 'Draft' or 'Cancel' state."
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,help:account_pre_invoice.field_account_invoice__partner_rut
+#: model:ir.model.fields,help:account_pre_invoice.field_account_pre_invoice__client_rut
+msgid "Show VAT in custom formatted way"
+msgstr ""
+
+#. module: account_pre_invoice
+#: selection:account.pre_invoice,is_tax_exempt:0
+msgid "Si"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,help:account_pre_invoice.field_account_invoice__company_rut
+msgid "The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements."
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_invoice__document_type
+msgid "Tipo"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__document_type
+msgid "Tipo de documento"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__total_clp
+msgid "Total a facturar"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__dolar_value
+msgid "Valor dolar a la fecha"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__uf_value
+msgid "Valor uf a la fecha"
+msgstr ""
+
+#. module: account_pre_invoice
+#: code:addons/account_pre_invoice/models/account_pre_invoice.py:347
+#, python-format
+msgid "Ya existe Factura con numero de documento %s and tipo %s. Please check original XML !"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model,name:account_pre_invoice.model_account_pre_invoice
+msgid "account.pre_invoice"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model,name:account_pre_invoice.model_account_pre_invoice_line
+msgid "account.pre_invoice.line"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "p.ej 1101-01 AP Clientes"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "p.ej 5101-01 AP Ventas"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "p.ej AP Servicios"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "p.ej Consultoria"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "p.ej FNA 5010"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "p.ej Factura Exenta"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model_terms:ir.ui.view,arch_db:account_pre_invoice.account_pre_invoice_form
+msgid "p.ej Numero de Folio"
+msgstr ""
+
+#. module: account_pre_invoice
+#: model:ir.model.fields,field_description:account_pre_invoice.field_account_pre_invoice__is_tax_exempt
+msgid "¿Excento de iva?"
+msgstr ""
+

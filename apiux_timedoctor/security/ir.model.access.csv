@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_apiux_timedoctor_apiux_timedoctor,apiux_timedoctor.apiux_timedoctor,model_apiux_timedoctor_apiux_timedoctor,,1,0,0,0

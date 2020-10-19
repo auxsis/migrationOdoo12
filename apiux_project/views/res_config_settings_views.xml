@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.project</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="50"/>
+            <field name="inherit_id" ref="project.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+            <div class="app_settings_block" data-string="Project" string="Project Sequence" data-key="project" groups="project.group_project_manager">            
+                        <h2>Project Sequences</h2>
+                        <group>
+                            <label for="id" string="Project Sequence"/>
+                            <div>
+                                <div>
+                                    <field name="project_sequence" class="oe_inline"/>
+                                </div>
+                            </div>
+                            <label for="id" string="Task Sequence"/>
+                            <div>
+                                <div>
+                                    <field name="task_sequence" class="oe_inline"/>
+                                </div>
+                            </div>
+                        </group>
+                </div>                
+                </xpath>
+            </field>
+        </record>
+</odoo>

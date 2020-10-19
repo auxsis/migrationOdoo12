@@ -139,3 +139,14 @@ class SiiTax(models.Model):
             return tax
         if (self.amount_type == 'percent' and not self.price_include) or (self.amount_type == 'division' and self.price_include):
             return base_amount * self.retencion / 100
+
+    #apiux eliminate grouping on taxes
+
+    def get_grouping_key(self, invoice_tax_val):
+        """ Returns a string that will be used to group account.invoice.tax sharing the same properties"""
+        self.ensure_one()
+        return str(invoice_tax_val.get('invl_id',0)) + '-' + \
+               str(invoice_tax_val['tax_id']) + '-' + \
+               str(invoice_tax_val['account_id']) + '-' + \
+               str(invoice_tax_val['account_analytic_id']) + '-' + \
+               str(invoice_tax_val.get('analytic_tag_ids', []))

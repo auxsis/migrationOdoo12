@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+        <record id="project_invoice_wizard_form" model="ir.ui.view">
+            <field name="name">Enviar factura</field>
+            <field name="model">project.invoice.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+      				<group>
+        					<group>
+          						<!--<field name="projection_id" readonly="True" invisible="1"/>-->
+          						<field name="pre_invoice_state" invisible="1"/>
+          						<field name="client_id" readonly="True"/>
+          						<field name="company_id" />
+          						<field name="hes"/>
+          						<field name="oc" placeholder="Numero de Orden de Compra"/>
+          						<field name="glosa" placeholder="p.ej Consultoria"/>
+								<field name="project_id"/>
+          						<field name="emission_date" required="True"/>
+											<!--<field name="entry_date" required="True"/>-->
+        					</group>
+      				</group>
+      				<group>
+        					<group>
+          						<field name="currency_id" options="{'no_quick_create': True, 'no_create_edit' : True}" domain="[('name','in',['CLP','USD','UF'])]"/>
+          						<field name="currency_name" invisible="1"/>
+          						<field name="clp_id" invisible="1"/>
+          						<field name="uf_value" attrs="{'invisible': [('currency_name','!=','UF')]}" groups="account.group_account_invoice"/>
+          						<field name="dolar_value" attrs="{'invisible': [('currency_name','!=','USD')]}"/>
+          						<field name="is_tax_exempt" required="True"/>
+        					</group>
+        					<group>
+          						<field name="amount"  options='{"currency_field": "currency_id"}'/>
+          						<field name="total_clp" readonly="1" widget="monetary" options='{"currency_field": "clp_id"}'/>
+          						<field name="tax" attrs="{'invisible': [('is_tax_exempt','=','si')]}"/>
+        					</group>
+      				</group>
+                    <notebook>
+                        <page string="Lineas">
+                            <field name="line_ids" >
+                                <tree string="Proyeccion" editable="bottom">
+                                <field name="sequence" string="No."/>
+                                <field name="id_out" string="id"/>
+                                <field name="outsourcing_id" readonly="1" />
+                                <field name="task_id" readonly="1"/>
+                                <field name="period_id" readonly="1"/>
+                                <field name="user_id" readonly="1"/>
+                                <field name="currency_id" readonly="1"/>
+                                <field name="quantity" />
+                                <field name="line_amount" options='{"currency_field": "currency_id"}'/>
+                                </tree>
+                            </field>
+                        </page>
+					</notebook>
+                    <footer>
+                        <button name="send_invoice" type="object" string="Enviar"/> <!-- Action Button -->
+                        <button string="Cancelar" class="oe_link" special="cancel" style="margin-left: 15px;"/> <!-- Do nothing -->
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Wizard -->
+        <record id="project_outsourcing_invoice_wizard_form" model="ir.ui.view">
+            <field name="name">Enviar factura</field>
+            <field name="model">project.outsourcing.invoice.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <!--<field name="projection_id" readonly="True" invisible="1"/>-->
+                            <field name="pre_invoice_state" invisible="1"/>
+                            <field name="partner_id" required="True"/>
+                            <field name="company_id" required="True"/>
+														<field name="hes"/>
+                            <field name="oc"/>
+                            <field name="glosa"/>
+                        </group>
+                        <group>
+                            <field name="project_id"/>
+							<field name="emission_date" required="True"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+						    <field name="currency_id" options="{'no_quick_create': True, 'no_create_edit' : True}" domain="[('name','in',['CLP','USD','UF'])]"/>
+                            <field name="currency_name" invisible="1"/>
+                            <field name="clp_id" invisible="1"/>
+                            <field name="uf_value" attrs="{'invisible': [('currency_name','!=','UF')]}" groups="account.group_account_invoice"/>
+                            <field name="dolar_value" attrs="{'invisible': [('currency_name','!=','USD')]}"/>
+                            <field name="is_tax_exempt" required="True"/>
+                        </group>
+                        <group>
+                            <field name="amount" readonly="1" widget="monetary" options='{"currency_field": "currency_id"}'/>
+                            <field name="total_clp" string="Monto neto(CLP)" readonly="1" widget="monetary" options='{"currency_field": "clp_id"}'/>
+                            <field name="tax" attrs="{'invisible': [('is_tax_exempt','=','si')]}"/>
+                        </group>
+                    </group>
+                        <notebook>
+                            <page string="Lineas">
+                                <field name="line_ids" >
+                                    <tree string="Proyeccion" editable="bottom">
+                                    <field name="sequence" string="No."/>
+                                    <field name="outsourcing_id" readonly="1" />
+                                    <field name="task_id" readonly="1"/>
+                                    <field name="period_id" readonly="1"/>
+                                    <field name="user_id" readonly="1"/>
+                                    <field name="currency_id" readonly="1"/>
+                                    <field name="quantity" />
+                                    <field name="line_amount" options='{"currency_field": "currency_id"}'/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    <footer>
+                        <button name="action_send" type="object" string="Enviar"/> <!-- Action Button -->
+                        <button string="Cancelar" class="oe_link" special="cancel" style="margin-left: 15px;"/> <!-- Do nothing -->
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+        <record id="view_project_outsourcing_tree" model="ir.ui.view">
+            <field name="name">project.outsourcing.tree</field>
+            <field name="model">project.outsourcing</field>
+            <field name="arch" type="xml">
+							<tree string="Staffing" edit="false" create="false">
+								<field name="sequence" string="No."/>
+								<field name="company_id" />
+								<field name="project_id" />
+								<field name="project_reference" />
+								<button name="action_open" states="draft" string="Abrir" type="object" groups="base.group_hr_user" class="oe_highlight"/>
+								<button name="action_reject" states="done" string="Rechazar" type="object" groups="base.group_hr_user" />
+								<button name="action_done" states="open" string="Cerrar" type="object" groups="base.group_hr_user" />
+								<button name="action_draft" states="rejected" string="Borrador" type="object" groups="base.group_hr_user" />
+								<button name="action_send" string="Enviar" type="object" states="done,open"/> <!--style="margin-left: 100px;" -->
+			          <button name="action_resend" string="ReEnviar" confirm="Se va a desvincular Factura. Esta seguro?" type="object" states="invoiced"/> <!-- style="margin-left: 100px;" -->
+								<field name="state" readonly="1"/>
+								<field name="task_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+								<field name="period_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
+								<field name="name" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+								<field name="user_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+								<field name="currency_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
+								<field name="quantity" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" widget="float_time"/>
+								<field name="projected_amount" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"  options='{"currency_field": "currency_id"}'/>
+								<field name="quantity_real" readonly="1" widget="float_time"/>
+								<field name="quantity_invoiced" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" widget="float_time"/>
+								<field name="amount" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"  options='{"currency_field": "currency_id"}'/>
+								<field name="real_period_id" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
+								<field name="invoice_id" readonly="True"/>
+							</tree>
+            </field>
+        </record>
+
+        <record id="view_project_outsourcing_tree_filter" model="ir.ui.view">
+            <field name="name">apiux.project.outsourcing.filter</field>
+            <field name="model">project.outsourcing</field>
+            <field name="arch" type="xml">
+                <search string="Proyeccion">
+                     <field name="project_id" string="Proyecto" filter_domain="['|', ('project_id','ilike',self),('project_reference','ilike',self)]"/>                     
+                    <filter name="filter_draft" domain="[('state','=','draft')]" string="Borrador"/>
+                    <filter name="filter_open"  domain="[('state','=','open')]" string="Abierto" />
+                    <filter name="filter_pending"  domain="[('state','=','done')]" string="Por facturar" />
+                    <filter name="filter_invoiced"  domain="[('state','=','invoiced')]" string="Facturado"/>
+                    <separator/>
+                    <filter name="reject" domain="[('state','=','rejected')]" string="Rechazados"/>
+                    <separator/>
+                    <field name="project_id"/>
+                    <field name="task_id"/>
+                    <field name="state"/>
+                    <field name="period_id"/>
+                     <group expand="0" string="Group By" name="grp1">
+                        <filter name="group_project_id" string="Proyecto" context="{'group_by':'project_id'}"/>
+                        <filter name="group_task_id" string="WBS" context="{'group_by':'task_id'}"/>
+                        <filter name="group_user_id" string="Recurso" context="{'group_by':'user_id'}"/>
+                        <filter name="group_state" string="Estado"    context="{'group_by':'state'}"/>
+                        <filter name="group_period_id" string="Periodo" context="{'group_by':'period_id'}"/>
+                        <filter name="group_invoice_id" string="Factura" context="{'group_by':'invoice_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="project_outsourcing" model="ir.actions.act_window">
+            <field name="name">Staffing</field>
+            <field name="res_model">project.outsourcing</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="view_project_outsourcing_tree_filter"/>
+            <field name="view_id" ref="view_project_outsourcing_tree"/>
+						<field name="context">{'search_default_group_project_id': 1, 'search_default_group_period_id':1, 'search_default_filter_pending':1}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Presionar para crear nueva comision.
+              </p><p>
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="project.menu_project_outsourcing" name="Staffing"  action="project_outsourcing" sequence="15" parent="project.menu_projects"/>
+
+
+
+</odoo>

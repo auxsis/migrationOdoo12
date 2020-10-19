@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_finance_periodical_processing"
+        name="Periodic Processing"
+        parent="account.menu_finance"
+        sequence="13"
+        groups="account.group_account_user,account.group_account_manager"/>
+
+    <menuitem
+        id="menu_account_end_year_treatments"
+        name="End of Period"
+        parent="menu_finance_periodical_processing"
+        sequence="25"/>
+
+    <menuitem
+        id="menu_account_close_period"
+        name="Close Period"
+        parent="menu_account_end_year_treatments"
+        action="sync_fiscal_year.action_account_period"
+        sequence="1"
+        groups="account.group_account_user,account.group_account_manager"/>
+
+    <menuitem
+        id="menu_wizard_fy_close"
+        name="Generate Opening Entries"
+        action="action_account_fiscalyear_close"
+        parent="menu_account_end_year_treatments" />
+
+    <menuitem
+        id="menu_wizard_account_open_closed_fiscalyear"
+        name="Cancel Closing Entries"
+        action="action_account_open_closed_fiscalyear"
+        sequence="18"
+        parent="menu_account_end_year_treatments" />
+
+    <menuitem
+        id="menu_wizard_fy_close_state"
+        name="Close a Fiscal Year"
+        action="action_account_fiscalyear_close_state"
+        sequence="20"
+        parent="menu_account_end_year_treatments" />
+</odoo>

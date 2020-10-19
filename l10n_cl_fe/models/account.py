@@ -93,6 +93,59 @@ class account_move(models.Model):
         return imps
 
 
+
+    @api.multi
+    def post(self, invoice=False):
+        _logger.info("movepost2")
+        self._post_validate()
+        # Create the analytic lines in batch is faster as it leads to less cache invalidation.
+        self.mapped('line_ids').create_analytic_lines()
+        for move in self:
+            _logger.info("movename=%s,%s",move.name,invoice)
+            if move.name == '/':
+                new_name = False
+                journal = move.journal_id
+
+                if invoice and invoice.move_name and invoice.move_name != '/':
+                    new_name = invoice.move_name
+                else:
+                    if journal.sequence_id:
+                        # If invoice is actually refund and journal has a refund_sequence then use that one or use the regular one
+                        sequence = journal.sequence_id
+                        if invoice and invoice.type in ['out_refund', 'in_refund'] and journal.refund_sequence:
+                            if not journal.refund_sequence_id:
+                                raise UserError(_('Please define a sequence for the credit notes'))
+                            sequence = journal.refund_sequence_id
+
+                        new_name = sequence.with_context(ir_sequence_date=move.date).next_by_id()
+                    else:
+                        raise UserError(_('Please define a sequence on the journal.'))
+
+                    #apiux get egress sequence for journal type bank
+                    _logger.info("journalline=%s,%s",journal.type,move.line_ids)
+                    if journal.type in ['cash','bank']:
+                        for ml in move.line_ids:
+                            _logger.info("egressline=%s,%s,%s",ml.account_id.user_type_id.type,ml.debit,ml.credit)
+                            if ml.account_id.user_type_id.type=='liquidity' and ml.debit==0 and ml.credit>0:
+                            
+                                if not journal.egress_sequence_id:
+                                    raise UserError(_('Please define an egress sequence for the journal'))
+                                sequence = journal.egress_sequence_id
+                                new_name = sequence.with_context(ir_sequence_date=move.date).next_by_id()
+                                break
+
+                if new_name:
+                    move.name = new_name
+
+            if move == move.company_id.account_opening_move_id and not move.company_id.account_bank_reconciliation_start:
+                # For opening moves, we set the reconciliation date threshold
+                # to the move's date if it wasn't already set (we don't want
+                # to have to reconcile all the older payments -made before
+                # installing Accounting- with bank statements)
+                move.company_id.account_bank_reconciliation_start = move.date
+
+        return self.write({'state': 'posted'})
+
 class account_move_line(models.Model):
     _inherit = "account.move.line"
 
@@ -103,3 +156,21 @@ class account_move_line(models.Model):
             store=True,
             readonly=True,
         )
+
+    real_period_id = fields.Many2one(
+        'account.period', 
+        string='Periodo Real',
+        )
+
+
+    #this sets date to real period start date if exists 
+    @api.one
+    def _prepare_analytic_line(self):
+        res=super(account_move_line,self)._prepare_analytic_line()
+            
+        for line in res:
+            real_period_id=line.get('real_period_id',False)
+            if real_period_id:
+                if line['date']<real_period_id.date_start or line['date']>real_period_id.date_stop:
+                    line['date']=real_period_id.date_start
+        return res

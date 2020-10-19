@@ -6,9 +6,12 @@
           <field name="model">account.invoice</field>
           <field name="inherit_id" ref="account.view_account_invoice_filter"/>
           <field name="arch" type="xml">
-              <field name="number" position="attributes">
+<!--               <field name="number" position="attributes">
                   <attribute name="filter_domain">['|','|','|','|', ('sii_document_number','ilike',self), ('number','ilike',self), ('origin','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self)]</attribute>
-              </field>
+              </field> -->
+              <field name="number" position="attributes">
+                  <attribute name="filter_domain">['|','|','|','|', ('sii_document_number','ilike',self), ('document_number','ilike',self), ('supplier_invoice_number','ilike',self), ('origin','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self)]</attribute>
+              </field>              
               <field name="partner_id" position="after">
                 <field name="activity_description"
                         placeholder="Glosa descriptiva" options="{'no_open': True}"/>
@@ -33,7 +36,9 @@
               </field>
               <field name="number" position="after">
               	  <field name="document_class_id" />
-                  <field name="sii_document_number" />
+                  <field name="document_number" />
+                  <field name="sii_document_number" />                  
+                  
               </field>
               <field name="number" position="attributes">
               	<attribute name="invisible">1</attribute>
@@ -48,7 +53,6 @@
             <field name="arch" type="xml">
               <form>
                   <field name="document_class_ids" invisible="1" />
-                  <field name="sii_document_number" invisible="1" readonly="1"/>
                   <field name="use_documents" invisible="1"/>
                   <field name="move_name" invisible="1"/>
                   <field name="sii_code" invisible="1"/>
@@ -58,42 +62,65 @@
                  <button string="Imprimir Copia y Cedible" type="object" name="print_copy_cedible" />
                  <button string="Imprimir Cedible" type="object" name="print_cedible" />
               </button>
-              <field name="invoice_line_tax_ids" position="attributes">
+              
+<!-- apiux make tax optional  <field name="invoice_line_tax_ids" position="attributes">
                 <attribute name="required">1</attribute>
-              </field>
+              </field> -->
+              
+              <field name="partner_shipping_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+              </field>  
 
-              <field name="state" position="before">
-                <button name="%(account.action_account_invoice_refund)d" type='action' string='Refund Invoice' groups="base.group_user" attrs="{'invisible': ['|',('type', '=', 'out_invoice'), ('state', 'not in', ('open','proforma2','paid'))]}"/>
-              </field>
+              <field name="cash_rounding_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+              </field>  
+
+
+              <field name="reference" position="after">
+                    <field name="refund_invoice_id"/>
+              </field>  
+
+
+
+<!--               <field name="state" position="before">
+                <button name="%(account.action_account_invoice_refund)d" type='action' string='Refund Invoice' groups="base.group_user" attrs="{'invisible': [('state', 'not in', ('open','proforma2','paid'))]}"/>
+              </field> -->
 
               <xpath expr="//form/sheet/h1" position="replace">
                 <h1 class="mt0">
-                  <div attrs="{'invisible': [('state', '=', 'draft'), ('type', 'not in', ['in_invoice', 'in_refund'])]}">
-                      <field name="document_class_id"
-                          options="{'no_open': True, 'no_create': True}"
-                          domain="[('id', 'in', document_class_ids)]"
-                          attr="'required':[('use_documents', '=', True), ('state', '=', 'draft')],
-                                'readonly':['|', ('state', '!=', 'draft'), ('sii_document_number', '>', 0)]}"
-                          class="oe_inline"/> Número:<br/>
-                       <field name="number" readonly="1" class="oe_inline"/>
-                  </div>
-                  <div attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('type', 'in', ['in_invoice', 'in_refund'])]}">
+                  <div>
                       <span class="o_form_label" attrs="{'invisible': ['|', ('state','!=','draft')]}">Siguiente</span>
+                      <field name="document_class_id" invisible="1"/>
                       <field name="journal_document_class_id"
-                        attrs="{'invisible':[('use_documents', '=', False)],
-                                'required':[('use_documents', '=', True), ('state', '=', 'draft')],
-                                'readonly':['|', ('state', '!=', 'draft'), ('sii_document_number', '>', 0)]}"
+                        attrs="{'required':[('use_documents', '=', True), ('state', '=', 'draft')],'readonly':['|', ('state', '!=', 'draft'), ('sii_document_number', '>', 0)]}"
+                        force_save="1"
                         options="{'no_create': True}"
-                        domain="[('sii_document_class_id', 'in', document_class_ids)]"
-                        style="width: 100%"/> Número:<br/>
-                      <field name="sequence_number_next" class="oe_inline" readonly="1" attrs="{'invisible': [('sii_document_number','&gt;', 0)]}" />
-                      <field name="sii_document_number" class="oe_inline" readonly="1" attrs="{'invisible': [('sii_document_number','&lt;=', 0)]}" />
+                        domain="[('sii_document_class_id', 'in', document_class_ids),('journal_id','=',journal_id)]"
+                        style="width: 100%"/> <br/>Número:
+                        <field name="document_number" readonly="1" class="oe_inline"/><br/>SII Número:
+                      <field name="sequence_number_next" class="oe_inline" readonly="1" invisible="1" />
+                      <field name="sii_document_number" class="oe_inline"  />
                       <field name="sequence_number_next_prefix" invisible="1" class="oe_inline"/>
                       <field name="number" readonly="1" invisible="1" class="oe_inline"/>
+
                   </div>
                 </h1>
               </xpath>
-
+              <xpath expr="//page[@name='other_info']/group/group/field[@name='account_id']" position="replace">
+              </xpath>
+              <xpath expr="//page[@name='other_info']/group/group/field[@name='journal_id']" position="replace">
+              </xpath>
+              <field name="date_invoice" position="before">
+                  <field name="journal_id" groups="account.group_account_user" options="{'no_create': True}" attrs="{'readonly':[('move_name','!=',False)]}"/>
+                  <field name="account_id" groups="account.group_account_user" domain="[('company_id', '=', company_id), ('internal_type', '=', 'receivable'), ('deprecated', '=', False)]"/>
+                  <field name="create_date" readonly="1" />
+              </field>              
+              
+              <field name="date_invoice" position="after"> 
+                   <field name="date_sent" />
+                   <field name="date_reception" />
+              </field>
+              
               <field name='partner_id' position="after">
                   <field name="activity_description"
                           placeholder="Glosa descriptiva" options="{'no_open': True}"/>
@@ -102,7 +129,31 @@
                     domain="[('id', 'in', acteco_ids)]"
                     options="{'no_open': True, 'no_create': True}"/>
               </field>
+              
+                <field name="partner_id" position="after">
+                    <field name="sector_id" string="Sector" />                
+                    <field name="cost_center_id" />
+                </field>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="after">
+                    <field name="sector_id" string="Sector"/>                
+                    <field name="cost_center_id" />
+                </xpath>
+                <field name="invoice_line_ids" position="attributes">
+                    <attribute name="context" operation="python_dict" key="sector_id">sector_id</attribute>
+                    <attribute name="context" operation="python_dict" key="cost_center_id">cost_center_id</attribute>
+                </field>
+                 <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='account_analytic_id']" position="after">
+                  <field name="sector_id"/>                 
+                  <field name="cost_center_id" />
+                </xpath> 
 
+                
+              <field name="analytic_tag_ids" position="replace">
+              </field> 
+
+              <field name="analytic_tag_ids" position="replace">
+              </field> 
+              
               <field name="user_id" position="after">
                 <field name="forma_pago" />
                 <field name="contact_id" domain="[('parent_id','=',partner_id)]" />
@@ -117,7 +168,10 @@
                 <field name="amount_untaxed_global_recargo" widget="monetary" attrs="{'invisible':[('amount_untaxed_global_recargo','=',0)]}"/>
               </field>
 
-              <field name="comment" position="after">
+              <field name="comment" position="replace">
+
+                <separator string="Glosa" colspan="2"/>
+                <field name="comment" string="Glosa" placeholder="Glosa..."/>
                 <field name="global_descuentos_recargos" widget="one2many_list" mode="tree" context="{'default_invoice_id': active_id}">
                   <tree string="Descuetos / Recargos Globales" editable="bottom">
                     <field name="type"/>
@@ -130,7 +184,7 @@
                   </tree>
                 </field>
               </field>
-
+<!-- 
               <field name="tax_line_ids" position="before">
                   <field name="referencias" mode="tree">
                     <form>
@@ -148,6 +202,21 @@
                       <field name="sii_referencia_CodRef"/>
                       <field name="motivo"/>
                       <field name="fecha_documento"/>
+                    </tree>
+                  </field>
+              </field> -->
+
+
+              <field name="tax_line_ids" position="before">
+                  <field name="refund_invoice_ids" mode="tree">
+                    <tree>
+                      <field name="name"/>                    
+                      <field name="date_invoice" required="True"/>
+                      <field name="document_number" required="True" />
+                      <field name="sii_document_number"/>
+                      <field name="document_class_id"/>                      
+                      <field name="amount_total"/>
+                      <field name="state"/>
                     </tree>
                   </field>
               </field>
@@ -212,32 +281,49 @@
             <field name="inherit_id" ref="account.invoice_supplier_form"/>
             <field name="arch" type="xml">
               <form>
-                  <field name="document_class_ids" invisible="1"/>
+                  <field name="document_class_ids" invisible="1"/>               
                   <field name="use_documents" invisible="1"/>
                   <field name="move_name" invisible="1"/>
+                  <field name="sii_code" invisible="1"/>                  
               </form>
 
-              <xpath expr="//form/sheet/div[1]/span[1]" position="before">
+<!--               <xpath expr="//form/sheet/div[1]/span[1]" position="before">
                   <span>Folio Interno</span>
-              </xpath>
-              <xpath expr="//form/sheet/div[1]" position="after">
-                <div attrs="{'invisible': [('use_documents', '=', False)]}">
+                  <field name="document_number" class="oe_inline"/>    
+              </xpath> -->
+              <xpath expr="//form/sheet/div[1]" position="replace">
+                <div>
                   <h1 class="mt0">
-                      <span>Documento y Folio SII</span>
-                      <div attrs="{'invisible': [('state', '=', 'draft'), ('type', 'not in', ['in_invoice', 'in_refund']), ('use_documents', '=', False)]}">
-                          <field name="document_class_id"
-                              options="{'no_open': True, 'no_create': True}"
-                              domain="[('id', 'in', document_class_ids)]"
-                              class="oe_inline"/><br/>
-                           Número:
-                          <field name="sii_document_number" class="oe_inline"/>
-                      </div>
+                  <div>
+                      <span class="o_form_label" attrs="{'invisible': ['|', ('state','!=','draft')]}">Siguiente</span>
+                      <field name="document_class_id" invisible="1"/>
+                      <field name="journal_document_class_id"
+                        attrs="{'required':[('use_documents', '=', True), ('state', '=', 'draft')],'readonly':['|', ('state', '!=', 'draft'), ('sii_document_number', '>', 0)]}"
+                        force_save="1"
+                        options="{'no_create': True}"
+                        domain="[('sii_document_class_id', 'in', document_class_ids),('journal_id','=',journal_id)]"
+                        style="width: 100%"/><br/> Número:
+                        <field name="document_number" readonly="1" class="oe_inline"/><br/>SII Número:
+                      <field name="sequence_number_next" class="oe_inline" readonly="1" invisible="1" />
+                      <field name="sii_document_number" class="oe_inline"  />
+                      <field name="sequence_number_next_prefix" invisible="1" class="oe_inline"/>
+                      <field name="number" readonly="1" invisible="1" class="oe_inline"/>
+
+                  </div>
                   </h1>
                 </div>
               </xpath>
-
+              <xpath expr="//page[@name='other_info']/group/group/field[@name='account_id']" position="replace">
+              </xpath>
+              <xpath expr="//page[@name='other_info']/group/group/field[@name='journal_id']" position="replace">
+              </xpath>
+              <field name="date_invoice" position="before">
+                  <field name="journal_id" groups="account.group_account_user" options="{'no_create': True}" attrs="{'readonly':[('move_name','!=',False)]}"/>
+                  <field name="account_id" groups="account.group_account_user" domain="[('company_id', '=', company_id), ('internal_type', '=', 'payable'), ('deprecated', '=', False)]"/> 
+                  <field name="create_date" readonly="1" />                  
+              </field>                 
               <field name="state" position="before">
-                <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'in_invoice'),('state','not in',('open','paid'))]}"/>
+                <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': [('state','not in',('open','paid'))]}"/>
               </field>
 
               <field name='partner_id' position="after">
@@ -249,12 +335,58 @@
                     options="{'no_open': True, 'no_create': True}"/>
               </field>
 
+                <field name="partner_id" position="after">
+                    <field name="sector_id" string="Sector"/>                
+                    <field name="cost_center_id" />
+                    <field name="origin" />
+                </field>
+               
+                
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="after">
+                    <field name="sector_id"/>
+                    <field name="cost_center_id" />
+                </xpath>
+                <field name="invoice_line_ids" position="attributes">
+                    <attribute name="context" operation="python_dict" key="sector_id">sector_id</attribute>                
+                    <attribute name="context" operation="python_dict" key="cost_center_id">cost_center_id</attribute>
+                </field>
+                
+                <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='name']" position="replace">
+                    <field name="name" invisible="1"/>
+                </xpath>   
+                                             
+                
+                
+                
+                 <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='account_analytic_id']" position="after">
+                  <field name="sector_id" string="Sector"/>                 
+                  <field name="cost_center_id" />
+                </xpath>  
+
               <field name="amount_untaxed" position="after">
                 <field name="amount_untaxed_global_discount" widget="monetary" attrs="{'invisible':[('amount_untaxed_global_discount','=',0)]}"/>
                 <field name="amount_untaxed_global_recargo" widget="monetary" attrs="{'invisible':[('amount_untaxed_global_recargo','=',0)]}"/>
               </field>
 
-              <field name="comment" position="after">
+              <field name="reference" position="replace">
+              </field> 
+              <field name="discount" position="replace">}
+              </field> 
+
+              <field name="analytic_tag_ids" position="replace">
+              </field> 
+
+              <field name="analytic_tag_ids" position="replace">
+              </field> 
+              
+              <field name="date" position="after">
+                    <field name="refund_invoice_id"/>
+              </field> 
+
+
+              <field name="comment" position="replace">
+                  <separator string="Glosa" colspan="4"/>
+                  <field name="comment" string="Glosa" placeholder="Glosa..."/>
                   <field name="global_descuentos_recargos" widget="one2many_list" mode="tree" context="{'default_invoice_id': active_id}">
                     <tree string="Descuetos / Recargos Globales" editable="bottom">
                       <field name="type"/>
@@ -268,7 +400,7 @@
                   </field>
               </field>
 
-              <xpath expr="//notebook/page[2]/group" position="after">
+<!--               <xpath expr="//notebook/page[2]/group" position="after">
                   <field name="referencias" mode="tree">
                     <form>
                       <group>
@@ -285,6 +417,20 @@
                       <field name="sii_referencia_CodRef"/>
                       <field name="motivo"/>
                       <field name="fecha_documento"/>
+                    </tree>
+                  </field>
+              </xpath> -->
+
+              <xpath expr="//notebook/page[2]/group" position="after">
+                  <field name="refund_invoice_ids" mode="tree">
+                    <tree>
+                      <field name="name"/>                    
+                      <field name="date_invoice" required="True"/>
+                      <field name="document_number" required="True" />
+                      <field name="sii_document_number"/>
+                      <field name="document_class_id"/>                      
+                      <field name="amount_total"/>
+                      <field name="state"/>
                     </tree>
                   </field>
               </xpath>
@@ -325,7 +471,7 @@
                 </notebook>
             </field>
         </record>
-
+        
         <record id="action_invoice_tree1" model="ir.actions.act_window">
             <field name="name">Todos los documentos de ventas (Para Certificación)</field>
             <field name="res_model">account.invoice</field>
@@ -359,5 +505,43 @@
         </record>
 
         <menuitem action="action_invoice_tree1" id="menu_action_invoice_tree1" parent="menu_sii_config" sequence="1"/>
+        
+        
+        
+        
+        <record id="l10n_cl_fe_invoice_tree" model="ir.ui.view">
+            <field name="name">l10n_cl_fe.account.invoice.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>            
+            <field name="arch" type="xml">
+                    <field name="sii_document_number" position="replace"/>
+                    <field name="document_class_id" position="replace"/>
+                    <field name="date_due" position="replace"/>            
+                    <field name="user_id" position="replace"/>
+                    <field name="origin" position="replace"/>                     
+            
+                    <field name="partner_id" position="before">
+                        <field name="company_id" />
+                        <field name="company_rut" />
+                        <field name="sii_document_number" />
+                        <field name="sii_code" />
+                    </field>
+                    <field name="partner_id" position="after">
+                        <field name="partner_rut" />    
+                    </field>
+                    
+                    <field name="date_invoice" position="after">
+                        <field name="date_reception" /> 
+                        <field name="date_due" />                          
+                    </field>
+
+            </field>
+        </record>        
+        
+        
+        
+        
+        
+        
     </data>
 </odoo>

@@ -1,0 +1,25 @@
+{
+    'name': "apiux booking",
+    'images': [],
+    'summary': """Booking functionality for Projects""",
+    'author': "Apiux",
+    'version': '0.0',
+    'depends': [
+        'hr_public_holidays',
+        'apiux_hr',
+        'apiux_hr_leave',
+        'project',
+        'apiux_project',
+    ],
+    'data': [
+        'views/hr_projection_timesheet_view.xml',
+        'views/project_accrued.xml',
+        #'wizards/hr_projection_matrix_view.xml',
+        'wizards/hr_projection_generate_view.xml',
+        'wizards/hr_projection_shorten_view.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+    'application': False,
+}

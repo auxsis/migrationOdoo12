@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+        <template id="assets_backend" name="dynamic_reports assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!-- <link rel="stylesheet" href="/account_dynamic_gl/static/src/css/gijgo.min.css"/> -->
+                <link rel="stylesheet" href="/account_dynamic_gl/static/src/css/dynamic_report.css"/>
+                <!-- <script type="text/javascript" src="/account_dynamic_gl/static/src/js/jquery-3.2.1.slim.min.js"/> -->
+                <!-- <script type="text/javascript" src="/account_dynamic_gl/static/src/js/gijgo.min.js"/> -->
+                <script type="text/javascript" src="/account_dynamic_gl/static/src/js/dynamic_report.js"/>
+            </xpath>
+        </template>
+</odoo>
+

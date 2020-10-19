@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_apiux_hr_leave_apiux_hr_leave,apiux_hr_leave.apiux_hr_leave,model_apiux_hr_leave_apiux_hr_leave,,1,0,0,0

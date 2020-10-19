@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="view_repo_estado_resultado" model="ir.ui.view">
+            <field name="name">cl.repo.estado_resultado.form</field>
+            <field name="model">cl.repo.estado_resultado</field>
+            <field name="arch" type="xml">
+                <form string="Subscription Compute">
+                    <group>
+                        <field name="company_id"/>
+						<field name="display_account"/>
+                        <field name="date_start"/>
+                        <field name="date_stop"/>
+                        <field name="file_path"  invisible="1"/>
+                        <field name="name"  invisible="1" />
+                        <field name="file" filename="name" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button string="Generar" name="generar" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_repo_estado_resultado" model="ir.actions.act_window">
+            <field name="name">Estado Resultado</field>
+            <field name="res_model">cl.repo.estado_resultado</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_repo_estado_resultado"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Estado Resultado" id="cl_sii_repo_estado_resultado"
+            parent="menu_finance_legal_statement_xlsx"
+            action="action_repo_estado_resultado" />
+
+    </data>
+</odoo>

@@ -5,6 +5,9 @@ from itertools import cycle
 import re
 
 
+import logging
+_logger = logging.getLogger(__name__)
+
 class res_partner(models.Model):
     _inherit = 'res.partner'
 
@@ -72,9 +75,9 @@ class res_partner(models.Model):
             if record.parent_id and not record.is_company:
                 name = "%s, %s" % (record.parent_name, name)
             if self.env.context.get('show_address_only'):
-                name = self._display_address(without_company=True)
+                name = recprd._display_address(without_company=True)
             if self.env.context.get('show_address'):
-                name = name + "\n" + self._display_address(without_company=True)
+                name = name + "\n" + record._display_address(without_company=True)
                 
             name= "["+(record.vat or "")+"] " +name +"\n"
             
@@ -169,11 +172,14 @@ class res_partner(models.Model):
 
     @staticmethod
     def format_document_number(vat):
-        clean_vat = (
-            re.sub('[^1234567890Kk]', '',
-                   str(vat))).zfill(9).upper()
-        return '%s.%s.%s-%s' % (
-            clean_vat[0:2], clean_vat[2:5], clean_vat[5:8], clean_vat[-1])
+        if vat:
+            clean_vat = (
+                re.sub('[^1234567890Kk]', '',
+                       str(vat))).zfill(9).upper()
+            return '%s.%s.%s-%s' % (
+                clean_vat[0:2], clean_vat[2:5], clean_vat[5:8], clean_vat[-1])
+        else:
+            return None
 
     @api.onchange('document_number')
     def onchange_document(self):
@@ -183,11 +189,16 @@ class res_partner(models.Model):
     @api.depends('document_number')
     def _compute_vat(self):
         for x in self:
-            clean_vat = (
-                re.sub('[^1234567890Kk]', '',
-                       str(x.document_number))).zfill(9).upper()
-            x.vat = 'CL%s' % clean_vat
+            _logger.info("documentnumber=%s",x.document_number)
+            if x.document_number:
+                clean_vat = (
+                    re.sub('[^1234567890Kk]', '',
+                           str(x.document_number))).zfill(9).upper()
+                x.vat = 'CL%s' % clean_vat
+            else:
+                x.vat=None
             x.name_get()
 
     def _inverse_vat(self):
-        self.document_number = self.format_document_number(self.vat)
+        for x in self:
+            x.document_number = x.format_document_number(x.vat)

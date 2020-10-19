@@ -22,6 +22,8 @@ Facturación Electrónica para Chile. Mayor información en https://odoocoop.cl
             'report_xlsx',
             'contacts',
             'portal',
+            'account_sector',
+            'account_cost_center',
         ],
     'external_dependencies': {
         'python': [
@@ -38,7 +40,7 @@ Facturación Electrónica para Chile. Mayor información en https://odoocoop.cl
     },
     'data': [
             'wizard/apicaf.xml',
-            'views/assets.xml',
+            # 'views/assets.xml',
             'wizard/journal_config_wizard_view.xml',
             'views/sii_menuitem.xml',
             'views/consumo_folios.xml',

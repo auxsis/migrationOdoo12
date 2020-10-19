@@ -1,0 +1,865 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cl_sii_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-02 18:47+0000\n"
+"PO-Revision-Date: 2016-03-02 18:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:62
+#: code:addons/cl_sii_reports/depreciacion.py:57
+#, python-format
+msgid "% Correción"
+msgstr "% Correción"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:88
+#, python-format
+msgid "Account Code"
+msgstr "Codigo Cuenta"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:58
+#, python-format
+msgid "Account Description"
+msgstr "Descripcion de Cuenta"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:57
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:56
+#, python-format
+msgid "Account Number"
+msgstr "N° de Cuenta"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:94
+#, python-format
+msgid "Active"
+msgstr "Activo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:88
+#: code:addons/cl_sii_reports/depreciacion.py:84
+#: code:addons/cl_sii_reports/libro_compra.py:89
+#: code:addons/cl_sii_reports/libro_diario.py:79
+#: code:addons/cl_sii_reports/libro_honorarios.py:68
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:68
+#: code:addons/cl_sii_reports/libro_ventas.py:89
+#, python-format
+msgid "Address"
+msgstr "Domicilio"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:57
+#: code:addons/cl_sii_reports/libro_compra.py:209
+#: code:addons/cl_sii_reports/libro_ventas.py:57
+#: code:addons/cl_sii_reports/libro_ventas.py:213
+#, python-format
+msgid "Afect Value"
+msgstr "Valor Afecto"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:65
+#: code:addons/cl_sii_reports/depreciacion.py:60
+#, python-format
+msgid "Ajuste de Costo"
+msgstr "Ajuste de Costo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:44
+#: selection:cl.repo.balance_tabular,display_account:0
+#, python-format
+msgid "All"
+msgstr "Todos"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:60
+#, python-format
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: cl_sii_reports
+#: model:ir.ui.menu,name:cl_sii_reports.cl_sii_repo_balance_tabular
+msgid "Balance 8 Columnas"
+msgstr "Balance 8 Columnas"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:267
+#, python-format
+msgid "Balances"
+msgstr "Saldos"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:67
+#: code:addons/cl_sii_reports/depreciacion.py:62
+#, python-format
+msgid "CM Depreciación Acumulada"
+msgstr "CM Depreciación Acumulada"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:63
+#: code:addons/cl_sii_reports/depreciacion.py:58
+#, python-format
+msgid "CM Ejercicio"
+msgstr "CM Ejercicio"
+
+#. module: cl_sii_reports
+#: view:cl.repo.balance_tabular:cl_sii_reports.view_repo_balance_tabular
+#: view:cl.repo.correcion_monetaria:cl_sii_reports.view_repo_correcion_monetaria
+#: view:cl.repo.depreciacion:cl_sii_reports.view_repo_depreciacion
+#: view:cl.repo.libro_compra:cl_sii_reports.view_repo_libro_compra
+#: view:cl.repo.libro_diario:cl_sii_reports.view_repo_libro_diario
+#: view:cl.repo.libro_honorario:cl_sii_reports.view_repo_libro_honorario
+#: view:cl.repo.libro_mayor:cl_sii_reports.view_repo_libro_mayor
+#: view:tmp.repo.libro_venta:cl_sii_reports.view_repo_libro_venta
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:59
+#: code:addons/cl_sii_reports/depreciacion.py:54
+#, python-format
+msgid "Categoria Activo"
+msgstr "Categoria Activo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:61
+#: code:addons/cl_sii_reports/libro_honorarios.py:58
+#, python-format
+msgid "Commentary"
+msgstr "Comentario"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:42
+#: field:cl.repo.balance_tabular,company_id:0
+#: field:cl.repo.correcion_monetaria,company_id:0
+#: field:cl.repo.depreciacion,company_id:0
+#: field:cl.repo.libro_compra,company_id:0
+#: field:cl.repo.libro_diario,company_id:0
+#: field:cl.repo.libro_honorario,company_id:0
+#: field:cl.repo.libro_mayor,company_id:0
+#: field:tmp.repo.libro_venta,company_id:0
+#, python-format
+msgid "Company"
+msgstr "Compañia"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:63
+#: code:addons/cl_sii_reports/correccion_monetaria.py:85
+#: code:addons/cl_sii_reports/depreciacion.py:81
+#: code:addons/cl_sii_reports/libro_compra.py:86
+#: code:addons/cl_sii_reports/libro_diario.py:76
+#: code:addons/cl_sii_reports/libro_honorarios.py:65
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:65
+#: code:addons/cl_sii_reports/libro_ventas.py:86
+#, python-format
+msgid "Company Name"
+msgstr "Nombre Compañia"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:69
+#: code:addons/cl_sii_reports/correccion_monetaria.py:91
+#: code:addons/cl_sii_reports/depreciacion.py:87
+#: code:addons/cl_sii_reports/libro_compra.py:54
+#: code:addons/cl_sii_reports/libro_compra.py:92
+#: code:addons/cl_sii_reports/libro_diario.py:82
+#: code:addons/cl_sii_reports/libro_honorarios.py:71
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:71
+#: code:addons/cl_sii_reports/libro_ventas.py:54
+#: code:addons/cl_sii_reports/libro_ventas.py:92
+#, python-format
+msgid "Contributor ID"
+msgstr "ID del Contribuyente"
+
+#. module: cl_sii_reports
+#: model:ir.ui.menu,name:cl_sii_reports.cl_repo_correcion_monetaria
+msgid "Correción Monetaria"
+msgstr "Auxiliar AF No NIIF"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:56
+#: code:addons/cl_sii_reports/depreciacion.py:51
+#, python-format
+msgid "Costo Original"
+msgstr "Costo Original"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:204
+#: code:addons/cl_sii_reports/libro_ventas.py:208
+#, python-format
+msgid "Count"
+msgstr "Contador"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,create_uid:0
+#: field:cl.repo.correcion_monetaria,create_uid:0
+#: field:cl.repo.depreciacion,create_uid:0
+#: field:cl.repo.libro_compra,create_uid:0
+#: field:cl.repo.libro_diario,create_uid:0
+#: field:cl.repo.libro_honorario,create_uid:0
+#: field:cl.repo.libro_mayor,create_uid:0
+#: field:tmp.repo.libro_venta,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,create_date:0
+#: field:cl.repo.correcion_monetaria,create_date:0
+#: field:cl.repo.depreciacion,create_date:0
+#: field:cl.repo.libro_compra,create_date:0
+#: field:cl.repo.libro_diario,create_date:0
+#: field:cl.repo.libro_honorario,create_date:0
+#: field:cl.repo.libro_mayor,create_date:0
+#: field:tmp.repo.libro_venta,create_date:0
+msgid "Created on"
+msgstr "Creado a"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:91
+#, python-format
+msgid "Credit"
+msgstr "Credito"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:93
+#, python-format
+msgid "Creditor"
+msgstr "Acreedor"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:60
+#: code:addons/cl_sii_reports/depreciacion.py:55
+#, python-format
+msgid "Cuenta Contable"
+msgstr "Cuenta Contable"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:53
+#: code:addons/cl_sii_reports/libro_honorarios.py:50
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:90
+#, python-format
+msgid "Debit"
+msgstr "Debito"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:92
+#, python-format
+msgid "Debtor"
+msgstr "Deudor"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:68
+#: code:addons/cl_sii_reports/depreciacion.py:63
+#, python-format
+msgid "Dep. Ac. Corregida"
+msgstr "Dep. Ac. Corregida"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:70
+#: code:addons/cl_sii_reports/depreciacion.py:65
+#, python-format
+msgid "Dep. Total Acumulada"
+msgstr "Dep. Total Acumulada"
+
+#. module: cl_sii_reports
+#: model:ir.ui.menu,name:cl_sii_reports.cl_repo_depreciacion
+msgid "Depreciación"
+msgstr "Auxiliar AF NIIF"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:66
+#: code:addons/cl_sii_reports/depreciacion.py:61
+#, python-format
+msgid "Depreciación Acumulada Inicial"
+msgstr "Depreciación Acumulada Inicial"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:69
+#: code:addons/cl_sii_reports/depreciacion.py:64
+#, python-format
+msgid "Depreciación Ejercicio"
+msgstr "Depreciación Ejercicio"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:53
+#: code:addons/cl_sii_reports/depreciacion.py:48
+#, python-format
+msgid "Descripcion"
+msgstr "Descripcion"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:53
+#: code:addons/cl_sii_reports/libro_compra.py:205
+#: code:addons/cl_sii_reports/libro_ventas.py:53
+#: code:addons/cl_sii_reports/libro_ventas.py:209
+#, python-format
+msgid "Document Anulled"
+msgstr "Anulacion de Documento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:51
+#: code:addons/cl_sii_reports/libro_ventas.py:51
+#, python-format
+msgid "Document Date"
+msgstr "Fecha Documento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:52
+#: code:addons/cl_sii_reports/libro_ventas.py:52
+#, python-format
+msgid "Document Number"
+msgstr "No de Documento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:203
+#: code:addons/cl_sii_reports/libro_ventas.py:207
+#, python-format
+msgid "Document Type"
+msgstr "Tipo Documento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:150
+#: code:addons/cl_sii_reports/libro_ventas.py:152
+#, python-format
+msgid "Document Type : "
+msgstr "Tipo Documento : "
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:66
+#, python-format
+msgid "Domicilio"
+msgstr "Address"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,file:0
+#: field:cl.repo.correcion_monetaria,file:0
+#: field:cl.repo.depreciacion,file:0
+#: field:cl.repo.libro_compra,file:0
+#: field:cl.repo.libro_diario,file:0
+#: field:cl.repo.libro_honorario,file:0
+#: field:cl.repo.libro_mayor,file:0
+#: field:tmp.repo.libro_venta,file:0
+msgid "Download Report"
+msgstr "Descargar Reporte"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:56
+#, python-format
+msgid "Entry Description"
+msgstr "Descripcion de Asiento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:55
+#, python-format
+msgid "Entry Number"
+msgstr "N° de Asiento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:78
+#: code:addons/cl_sii_reports/depreciacion.py:72
+#, python-format
+msgid "Es Terreno"
+msgstr "Es Terreno"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:206
+#: code:addons/cl_sii_reports/libro_ventas.py:210
+#, python-format
+msgid "Exent"
+msgstr "Exento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:56
+#: code:addons/cl_sii_reports/libro_compra.py:208
+#: code:addons/cl_sii_reports/libro_ventas.py:56
+#: code:addons/cl_sii_reports/libro_ventas.py:212
+#, python-format
+msgid "Exent Value"
+msgstr "Valor Exento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:58
+#: code:addons/cl_sii_reports/depreciacion.py:53
+#, python-format
+msgid "Fecha Comienzo Depreciación"
+msgstr "Fecha Comienzo Depreciación"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:57
+#: code:addons/cl_sii_reports/depreciacion.py:52
+#, python-format
+msgid "Fecha Puesta en Servicio"
+msgstr "Fecha Puesta en Servicio"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:55
+#: code:addons/cl_sii_reports/depreciacion.py:50
+#, python-format
+msgid "Fecha de Adquisición"
+msgstr "Fecha de Adquisición"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,file_path:0
+#: field:cl.repo.correcion_monetaria,file_path:0
+#: field:cl.repo.depreciacion,file_path:0
+#: field:cl.repo.libro_compra,file_path:0
+#: field:cl.repo.libro_diario,file_path:0
+#: field:cl.repo.libro_honorario,file_path:0
+#: field:cl.repo.libro_mayor,file_path:0
+#: field:tmp.repo.libro_venta,file_path:0
+msgid "File Location"
+msgstr "Ubicacion de archivo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:234
+#, python-format
+msgid "Final Balance"
+msgstr "Saldo Final"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,date_stop:0
+#: field:cl.repo.libro_compra,date_stop:0
+#: field:cl.repo.libro_diario,date_stop:0
+#: field:cl.repo.libro_honorario,date_stop:0
+#: field:cl.repo.libro_mayor,date_stop:0
+#: field:tmp.repo.libro_venta,date_stop:0
+msgid "Finish Date"
+msgstr "Fecha Termino"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:268
+#, python-format
+msgid "General Balance"
+msgstr "Balance General"
+
+#. module: cl_sii_reports
+#: view:cl.repo.balance_tabular:cl_sii_reports.view_repo_balance_tabular
+#: view:cl.repo.correcion_monetaria:cl_sii_reports.view_repo_correcion_monetaria
+#: view:cl.repo.depreciacion:cl_sii_reports.view_repo_depreciacion
+#: view:cl.repo.libro_compra:cl_sii_reports.view_repo_libro_compra
+#: view:cl.repo.libro_diario:cl_sii_reports.view_repo_libro_diario
+#: view:cl.repo.libro_honorario:cl_sii_reports.view_repo_libro_honorario
+#: view:cl.repo.libro_mayor:cl_sii_reports.view_repo_libro_mayor
+#: view:tmp.repo.libro_venta:cl_sii_reports.view_repo_libro_venta
+msgid "Generar"
+msgstr "Generar"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_honorarios.py:55
+#, python-format
+msgid "Gross Amount"
+msgstr "Monto Bruto"
+
+#. module: cl_sii_reports
+#: field:cl.repo.correcion_monetaria,group_id:0
+#: field:cl.repo.depreciacion,group_id:0
+msgid "Grupo"
+msgstr "Grupo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:60
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:59
+#, python-format
+msgid "Have"
+msgstr "Haber"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_honorarios.py:51
+#: field:cl.repo.balance_tabular,id:0
+#: field:cl.repo.correcion_monetaria,id:0
+#: field:cl.repo.depreciacion,id:0
+#: field:cl.repo.libro_compra,id:0
+#: field:cl.repo.libro_diario,id:0
+#: field:cl.repo.libro_honorario,id:0
+#: field:cl.repo.libro_mayor,id:0
+#: field:tmp.repo.libro_venta,id:0
+#, python-format
+msgid "ID"
+msgstr "RUT"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:72
+#: code:addons/cl_sii_reports/correccion_monetaria.py:97
+#: code:addons/cl_sii_reports/depreciacion.py:93
+#: code:addons/cl_sii_reports/libro_compra.py:95
+#: code:addons/cl_sii_reports/libro_diario.py:85
+#: code:addons/cl_sii_reports/libro_honorarios.py:74
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:74
+#: code:addons/cl_sii_reports/libro_ventas.py:95
+#, python-format
+msgid "Industry"
+msgstr "Giro"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:257
+#, python-format
+msgid "Initial Balance"
+msgstr "Saldo Inicial"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,write_uid:0
+#: field:cl.repo.correcion_monetaria,write_uid:0
+#: field:cl.repo.depreciacion,write_uid:0
+#: field:cl.repo.libro_compra,write_uid:0
+#: field:cl.repo.libro_diario,write_uid:0
+#: field:cl.repo.libro_honorario,write_uid:0
+#: field:cl.repo.libro_mayor,write_uid:0
+#: field:tmp.repo.libro_venta,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,write_date:0
+#: field:cl.repo.correcion_monetaria,write_date:0
+#: field:cl.repo.depreciacion,write_date:0
+#: field:cl.repo.libro_compra,write_date:0
+#: field:cl.repo.libro_diario,write_date:0
+#: field:cl.repo.libro_honorario,write_date:0
+#: field:cl.repo.libro_mayor,write_date:0
+#: field:tmp.repo.libro_venta,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:54
+#, python-format
+msgid "Legal Category"
+msgstr "Categoria Legal"
+
+#. module: cl_sii_reports
+#: view:cl.repo.libro_honorario:cl_sii_reports.view_repo_libro_honorario
+#: model:ir.ui.menu,name:cl_sii_reports.cl_sii_repo_libro_diario
+msgid "Libro Honorarios"
+msgstr "Libro Honorarios"
+
+#. module: cl_sii_reports
+#: model:ir.ui.menu,name:cl_sii_reports.cl_repo_libro_compra
+msgid "Libro de Compras"
+msgstr "Libro de Compras"
+
+#. module: cl_sii_reports
+#: model:ir.ui.menu,name:cl_sii_reports.cl_sii_repo_libro_ventas
+msgid "Libro de Ventas"
+msgstr "Libro de Ventas"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:96
+#, python-format
+msgid "Loss"
+msgstr "Perdida"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,display_account:0
+msgid "Mostrar cuentas"
+msgstr "Mostrar cuentas"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:77
+#: code:addons/cl_sii_reports/depreciacion.py:71
+#, python-format
+msgid "Método de cálculo"
+msgstr "Método de cálculo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:89
+#: code:addons/cl_sii_reports/libro_honorarios.py:52
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:57
+#: field:cl.repo.balance_tabular,name:0
+#: field:cl.repo.correcion_monetaria,name:0
+#: field:cl.repo.depreciacion,name:0
+#: field:cl.repo.libro_compra,name:0
+#: field:cl.repo.libro_diario,name:0
+#: field:cl.repo.libro_honorario,name:0
+#: field:cl.repo.libro_mayor,name:0
+#: field:tmp.repo.libro_venta,name:0
+#, python-format
+msgid "Name"
+msgstr "Nombre"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_honorarios.py:57
+#, python-format
+msgid "Net"
+msgstr "Liquido"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:52
+#: code:addons/cl_sii_reports/depreciacion.py:47
+#, python-format
+msgid "Nº Activo"
+msgstr "Nº Activo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:54
+#: code:addons/cl_sii_reports/depreciacion.py:49
+#, python-format
+msgid "Número Documento"
+msgstr "Número Documento"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:59
+#: code:addons/cl_sii_reports/libro_compra.py:211
+#: code:addons/cl_sii_reports/libro_ventas.py:59
+#: code:addons/cl_sii_reports/libro_ventas.py:215
+#, python-format
+msgid "Other Taxes"
+msgstr "Otros Impuestos"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_diario.py:59
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:58
+#, python-format
+msgid "Owe"
+msgstr "Debe"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:95
+#, python-format
+msgid "Passive"
+msgstr "Pasivo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:81
+#: code:addons/cl_sii_reports/correccion_monetaria.py:108
+#: code:addons/cl_sii_reports/depreciacion.py:104
+#: code:addons/cl_sii_reports/libro_compra.py:106
+#: code:addons/cl_sii_reports/libro_diario.py:96
+#: code:addons/cl_sii_reports/libro_honorarios.py:85
+#: code:addons/cl_sii_reports/libro_mayor_sii.py:83
+#: code:addons/cl_sii_reports/libro_ventas.py:106
+#, python-format
+msgid "Period"
+msgstr "Periodo"
+
+#. module: cl_sii_reports
+#: field:cl.repo.correcion_monetaria,periodo:0
+#: field:cl.repo.depreciacion,periodo:0
+msgid "Periodo"
+msgstr "Periodo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:97
+#, python-format
+msgid "Profit"
+msgstr "Ganancias"
+
+#. module: cl_sii_reports
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_balance_tabular
+msgid "Reporte Balance 8 Columnas"
+msgstr "Reporte Balance 8 Columnas"
+
+#. module: cl_sii_reports
+#: view:cl.repo.correcion_monetaria:cl_sii_reports.view_repo_correcion_monetaria
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_correccion_monetaria
+msgid "Reporte Correccion Monetaria"
+msgstr "Reporte Correccion Monetaria"
+
+#. module: cl_sii_reports
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_libro_diario
+msgid "Reporte Libro Diario"
+msgstr "Reporte Libro Diario"
+
+#. module: cl_sii_reports
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_libro_honorario
+msgid "Reporte Libro Honorarios"
+msgstr "Reporte Libro Honorarios"
+
+#. module: cl_sii_reports
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_libro_mayor
+msgid "Reporte Libro Mayor"
+msgstr "Reporte Libro Mayor"
+
+#. module: cl_sii_reports
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_libro_compra
+msgid "Reporte Libro de Compra"
+msgstr "Reporte Libro de Compra"
+
+#. module: cl_sii_reports
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_libro_venta
+msgid "Reporte Libro de Ventas"
+msgstr "Reporte Libro de Ventas"
+
+#. module: cl_sii_reports
+#: view:cl.repo.depreciacion:cl_sii_reports.view_repo_depreciacion
+#: model:ir.actions.act_window,name:cl_sii_reports.action_repo_depreciacion
+msgid "Reporte de Depreciación"
+msgstr "Reporte de Depreciación"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_honorarios.py:56
+#, python-format
+msgid "Retention"
+msgstr "Retencion"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:61
+#: code:addons/cl_sii_reports/depreciacion.py:56
+#, python-format
+msgid "Saldo Inicial"
+msgstr "Saldo Inicial"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:71
+#: code:addons/cl_sii_reports/depreciacion.py:66
+#, python-format
+msgid "Saldo Neto Activo"
+msgstr "Saldo Neto Activo"
+
+#. module: cl_sii_reports
+#: field:cl.repo.balance_tabular,date_start:0
+#: field:cl.repo.libro_compra,date_start:0
+#: field:cl.repo.libro_diario,date_start:0
+#: field:cl.repo.libro_honorario,date_start:0
+#: field:cl.repo.libro_mayor,date_start:0
+#: field:tmp.repo.libro_venta,date_start:0
+msgid "Start Date"
+msgstr "Fecha Inicio"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:269
+#, python-format
+msgid "State of Results"
+msgstr "Estado de Resultados"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:207
+#: code:addons/cl_sii_reports/libro_ventas.py:211
+#, python-format
+msgid "Subject to Taxes"
+msgstr "Sujeto a Impu."
+
+#. module: cl_sii_reports
+#: view:cl.repo.balance_tabular:cl_sii_reports.view_repo_balance_tabular
+#: view:cl.repo.libro_compra:cl_sii_reports.view_repo_libro_compra
+#: view:cl.repo.libro_diario:cl_sii_reports.view_repo_libro_diario
+#: view:cl.repo.libro_mayor:cl_sii_reports.view_repo_libro_mayor
+#: view:tmp.repo.libro_venta:cl_sii_reports.view_repo_libro_venta
+msgid "Subscription Compute"
+msgstr "Subscription Compute"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:316
+#: code:addons/cl_sii_reports/balance_tabular.py:352
+#, python-format
+msgid "Sum"
+msgstr "Sumas"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:55
+#: code:addons/cl_sii_reports/libro_ventas.py:55
+#, python-format
+msgid "Supplier Name"
+msgstr "Nombre Proveedor"
+
+#. module: cl_sii_reports
+#: field:cl.repo.correcion_monetaria,tipo:0
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:60
+#: code:addons/cl_sii_reports/libro_compra.py:212
+#: code:addons/cl_sii_reports/libro_honorarios.py:155
+#: code:addons/cl_sii_reports/libro_ventas.py:60
+#: code:addons/cl_sii_reports/libro_ventas.py:216
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:359
+#, python-format
+msgid "Totals"
+msgstr "Totales"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_compra.py:58
+#: code:addons/cl_sii_reports/libro_compra.py:210
+#: code:addons/cl_sii_reports/libro_ventas.py:58
+#: code:addons/cl_sii_reports/libro_ventas.py:214
+#, python-format
+msgid "VAT"
+msgstr "IVA"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:64
+#: code:addons/cl_sii_reports/depreciacion.py:59
+#, python-format
+msgid "Valor act.comp.(Lº)"
+msgstr "Valor act.comp.(Lº)"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:73
+#: code:addons/cl_sii_reports/depreciacion.py:68
+#, python-format
+msgid "Vida Util Acumulada"
+msgstr "Vida Util Acumulada"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:72
+#: code:addons/cl_sii_reports/depreciacion.py:67
+#, python-format
+msgid "Vida Util Inicial (Meses)"
+msgstr "Vida Util Inicial (Meses)"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:75
+#: code:addons/cl_sii_reports/correccion_monetaria.py:76
+#: code:addons/cl_sii_reports/depreciacion.py:70
+#, python-format
+msgid "Vida Util Residual"
+msgstr "Vida Util Residual"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/correccion_monetaria.py:74
+#: code:addons/cl_sii_reports/depreciacion.py:69
+#, python-format
+msgid "Vida Util Utilizada"
+msgstr "Vida Util Utilizada"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_honorarios.py:54
+#, python-format
+msgid "Voucher Number"
+msgstr "Numero Boleta"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/libro_honorarios.py:53
+#, python-format
+msgid "Voucher Type"
+msgstr "Tipo Boleta"
+
+#. module: cl_sii_reports
+#: code:addons/cl_sii_reports/balance_tabular.py:45
+#: selection:cl.repo.balance_tabular,display_account:0
+#, python-format
+msgid "With transactions"
+msgstr "Con movimiento"
+
+#. module: cl_sii_reports
+#: view:cl.repo.balance_tabular:cl_sii_reports.view_repo_balance_tabular
+#: view:cl.repo.correcion_monetaria:cl_sii_reports.view_repo_correcion_monetaria
+#: view:cl.repo.depreciacion:cl_sii_reports.view_repo_depreciacion
+#: view:cl.repo.libro_compra:cl_sii_reports.view_repo_libro_compra
+#: view:cl.repo.libro_diario:cl_sii_reports.view_repo_libro_diario
+#: view:cl.repo.libro_honorario:cl_sii_reports.view_repo_libro_honorario
+#: view:cl.repo.libro_mayor:cl_sii_reports.view_repo_libro_mayor
+#: view:tmp.repo.libro_venta:cl_sii_reports.view_repo_libro_venta
+msgid "or"
+msgstr "or"
+

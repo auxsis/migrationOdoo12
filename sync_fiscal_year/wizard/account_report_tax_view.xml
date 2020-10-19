@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sync_account_standard_report.accounting_tax_report_view" model="ir.ui.view">
+        <field name="name">Tax Reports</field>
+        <field name="model">account.tax.report</field>
+        <field name="inherit_id" ref="account.account_common_report_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="journal_ids" position="replace"/>
+                <field name="target_move" position="replace"/>
+                <xpath expr="//field[@name='filter_by']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_from']" position="attributes">
+                    <attribute name="attrs">{'required': [('filter_by', '=', 'date')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_to']" position="attributes">
+                    <attribute name="attrs">{'required': [('filter_by', '=', 'date')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='period_from']" position="attributes">
+                    <attribute name="attrs">{'required': [('filter_by', '=', 'period')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='period_to']" position="attributes">
+                    <attribute name="attrs">{'required': [('filter_by', '=', 'period')]}</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+
+
+        <record id="project_hr_timesheet_line_tree" model="ir.ui.view">
+            <field name="name">project.hr.timesheet.tree</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="project_id" position="replace">
+                    <field name="user_id" />
+                    <field domain="[('allow_timesheets','=',1)]" name="project_id" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="cost_center_id" />
+                    <field name="sector_id" /> 
+                    <field name="task_activity_type" />
+                    <field name="task_stage_close" invisible="1" />                    
+                </field> 
+                <field name="task_id" position="replace">
+                    <field name="task_id" options="{'no_open': True, 'no_create': True}" domain="[('project_id','=',project_id),('user_id','=',uid),('stage_id.close_stage','=',False),('outsourcing_state','in',['open','preinvoiced','invoiced'])]" />               
+                </field>
+            </field>
+        </record>	
+	
+
+
+
+
+  </data>
+</odoo>

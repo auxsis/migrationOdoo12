@@ -43,6 +43,16 @@ class ResPartner(models.Model):
                     p.dte_email_id = dte.id
                     p.dte_email = dte.email
                     break
+        
+    @api.multi        
+    def _journal_item_count(self):
+        MoveLine = self.env['account.move.line']
+        AnalyticAccount = self.env['account.analytic.account']
+        for partner in self:
+            partner.journal_item_count = MoveLine.search_count([('partner_id', '=', partner.id)])
+                  
+                    
+                    
     type = fields.Selection(
         selection_add=[
             ('dte', 'Contacto DTE'),
@@ -106,6 +116,10 @@ class ResPartner(models.Model):
     last_sync_update = fields.Datetime(
         string="Fecha Actualizado",
     )
+    #apiux add field for journal item count
+    journal_item_count=fields.Integer('Journal Item Count', compute=_journal_item_count)
+    
+    
 
     def write(self, vals):
         result = super(ResPartner, self).write(vals)
@@ -221,7 +235,7 @@ class ResPartner(models.Model):
                 [
                     ('vat', '=', vat),
                     ('vat', '!=',  'CL555555555'),
-                    ('commercial_partner_id', '!=', self.commercial_partner_id.id ),
+                    #('commercial_partner_id', '!=', self.commercial_partner_id.id ),
                 ],
                 limit=1,
             )
@@ -263,9 +277,9 @@ class ResPartner(models.Model):
                 [
                     ('vat', '=', r.vat),
                     ('id', '!=', r.id),
-                    ('commercial_partner_id', '!=', r.commercial_partner_id.id),
+                    #('commercial_partner_id', '!=', r.commercial_partner_id.id),
                 ])
-            if r.vat != "CL555555555" and partner:
+            if r.vat and r.vat != "CL555555555" and partner:
                 raise UserError(_('El rut: %s debe ser único') % r.vat)
                 return False
 
@@ -285,6 +299,8 @@ class ResPartner(models.Model):
             else:
                 return False
         except IndexError:
+            return False
+        except ValueError:
             return False
 
     def _process_data(self, data={}):

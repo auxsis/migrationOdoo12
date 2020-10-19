@@ -11,12 +11,15 @@ class AccountJournalSiiDocumentClass(models.Model):
     _description = "Journal SII Documents"
     _order = 'sequence'
 
+    #apiux change name to include sii_code
     @api.depends('sii_document_class_id', 'sequence_id')
     def get_secuence_name(self):
         for r in self:
             sequence_name = r.sii_document_class_id.name or ''
+            sii_code=r.sii_document_class_id.sii_code
             if r.sequence_id:
-                sequence_name = "(%s) %s: %s " % (r.qty_available, sequence_name, r.sequence_id.name)
+                #sequence_name = "(%s) (%s) %s: %s " % (sii_code,r.qty_available, sequence_name, r.sequence_id.name)
+                sequence_name = "(%s) (%s) %s" % (sii_code,r.qty_available, sequence_name)
             r.name = sequence_name
 
     name = fields.Char(

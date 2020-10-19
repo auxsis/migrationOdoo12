@@ -13,10 +13,20 @@ class AccountInvoiceRefund(models.TransientModel):
 
     _inherit = "account.invoice.refund"
 
+    @api.model
+    def _default_tipo_nota(self):
+        docs=self.env['sii.document_class'].search([('document_type', 'in', ['credit_note']),('dte', '=', True)])
+        if docs:
+            return docs[0]
+        return False
+            
+            
+
     tipo_nota = fields.Many2one(
             'sii.document_class',
             string="Tipo De nota",
             required=True,
+            default=lambda self: self._default_tipo_nota(),
             domain=[
                     ('document_type', 'in', ['debit_note','credit_note']),
                     ('dte', '=', True),
@@ -40,6 +50,15 @@ class AccountInvoiceRefund(models.TransientModel):
             self.description = _("Dice:   Debe Decir: ")
 
     @api.multi
+    def invoice_refund(self):
+        _logger.info("invoicerefund1")
+        data_refund = self.read(['filter_refund'])[0]['filter_refund']
+        result,refund,inv = self.compute_refund(data_refund)
+        return result
+
+
+
+    @api.multi
     def compute_refund(self, mode='1'):
         inv_obj = self.env['account.invoice']
         inv_tax_obj = self.env['account.invoice.tax']
@@ -60,6 +79,27 @@ class AccountInvoiceRefund(models.TransientModel):
                 date = form.date_invoice or False
                 description = form.description or inv.name
                 type = inv.type
+                
+                #apiux set up journal type for credit notes
+                journal_id=inv.journal_id.id
+                
+                if type == 'out_invoice' and self.tipo_nota.document_type == "credit_note":
+                    journal_id=inv.journal_id.refund_journal_id.id
+                elif type == 'in_invoice' and self.tipo_nota.document_type == "credit_note":
+                    journal_id=inv.journal_id.refund_journal_id.id
+
+                jdc = self.env['account.journal.sii_document_class'].search(
+                        [
+                            ('sii_document_class_id.sii_code', '=', self.tipo_nota.sii_code),
+                            ('journal_id', '=', journal_id),
+                        ],
+                        limit=1,
+                    )                 
+                
+                #apiux end
+                
+                    
+                
                 if mode in ['2']:
                     invoice = inv.read(inv_obj._get_refund_modify_read_fields())
                     invoice = invoice[0]
@@ -69,13 +109,7 @@ class AccountInvoiceRefund(models.TransientModel):
                                     ('product_tmpl_id', '=', self.env.ref('l10n_cl_fe.no_product').id),
                             ]
                         )
-                    jdc = self.env['account.journal.sii_document_class'].search(
-                            [
-                                ('sii_document_class_id.sii_code', '=', self.tipo_nota.sii_code),
-                                ('journal_id', '=', inv.journal_id.id),
-                            ],
-                            limit=1,
-                        )
+
                     if type == 'out_invoice' and self.tipo_nota.document_type == "credit_note":
                         refund_type = 'out_refund'
                     elif type in ['out_invoice', 'out_refund']:
@@ -131,7 +165,13 @@ class AccountInvoiceRefund(models.TransientModel):
                     if refund.payment_term_id.id:
                         refund._onchange_payment_term_date_invoice()
                 if mode in ['1', '3']:
-                    refund = inv.refund(form.date_invoice, date, description, inv.journal_id.id, tipo_nota=self.tipo_nota.sii_code, mode=mode)
+                
+                    #apiux set journal id for mode 3 and update document types
+                    refund = inv.refund(form.date_invoice, date, description, journal_id, tipo_nota=self.tipo_nota.sii_code, mode=mode)
+                    refund.journal_document_class_id= jdc
+                    refund.document_class_id=jdc.sii_document_class_id 
+                    #end apiux
+                    
                 created_inv.append(refund.id)
                 xml_id = refund.type == 'out_refund' and 'action_invoice_out_refund' or \
                          refund.type == 'out_invoice' and 'action_invoice_tree1' or \
@@ -146,5 +186,5 @@ class AccountInvoiceRefund(models.TransientModel):
             invoice_domain = safe_eval(result['domain'])
             invoice_domain.append(('id', 'in', created_inv))
             result['domain'] = invoice_domain
-            return result
+            return [result,refund,inv]
         return True

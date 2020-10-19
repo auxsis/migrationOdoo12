@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- Wizard -->
+        <record id="project_accrued_invoice_wizard_form" model="ir.ui.view">
+            <field name="name">Enviar factura</field>
+            <field name="model">project.accrued.invoice.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="projection_id" readonly="True" invisible="1"/>
+                            <field name="pre_invoice_state" invisible="1"/>
+                            <field name="partner_id" required="True" readonly="1"/>
+                            <field name="company_id" required="True" readonly="1"/>
+                            <field name="glosa" string="Descripción" required="1"/>
+                            <field name="invoice_product_id" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                            <field name="journal_id" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                        </group>
+                        <group>
+                            <field name="project_id" readonly="1"/>
+		                        <field name="emission_date" required="True"/>
+                                <field name="invoice_account_receivable_id" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                                <field name="invoice_account_id" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+						    <field name="currency_id" options="{'no_quick_create': True, 'no_create_edit' : True}" domain="[('name','in',['CLP','USD','UF'])]"/>
+                            <field name="currency_name" invisible="1"/>
+                            <field name="clp_id" invisible="1"/>
+                            <field name="uf_value" attrs="{'invisible': [('currency_name','!=','UF')]}" />
+                            <field name="dolar_value" attrs="{'invisible': [('currency_name','!=','USD')]}"/>
+                            <field name="is_tax_exempt" required="True"/>
+                        </group>
+                        <group>
+                            <field name="amount" readonly="1" widget="monetary" options='{"currency_field": "currency_id"}'/>
+                            <field name="total_clp" string="Monto neto(CLP)" readonly="1" widget="monetary" options='{"currency_field": "clp_id"}'/>
+                            <field name="tax" attrs="{'invisible': [('is_tax_exempt','=','si')]}"/>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="action_send" type="object" string="Enviar"/> <!-- Action Button -->
+                        <button string="Cancelar" class="oe_link" special="cancel" style="margin-left: 15px;"/> <!-- Do nothing -->
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="project_pre_invoice_search" model="ir.ui.view">
+            <field name="name">project.pre.invoice.search</field>
+            <field name="model">project.pre.invoice</field>
+            <field name="arch" type="xml">
+                <search string="Devengados">
+                    <field name="project_id" string="Proyecto" filter_domain="[('project_reference','ilike',self)]"/>
+                    <filter name="filter_preaccrued" icon="terp-personal" domain="[('is_preaccrued','!=',False)]" string="Devengados"/>
+                    <separator/>
+                    <filter name="filter_nopreaccrued" icon="terp-personal" domain="[('is_preaccrued','=',False)]" string="No Devengados"/>
+                    <separator/>
+                    <filter name="filter_staffing" icon="terp-personal" domain="[('invoice_type','!=','milestone')]" string="Staffing"/>
+                    <separator/>
+                    <filter name="filter_hito" icon="terp-personal" domain="[('invoice_type','=','milestone')]" string="Hito"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Periodo" name="group_period" icon="terp-personal" domain="[]" context="{'group_by':'invoice_period'}"/>
+                        <filter string="Proyecto" name="group_project" icon="terp-folder-green" domain="[]" context="{'group_by':'project_id'}"/>
+                        <filter string="Tipo Invoice" name="group_type" icon="terp-personal" domain="[]" context="{'group_by':'invoice_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="project_pre_invoice_tree" model="ir.ui.view">
+            <field name="name">project.pre.invoice.tree</field>
+            <field name="model">project.pre.invoice</field>
+            <field name="arch" type="xml">
+                <tree string="Desvengados" create="false" edit="false">
+                    <button name="send_preaccrued"
+                        string="Devengar"
+                        type="object"
+                        attrs="{'invisible':['|',('is_preaccrued','!=', False),('state','in',['invoiced'])]}"
+                        confirm="Se genera la Linea Analitica con los cambios. Quiere seguir?"/>
+                    <button name="remove_preaccrued"
+                        string="Eliminar Devengado"
+                        type="object"
+                        attrs="{'invisible':[('is_preaccrued','=', False)]}"
+                        confirm="Se elimina la Linea Analitica con los cambios. Quiere seguir?"/>
+                    <field name="company_id" invisible="1"/>
+                    <field name="pre_invoice_state" invisible="1"/>
+                    <field name="state" required="1"/>
+                    <field name="project_id" readonly="1"/>
+                    <field name="project_reference" invisible="1"/>
+                    <field name="outsourcing_ids" widget="one2many_tags" readonly="1"/>
+                    <field name="invoice_type" readonly="1" />
+                    <field name="invoice_period" readonly="1"/>
+                    <field name="period_id" readonly="1"/>
+                    <field name="projected_amount" sum="Total"/>
+                    <field name="amount" readonly="1" />
+                    <field name="money"  readonly="1" />
+                    <field name="invoice_id" readonly="1" />
+                    <field name="preaccrued_amount" readonly="1"/>
+                    <field name="link_preaccrued_id" readonly="1"/>
+                    <field name="is_preaccrued" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="act_project_pre_invoice_tree" model="ir.actions.act_window">
+            <field name="name">Devengados</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.pre.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="project_pre_invoice_search"/>
+            <field name="context">{"search_default_group_project":1}</field>
+        </record>
+
+        <menuitem id="menu_project_pre_invoice" parent="project.menu_projects" action="act_project_pre_invoice_tree"/>
+
+</odoo>

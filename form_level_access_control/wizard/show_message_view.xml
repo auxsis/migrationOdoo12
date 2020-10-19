@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+
+		<record id = "show_final_message_wizard" model = "ir.ui.view">
+			<field name = "name">show.final.message.wizard</field>
+			<field name = "model">show.message</field>
+			<field name = "arch" type = "xml">
+				<form>
+					<p><h2>Changes Applied Successfully.</h2></p>
+					<footer>
+						<button string="Ok" type="object" class="oe_highlight" name="ok"/>
+					</footer>
+			    </form>
+			</field>
+		</record>  
+		
+</data>
+</odoo>		

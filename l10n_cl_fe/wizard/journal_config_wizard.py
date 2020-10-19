@@ -127,8 +127,10 @@ Include unusual taxes documents, as transfer invoice, and reissue
         document_class_obj = self.env['sii.document_class']
         document_class_ids = document_class_obj.search(domain)
         journal.document_class_ids = document_class_ids.ids
-        if journal.type == 'purchase':
-            return
+        
+        #apiux create documents for purchase journals
+        # if journal.type == 'purchase':
+            # return
         journal_document_obj = self.env['account.journal.sii_document_class']
         sequence = 10
         for document_class in document_class_ids:
