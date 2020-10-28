@@ -90,7 +90,7 @@ class account_move_line(models.Model):
         if not self.analytic_journal_id:
             raise ValidationError(_("Move line does not have an analytic journal specified. Cannot create the analytic line"))
             
-        for line in res:
+        for line in res[0]:
             line['journal_id']=self.analytic_journal_id.id
         return res
 

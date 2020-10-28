@@ -57,7 +57,8 @@
                 </group>
                 <group>
                   <group>
-                    <field name="oc_profile" attrs="{'required':[('origin','=','odoo12')]}" domain="[('project_id','=',account_id),('state_booking','=',False)]"/>
+                    <field name="profile_ids" invisible="1"/>
+                    <field name="oc_profile" attrs="{'required':[('origin','=','odoo12')]}" domain="[('project_id','=',account_id),('id','in',profile_ids)]"/>
                     <field name="user_id" required="1" attrs="{'readonly':[('state','=', 'confirm')]}" options="{'no_open': True, 'no_create': True}"/>
                     <field name="confirm_type" string="Tipo Booking" readonly="1"/>
                     <field name="invoicing_type" required="1" widget="selection" domain="[('name','in',['Hora(s)','Mes(es)'])]"/>

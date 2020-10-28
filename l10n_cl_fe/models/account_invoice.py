@@ -895,7 +895,6 @@ class AccountInvoice(models.Model):
                 tax_grouped[key]['amount'] += val['amount']
                 tax_grouped[key]['amount_retencion'] += val['amount_retencion']
                 tax_grouped[key]['base'] += val['base']
-            _logger.info("taxgrouped=%s,%s",tax_grouped,val)
         return tax_grouped
 
     @api.multi
@@ -1204,7 +1203,7 @@ a VAT."""))
                     move_name = (prefix + str(sii_document_number)).replace(' ','')
                     to_write.update({
                             #'sii_document_number': int(sii_document_number),
-                            'move_name': move_name,
+                            #'move_name': move_name,
                         })
                     obj_inv.write(to_write)
 
@@ -1221,6 +1220,42 @@ a VAT."""))
                        }
             obj_inv.move_id.write(guardar)
         return True
+
+
+    @api.model
+    def invoice_line_move_line_get(self):
+        res = []
+        for line in self.invoice_line_ids:
+            if not line.account_id:
+                continue
+            if line.quantity==0 and self.type!='out_refund':
+                continue
+            tax_ids = []
+            for tax in line.invoice_line_tax_ids:
+                tax_ids.append((4, tax.id, None))
+                for child in tax.children_tax_ids:
+                    if child.type_tax_use != 'none':
+                        tax_ids.append((4, child.id, None))
+            analytic_tag_ids = [(4, analytic_tag.id, None) for analytic_tag in line.analytic_tag_ids]
+
+            move_line_dict = {
+                'invl_id': line.id,
+                'type': 'src',
+                'name': line.name,
+                'price_unit': line.price_unit,
+                'quantity': line.quantity,
+                'price': line.price_subtotal,
+                'account_id': line.account_id.id,
+                'product_id': line.product_id.id,
+                'uom_id': line.uom_id.id,
+                'account_analytic_id': line.account_analytic_id.id,
+                'analytic_tag_ids': analytic_tag_ids,
+                'tax_ids': tax_ids,
+                'invoice_id': self.id,
+            }
+            res.append(move_line_dict)
+        return res
+
 
     @api.multi
     def _check_duplicate_supplier_reference(self):
@@ -1333,7 +1368,8 @@ a VAT."""))
                 paylines=origin_invoice._get_outstanding_info_lines(inv)
                 if paylines:
                     for payline in paylines:
-                        origin_invoice.assign_outstanding_credit(payline.id)
+                        if payline:
+                            origin_invoice.assign_outstanding_credit(payline.id)
 
             return res
 

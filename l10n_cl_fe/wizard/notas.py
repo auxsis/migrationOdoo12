@@ -161,6 +161,8 @@ class AccountInvoiceRefund(models.TransientModel):
                             invoice[field] = invoice[field] and invoice[field][0]
                         else:
                             invoice[field] = invoice[field] or False
+                    #apiux change journal id here to credit note journal   
+                    invoice['journal_id']=journal_id
                     refund = inv_obj.create(invoice)
                     if refund.payment_term_id.id:
                         refund._onchange_payment_term_date_invoice()

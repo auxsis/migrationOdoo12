@@ -114,13 +114,15 @@ class account_analytic_line(models.Model):
     @api.model
     def create(self, vals):
 
-        date=vals.get('date',False)
-        task_id=vals.get('task_id')
 
-        
-        task=self.env['project.task'].browse([task_id])
-        if task.date_deadline and date > task.date_deadline:
-            raise Warning(_('''The date entered exceeds the date limit on the Task. Please check the date and Task'''))
+        # for rec in vals:
+            # date=rec.get('date',False)
+            # task_id=rec.get('task_id')
+
+            
+            # task=self.env['project.task'].browse([task_id])
+            # if task.date_deadline and date > task.date_deadline:
+                # raise Warning(_('''The date entered exceeds the date limit on the Task. Please check the date and Task'''))
 
 
         return super(account_analytic_line, self).create(vals)

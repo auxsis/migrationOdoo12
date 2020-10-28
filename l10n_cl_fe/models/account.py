@@ -101,7 +101,7 @@ class account_move(models.Model):
         # Create the analytic lines in batch is faster as it leads to less cache invalidation.
         self.mapped('line_ids').create_analytic_lines()
         for move in self:
-            _logger.info("movename=%s,%s",move.name,invoice)
+            _logger.info("movename=%s,%s",move.name,invoice and invoice.move_name or '')
             if move.name == '/':
                 new_name = False
                 journal = move.journal_id

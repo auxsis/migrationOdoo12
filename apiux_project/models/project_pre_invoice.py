@@ -87,8 +87,8 @@ class ProjectPreInvoice(models.Model):
             
         last_sale_note=None
         sale_notes=self.project_id.nota_ids.sorted(key=lambda r:r.create_date, reverse=True)
-        if sales_notes:
-            last_sale_note=sales_notes[0]
+        if sale_notes:
+            last_sale_note=sale_notes[0]
             
 
         currency_id=self.env['res.currency'].search([('name','=',self.money.upper())])

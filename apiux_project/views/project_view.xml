@@ -101,6 +101,7 @@
                                     <field name="total_hours_projected" attrs="{'readonly':True}"/>
                                     <field name="total_hours_sold" attrs="{'readonly':True}"/>
                                     <field name="total_hours_registered" attrs="{'readonly':True}"/>
+                                    <field name="total_hours_analytic" attrs="{'readonly':True}"/>                                    
                                     <separator colspan="2" />
                                 </group>
                                 <group name="group_sales" string="Venta/Facturación" >

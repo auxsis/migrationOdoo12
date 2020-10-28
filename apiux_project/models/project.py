@@ -102,6 +102,9 @@ class project_project(models.Model):
     total_hours_projected = fields.Float(string="Horas Proyectadas",compute="compute_hours_projected")
     total_hours_sold = fields.Float(string="Horas Vendidas",compute="compute_hours_sold")
     total_hours_registered = fields.Float(string="Horas Registradas",compute="compute_hours_registered")
+    total_hours_analytic = fields.Float(string="Horas Analiticas",compute="compute_hours_analytic")
+    
+    
     nota_ids=fields.One2many('crm.sale.note','project_id','CRM Sale Note')
     invoice_id=fields.One2many('account.invoice','project_id', string='Invoices')
 
@@ -156,6 +159,16 @@ class project_project(models.Model):
                 for work in task.work_ids:
                     hours_registered+=work.unit_amount
         self.total_hours_registered=hours_registered
+
+
+    @api.multi
+    @api.depends('analytic_account_id.line_ids')
+    def compute_hours_analytic(self):
+        hours_analytic=0
+        for rec in self:
+            for line in rec.analytic_account_id.line_ids.filtered(lambda x:x.journal_id.code=='TS'):
+                hours_analytic+=line.unit_amount
+        self.total_hours_analytic=hours_analytic
 
 
     @api.multi

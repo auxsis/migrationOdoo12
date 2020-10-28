@@ -53,7 +53,7 @@ class ProjectOutsourcing(models.Model):
     @api.depends('assignment_id.unit_amount','quantity')
     def _compute_quantity_days(self):
         for rec in self:
-            self.quantity_days=round((rec.quantity/rec.assignment_id.unit_amount), 2)
+            rec.quantity_days=round((rec.quantity/rec.assignment_id.unit_amount), 2)
     
 
     activity_type=fields.Many2one('project.task.activity.type',string='Activity Type',required=True,help='Pleas select an activity type for your tasks')
@@ -452,13 +452,49 @@ class hr_projection_timesheet(models.Model):
     hours_profile = fields.Integer(string="Horas Perfil")
     
     origin=fields.Selection([('odoo8','odoo8'),('odoo12','odoo12')], string='Origen', default='odoo12')
+    profile_ids = fields.Many2many('sale.order.line',compute='change_invoicing_type',string='Available Profiles')
 
 
-    @api.onchange('oc_profile')
-    def change_hours(self):
+    @api.depends('invoicing_type','account_id','oc_profile','state')
+    def change_invoicing_type(self):
+
         if self.oc_profile:
             self.invoicing_type=self.oc_profile.order_id.type_sale
             self.hours_profile=self.oc_profile.product_uom_qty/self.oc_profile.order_id.type_sale.factor
+
+
+        #ok what are my available profiles without filtro
+        available_profile_ids=[]
+        all_profile_ids=self.env['sale.order.line'].search([('project_id','=',self.account_id)])
+        
+        for profile_id in all_profile_ids:
+            #find all bookings for confirmado
+            all_bookings=self.env['hr.projection.timesheet'].search([('oc_profile','=',profile_id.id),('state','=','confirm')])
+
+            if all_bookings:
+                if self.invoicing_type.name=='Hora(s)':
+                    hours_total=sum([x.amount for x in all_bookings])
+                    if hours_total<=profile_id.product_uom_qty*1.05:
+                        available_profile_ids.append(profile_id.id)
+                        
+                if self.invoicing_type.name=='Mes(es)':
+                    days_total=sum([x.number_of_days_temp for x in all_bookings])
+                    if days_total<=profile_id.product_uom_qty:
+                        available_profile_ids.append(profile_id.id)
+                        
+        if available_profile_ids:
+            self.profile_ids=available_profile_ids
+            if self.oc_profile.id not in available_profile_ids:
+                self.oc_profile=False
+        else:
+            self.profile_ids=all_profile_ids
+
+
+    # @api.onchange('oc_profile')
+    # def change_hours(self):
+        # if self.oc_profile:
+            # self.invoicing_type=self.oc_profile.order_id.type_sale
+            # self.hours_profile=self.oc_profile.product_uom_qty/self.oc_profile.order_id.type_sale.factor
 
 
     #On confirm onboard search for employee onboard and update with first project
@@ -730,7 +766,7 @@ class hr_projection_timesheet(models.Model):
         staff_obj=self.env['project.outsourcing']
         
         #Esta chequeo no aplica para booking de tipo Meses
-        if self.invoicing_type.name not in ['Mes(es)']:
+        if self.invoicing_type.name in ['Hora(s)']:
             hours_5=int(self.hours_profile*0.05)
             if self.hours_profile+hours_5<self.amount_2:
                 raise models.ValidationError(('No es posible asignar más de '+str(self.hours_profile+hours_5)+' horas ('+str(self.hours_profile)+' horas + '+str(hours_5)+' horas).\n Para más ayuda contacta al administrador'))
@@ -983,6 +1019,7 @@ class hr_projection_timesheet(models.Model):
         # date_to has to be greater than date_from
         if (date_from and date_to) and (date_from > date_to):
             raise exceptions.ValidationError(_('The start date must be anterior to the end date.'))
+            
 
         #recalculate num days adding 1
         vals["number_of_days_temp"]=self._get_number_of_days(date_from, date_to)+1

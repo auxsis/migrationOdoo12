@@ -271,6 +271,7 @@ class SaleOrderLine(models.Model):
     order_id_quotation = fields.Many2one('crm.sale.note', string='Order Reference', required=False, ondelete='cascade', index=True)
     price = fields.Monetary(compute='compute_price_quotation', string='Precio', readonly=True, store=True)
     state_booking = fields.Boolean(string="Estado", default=False)
+    project_id = fields.Many2one('project.project', 'Proyecto Generado', index=True, copy=True)
 
     @api.depends('cost','product_uom_qty','risk','order_id.type_sale')
     def compute_cost(self):
