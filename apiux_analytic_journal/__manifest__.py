@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','l10n_cl_fe','hr_timesheet','analytic'],
+    'depends': ['base','l10n_cl_fe','hr_timesheet','analytic','project_analytic'],
 
     # always loaded
     'data': [

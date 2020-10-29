@@ -112,7 +112,6 @@
                 								<button name="action_draft" states="rejected" string="Borrador" type="object" groups="base.group_hr_user"/>
                                                 <button name="action_send" string="Enviar" type="object" style="margin-left: 100px;" attrs="{'invisible':[('state','!=', 'done')]}"/>
                 								<field name="state" readonly="1"/>
-                								<field name="period_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
                 								<field name="name" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
                 								<field name="description" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
                 								<field name="activity_type" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
@@ -125,6 +124,7 @@
                 								<field name="quantity_real" readonly="1" widget="float_time"/>
                 								<field name="quantity_invoiced" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" widget="float_time"/>
                 								<field name="amount" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" options="{&quot;currency_field&quot;: &quot;currency_id&quot;}"/>
+                								<field name="period_id" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
                 								<field name="real_period_id" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
                 								<field name="invoice_id" readonly="1"/>
                             </tree>

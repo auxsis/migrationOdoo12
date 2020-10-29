@@ -45,6 +45,7 @@
                                 <field name="outsourcing_id" readonly="1" />
                                 <field name="task_id" readonly="1"/>
                                 <field name="period_id" readonly="1"/>
+                                <field name="real_period_id" readonly="1"/>                                
                                 <field name="user_id" readonly="1"/>
                                 <field name="currency_id" readonly="1"/>
                                 <field name="quantity" />

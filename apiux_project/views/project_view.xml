@@ -187,7 +187,6 @@
                                                     <button name="action_send" string="Enviar" type="object" style="margin-left: 100px;" attrs="{'invisible':[('state','!=', 'done'),('state','!=', 'open')]}"/>
                                                     <button name="action_resend" string="ReEnviar" confirm="Se va a desvincular Factura. Esta seguro?" type="object" style="margin-left: 100px;" attrs="{'invisible':[('state','!=', 'invoiced')]}"/>
                                                     <field name="state" readonly="1"/>
-                                                    <field name="period_id" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
                                                     <field name="name" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
                                                     <field name="description" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
                                                     <field name="activity_type" attrs="{'readonly': [('state','not in',('draft', 'open'))]}"/>
@@ -200,6 +199,7 @@
                                                     <field name="quantity_real" readonly="1" widget="float_time"/>
                                                     <field name="quantity_invoiced" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" widget="float_time"/>
                                                     <field name="amount" attrs="{'readonly': [('state','not in',('draft', 'open'))]}" options="{&quot;currency_field&quot;: &quot;currency_id&quot;}"/>
+                                                    <field name="period_id" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>                                                    
                                                     <field name="real_period_id" domain="[('company_id','=', company_id)]" options="{'no_create': True, 'no_open' : True}"/>
                                                     <field name="projection_id" domain="['|',('project_id','=',project_id),('state','in',['preinvoiced','invoiced'])]"/>
                                                     <field name="invoice_id" />
@@ -212,9 +212,9 @@
                                                 <field name="project_id" invisible="1"/>
                                                 <button name="send_preinvoice" string="Enviar a" type="object" style="margin-left: 100px;" attrs="{'invisible':['|',('pre_invoice_state','!=', 'proyectado'),('state','in',['preinvoiced','invoiced'])]}"/>
                                                 <field name="outsourcing_ids" />
-                                                <field name="pre_invoice_state"/>
+                                                <field name="pre_invoice_state" invisible="1"/>
                                                 <field name="invoice_type" />
-                                                <field name="state" invisible="1"/>                            
+                                                <field name="state" />                            
                                                 <field name="invoice_period" attrs="{'readonly': [('pre_invoice_state','in',('pendiente', 'facturado'))]}"/>
                                                 <field name="period_id" string="Periodo Real"/>
                                                 <field name="projected_amount" widget="monetary"/>
@@ -260,6 +260,33 @@
                         </xpath>        
             </field>
         </record>
+        
+        
+        <record id="apiux_project_view_project" model="ir.ui.view">
+            <field name="name">apiux.project.edit.project</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after" >
+                    <field name="project_reference" readonly="1" />
+                </field>
+            </field>
+        </record>
+
+
+        <record id="apiux_project_view_project_project_filter" model="ir.ui.view">
+            <field name="name">apiux.project.view.project.project.filter</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes" >
+                  <attribute name="filter_domain">['|','|',('name','ilike',self), ('project_reference','ilike',self), ('partner_id', 'child_of', self)]</attribute>
+                </field>
+            </field>
+        </record>
+
+
+
 
 
         <record id="project.open_view_project_all" model="ir.actions.act_window">

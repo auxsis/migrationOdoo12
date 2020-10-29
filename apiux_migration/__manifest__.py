@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','account_sector','hr','apiux_hr_leave','apiux_queue','account_payment_order','l10n_cl_fe','account_cost_center','apiux_project','apiux_timedoctor'],
+    'depends': ['base','account_sector','hr','apiux_hr_leave','apiux_queue','account_payment_order','l10n_cl_fe','account_cost_center','apiux_project','apiux_timedoctor','apiux_analytic_journal'],
 
     # always loaded
     'data': [

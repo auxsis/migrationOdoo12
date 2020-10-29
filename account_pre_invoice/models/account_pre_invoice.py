@@ -291,6 +291,11 @@ class AccountPreInvoice(models.Model):
         lineNo=1
 
         #do preinvoice lines
+        #we also need to force the period on the invoice 
+        #to the latest real_period_id on the prefactura lines
+        #with read ahead
+        
+        forced_period_id=self.line_ids[0].real_period_id
         
         for line in self.line_ids:
             line_id_list=[0,False]
@@ -301,7 +306,12 @@ class AccountPreInvoice(models.Model):
             line_id['product_id']=line.product_id.id
             line_id['name']=line.product_id.name
 
-                  
+            #This field will drive the analitic line when validated
+            line_id['analytic_period_id']=line.period_id.id
+            
+            #Check forced period id against next real_period_id
+            if line.real_period_id.date_start>forced_period_id.date_start:
+                forced_period_id=line.real_period_id
                     
             line_id['account_id']=line.account_id.id
             line_id['account_analytic_id']=invoice['Header']['account_analytic_id']
@@ -330,6 +340,7 @@ class AccountPreInvoice(models.Model):
             lineNo+=1
         #end invoice line processing
         
+        invoice['Header']['period_id']=forced_period_id.id
                                 
         #create invoice header and lines
         inv_obj=self.env['account.invoice']
@@ -534,7 +545,6 @@ class PreInvoiceLine(models.Model):
     
 
     name=fields.Char('Perfil')
-    projection_id=fields.Many2one('project.pre.invoice', ondelete='restrict',required=False,string='Linea Proyeccion')
     note_id=fields.Many2one('crm.sale.note', ondelete='restrict',required=False,string='Linea Nota de Venta')
     
     
@@ -604,4 +614,14 @@ class AccountInvoice(models.Model):
         self.cost_center_id=self.project_id.cost_center_id
     
     
+class AccountInvoiceLine(models.Model):
+    _inherit='account.invoice.line'
+
+    analytic_period_id=fields.Many2one('account.period', string='Periodo Analitico')
+    
+    
+class AccountMoveLine(models.Model):
+    _inherit='account.move.line'
+
+    analytic_period_id=fields.Many2one('account.period', string='Periodo Analitico')    
     

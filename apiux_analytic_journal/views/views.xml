@@ -87,5 +87,37 @@
       </field>
     </record>
 
+
+    <record id="analytic_journal_view_account_analytic_line_tree" model="ir.ui.view">
+      <field name="name">analytic.journal.view.account.analytic.line.tree</field>
+      <field name="model">account.analytic.line</field>
+      <field name="inherit_id" ref="analytic.view_account_analytic_line_tree"/>
+      <field name="arch" type="xml">
+        <field name="name" position="after">
+          <field name="journal_id"/>
+          <field name="payment_state"/>          
+        </field>
+      </field>
+    </record>
+
+
+    <record id="analytic_journal_view_account_analytic_line_tree" model="ir.ui.view">
+      <field name="name">analytic.journal.view.account.analytic.line.tree</field>
+      <field name="model">account.analytic.line</field>
+      <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+      <field name="arch" type="xml">
+        <filter name="groupby_employee" position="before">
+            <filter string="Mes Tarea" context="{'group_by':'date'}" name="group_date" help="Invoice Tasks by Month"/>        
+            <filter string="Diario Analitico" context="{'group_by':'journal_id'}" name="group_journal_id"/>     
+            <filter string="Estado Pago" context="{'group_by':'payment_state'}" name="group_payment_state"/>        
+            <filter string="Usuario" name="groupby_user" domain="[]" context="{'group_by':'user_id'}"/>        
+        </filter>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="analytic.account_analytic_line_action">
+            <field name="context">{'search_default_group_payment_state': 1,'search_default_group_journal': 1, 'search_default_group_date': 1,'default_account_id': active_id}</field>
+    </record>
+    
   </data>
 </odoo>

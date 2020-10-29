@@ -397,7 +397,9 @@ class ProjectInvoiceWizard(models.TransientModel):
             'emission_date': self.emission_date,
             'send_date': self.emission_date,
             'projection_status':'pending',
+            'projection_id':self.projection_id and self.projection_id.id or False
         }
+
 
         lines_list=[]
         lvalues={}
@@ -419,7 +421,7 @@ class ProjectInvoiceWizard(models.TransientModel):
             lvalues['outsourcing_id']=line.outsourcing_id.id
             lvalues['currency_id']=line.currency_id.id
             lvalues['company_id']=line.company_id.id
-            lvalues['period_id']=line.period_id.id
+            lvalues['period_id']=(line.period_id and line.period_id.id) or (line.real_period_id and line.real_period_id.id) or False
             lvalues['quantity']=line.quantity
             lvalues['amount']=line.line_amount
             lvalues['amount_clp']=temp_clp
@@ -450,7 +452,8 @@ class InvoiceLines(models.TransientModel):
     user_id=fields.Many2one(related='outsourcing_id.user_id',string='Nombre')
     currency_id = fields.Many2one(related='outsourcing_id.currency_id', string='Moneda')
     company_id = fields.Many2one(related='outsourcing_id.company_id', string='Compañia')
-    period_id =fields.Many2one(related='outsourcing_id.period_id', string='Periodo')
+    period_id =fields.Many2one(related='outsourcing_id.period_id', string='Periodo')    
+    real_period_id =fields.Many2one(related='outsourcing_id.real_period_id', string='Periodo Real')
     quantity=fields.Float(related='outsourcing_id.quantity_invoiced', string='Reales./Horas')
     line_amount=fields.Monetary(related='outsourcing_id.amount',string='Monto Real')
   
@@ -459,3 +462,21 @@ class InvoiceLines(models.TransientModel):
 class InvoiceAttachment(models.Model):
     _inherit = 'ir.attachment'
     invoice_id = fields.Many2one('project.pre_invoice')    
+
+
+
+
+class AccountPreInvoice(models.Model):
+    _inherit='account.pre_invoice'
+
+    projection_id=fields.Many2one('project.pre.invoice', ondelete='restrict',required=False,string='Linea Proyeccion')
+
+    @api.multi
+    def unlink(self):
+
+        if self.projection_id:
+            self.projection_id.state='draft'
+
+        return super(AccountPreInvoice, self).unlink()
+
+

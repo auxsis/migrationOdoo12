@@ -10,6 +10,7 @@
         'apiux_hr_leave',
         'project',
         'apiux_project',
+        'apiux_analytic_journal',
     ],
     'data': [
         'views/hr_projection_timesheet_view.xml',

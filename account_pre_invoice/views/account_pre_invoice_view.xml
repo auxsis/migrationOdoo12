@@ -102,7 +102,6 @@
                                         <field name="quantity" />									
                                         <field name="amount" options='{"currency_field": "currency_id"}'/>
                                         <field name="amount_clp" />	
-                                        <field name="projection_id" string="Hito"  attrs="{'invisible':[('projection_id','=',False)]}" />
                                         <field name="note_id" string="Nota"  attrs="{'invisible':[('note_id','=',False)]}" />																
                                     </tree>
                                 </field>
