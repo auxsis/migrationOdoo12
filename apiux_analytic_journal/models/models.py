@@ -89,9 +89,12 @@ class account_move_line(models.Model):
         
         if not self.analytic_journal_id:
             raise ValidationError(_("Move line does not have an analytic journal specified. Cannot create the analytic line"))
-            
-        for line in res[0]:
-            line['journal_id']=self.analytic_journal_id.id
+
+        if type(res) is list:
+            res=res[0]    
+
+        res['journal_id']=self.analytic_journal_id.id
+                
         return res
 
 
@@ -113,6 +116,7 @@ class account_move_line(models.Model):
             self.mapped('analytic_line_ids').unlink()
             self.create_analytic_lines()
         return res
+
 
 
     @api.multi

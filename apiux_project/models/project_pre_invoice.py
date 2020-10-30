@@ -421,7 +421,8 @@ class ProjectInvoiceWizard(models.TransientModel):
             lvalues['outsourcing_id']=line.outsourcing_id.id
             lvalues['currency_id']=line.currency_id.id
             lvalues['company_id']=line.company_id.id
-            lvalues['period_id']=(line.period_id and line.period_id.id) or (line.real_period_id and line.real_period_id.id) or False
+            lvalues['period_id']=(line.period_id and line.period_id.id) or False
+            lvalues['real_period_id']=(line.real_period_id and line.real_period_id.id) or (line.period_id and line.period_id.id) or False
             lvalues['quantity']=line.quantity
             lvalues['amount']=line.line_amount
             lvalues['amount_clp']=temp_clp

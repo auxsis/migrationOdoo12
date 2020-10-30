@@ -340,6 +340,7 @@ class AccountPreInvoice(models.Model):
             lineNo+=1
         #end invoice line processing
         
+        _logger.info("forcedp=%s",forced_period_id.date_stop)
         invoice['Header']['period_id']=forced_period_id.id
                                 
         #create invoice header and lines
@@ -387,6 +388,7 @@ class AccountPreInvoice(models.Model):
         
         #set document class id
         new_invoice.document_class_id = new_invoice.journal_document_class_id.sii_document_class_id
+        new_invoice.period_id=forced_period_id
             
         #compute taxes
         #self.env['account.invoice.tax'].compute(new_invoice)
@@ -553,6 +555,7 @@ class PreInvoiceLine(models.Model):
     currency_id = fields.Many2one('res.currency', string='Moneda',required=True)
     company_id = fields.Many2one('res.company', string='Compañia',required=True)
     period_id =fields.Many2one('account.period', 'Periodo')
+    real_period_id =fields.Many2one('account.period', 'Periodo Real')    
     product_id=fields.Many2one('product.product', string='Producto')
     quantity=fields.Float('Reales./Horas',required=True)
     amount=fields.Monetary('Monto Neto',currency_field='currency_id', required=True, help='Monto en la moneda de la Prefectura')
@@ -624,4 +627,26 @@ class AccountMoveLine(models.Model):
     _inherit='account.move.line'
 
     analytic_period_id=fields.Many2one('account.period', string='Periodo Analitico')    
+    
+    
+
+    #take analytic period from move line, compare with line date
+    #if line date in period, leave date as is, else take last day
+    #of period
+    @api.one
+    def _prepare_analytic_line(self):
+        res=super(AccountMoveLine,self)._prepare_analytic_line()
+        
+        if type(res) is list:
+            res=res[0]    
+        
+        if res.get('analytic_period_id',False):
+            analytic_period=self.env['account.period'].search([('id','=', analytic_period_id)])
+            if analytic_period:
+                if res['date']>=analytic_period.date_start and res['date']<=analytic_period.date_stop:
+                    pass
+                else:
+                    res['date']=analytic_period_id.date_stop
+                
+        return res    
     

@@ -524,21 +524,23 @@ class AccountInvoice(models.Model):
         if line.get('cost_center_id'):
             res['cost_center_id'] = line['cost_center_id']
         if line.get('sector_id'):
-            res['sector_id'] = line['sector_id']                
+            res['sector_id'] = line['sector_id'] 
+        if line.get('analytic_period_id'):
+            res['analytic_period_id'] = line['analytic_period_id']              
         return res
 
-    @api.model
-    def invoice_line_move_line_get(self):
-        res = super(AccountInvoice, self).invoice_line_move_line_get()
+    # @api.model
+    # def invoice_line_move_line_get(self):
+        # res = super(AccountInvoice, self).invoice_line_move_line_get()
 
-        for dict_data in res:
-            invl_id = dict_data.get('invl_id')
-            line = self.env['account.invoice.line'].browse(invl_id)
-            if line.cost_center_id:
-                dict_data['cost_center_id'] = line.cost_center_id.id
-            if line.sector_id:
-                dict_data['sector_id'] = line.sector_id.id
-        return res
+        # for dict_data in res:
+            # invl_id = dict_data.get('invl_id')
+            # line = self.env['account.invoice.line'].browse(invl_id)
+            # if line.cost_center_id:
+                # dict_data['cost_center_id'] = line.cost_center_id.id
+            # if line.sector_id:
+                # dict_data['sector_id'] = line.sector_id.id
+        # return res
 
 
 
@@ -1257,6 +1259,7 @@ a VAT."""))
                 'invoice_id': self.id,
             }
             res.append(move_line_dict)
+            _logger.info("moveline=%s", res)
         return res
 
 

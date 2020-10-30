@@ -11,6 +11,9 @@
           <field name="project_id" domain="[('partner_id','=',partner_id)]" options="{'no_quick_create': True, 'no_create_edit' : True, 'no_open':True}"/>
           <field name="reference" />
         </field>
+        <field name="product_id" position="after">
+          <field name="analytic_period_id" />
+        </field> 
  
     
     

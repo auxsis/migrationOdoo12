@@ -96,12 +96,10 @@ class account_move(models.Model):
 
     @api.multi
     def post(self, invoice=False):
-        _logger.info("movepost2")
         self._post_validate()
         # Create the analytic lines in batch is faster as it leads to less cache invalidation.
         self.mapped('line_ids').create_analytic_lines()
         for move in self:
-            _logger.info("movename=%s,%s",move.name,invoice and invoice.move_name or '')
             if move.name == '/':
                 new_name = False
                 journal = move.journal_id
@@ -125,7 +123,6 @@ class account_move(models.Model):
                     _logger.info("journalline=%s,%s",journal.type,move.line_ids)
                     if journal.type in ['cash','bank']:
                         for ml in move.line_ids:
-                            _logger.info("egressline=%s,%s,%s",ml.account_id.user_type_id.type,ml.debit,ml.credit)
                             if ml.account_id.user_type_id.type=='liquidity' and ml.debit==0 and ml.credit>0:
                             
                                 if not journal.egress_sequence_id:
@@ -163,14 +160,20 @@ class account_move_line(models.Model):
         )
 
 
-    #this sets date to real period start date if exists 
+    #Apiux this sets date to analytic period start date if exists 
+    #This is to ensure invoice lines fall under thier respective analytic periods
+    #according to the staffing in the project
+    
     @api.one
     def _prepare_analytic_line(self):
         res=super(account_move_line,self)._prepare_analytic_line()
-            
-        for line in res:
-            real_period_id=line.get('real_period_id',False)
-            if real_period_id:
-                if line['date']<real_period_id.date_start or line['date']>real_period_id.date_stop:
-                    line['date']=real_period_id.date_start
+        if type(res) is list:
+            res=res[0]    
+
+
+        if self.analytic_period_id:
+            analytic_period_id=self.analytic_period_id
+            if res['date']<analytic_period_id.date_start or res['date']>analytic_period_id.date_stop:
+                res['date']=analytic_period_id.date_start
+        
         return res

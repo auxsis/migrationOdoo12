@@ -92,7 +92,8 @@
                                     <tree editable="bottom"  default_order='sequence'>
                                         <field name="sequence" string="No." readonly="1"/>
                                         <field name="company_id" />
-                                        <field name="period_id" domain="[('company_id','=', company_id)]"/>								
+                                        <field name="period_id" domain="[('company_id','=', company_id)]"/>
+                                        <field name="real_period_id" domain="[('company_id','=', company_id)]"/>	                                        
                                         <field name="name"/>
                                         <field name="clp_id" invisible="1" />
                                         <field name="product_id"  domain="[('company_id','=', company_id)]"/>

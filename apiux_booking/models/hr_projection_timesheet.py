@@ -465,7 +465,7 @@ class hr_projection_timesheet(models.Model):
 
         #ok what are my available profiles without filtro
         available_profile_ids=[]
-        all_profile_ids=self.env['sale.order.line'].search([('project_id','=',self.account_id)])
+        all_profile_ids=self.env['sale.order.line'].search([('project_id','=',self.account_id.id)])
         
         for profile_id in all_profile_ids:
             #find all bookings for confirmado
